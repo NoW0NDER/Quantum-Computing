@@ -82,7 +82,37 @@
 
     $|i| = |0+i| = \sqrt{|0+i|^2} = \sqrt{(0+i)(0+i)^*}=\sqrt{(0+i)(0-i)}=\sqrt{-i^2}=\sqrt{-(-1)}=\sqrt{1}=1$
     \item \begin{enumerate}
-        \item[i.] 
+        \item[i.] For complex number $c_1=a_1+b_1i$ and $c_2=a_2+b_2i$, we have
+        \[|c_1|^2=a_1^2+b_1^2\]
+        \[|c_2|^2=a_2^2+b_2^2\]
+        \[|c_1+c2|^2=(a_1+a_2)^2+(b_1+b_2)^2
+        \\=a_1^2+a_2^2+2a_1a_2+b_1^2+b_2^2+2b_1b_2\]
+        
+        so we need to find $a_1,a_2,b_1,b_2$ that makes 
+        \[a_1^2+a_2^2+2a_1a_2+b_1^2+b_2^2+2b_1b_2\geq a_1^2+b_1^2\]
+        and
+        \[a_1^2+a_2^2+2a_1a_2+b_1^2+b_2^2+2b_1b_2<a_2^2+b_2^2\]
+        so we have
+        \[a_2^2+2a_1a_2+b_2^2+2b_1b_2\geq 0\]
+        and
+        \[a_1^2+2a_1a_2+b_1^2+2b_1b_2<0\]
+        so, we need $2a_1a_2+2b_1b_2\geq-(a_2^2+b_2^2)$ and $2a_1a_2+2b_1b_2<-(a_1^2+b_1^2)$,
+
+        which means $-(a_2^2+b_2^2)\leq 2a_1a_2+2b_1b_2<-(a_1^2+b_1^2)$,
+        
+        Through observing, it is easy to find $a_1=-1,a_2=3,b_1=1,b2=-3$ makes $|c_1+c_2|^2\geq |c_1|^2$ and $|c_1+c_2|^2< |c_2|^2$.
+        
+        \item[ii.] To make $|c_1+c_2|^2< |c_1|^2$ and $|c_1+c_2|^2< |c_2|^2$,
+        we need to make
+        \[a_1^2+a_2^2+2a_1a_2+b_1^2+b_2^2+2b_1b_2< a_1^2+b_1^2\]
+        and
+        \[a_1^2+a_2^2+2a_1a_2+b_1^2+b_2^2+2b_1b_2< a_2^2+b_2^2\]
+        so, we have
+        \[a_2^2+2a_1a_2+b_2^2+2b_1b_2< 0\]
+        and
+        \[a_1^2+2a_1a_2+b_1^2+2b_1b_2< 0\]
+        I don't think we can find $a_1,a_2,b_1,b_2$ that can make $|c_1+c_2|^2< |c_1|^2$ and $|c_1+c_2|^2< |c_2|^2$ true.
+
     \end{enumerate}
 \end{enumerate}
 \end{document}
