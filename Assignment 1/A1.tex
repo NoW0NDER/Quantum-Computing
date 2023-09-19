@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage{lipsum}
+\begin{document}
+\title{Assignment 1}
+\author{
+    Name:\underline{Wang Dingrui}
+}
+\maketitle
+\section*{EXERCISE 1: COMPLEX NUMBERS}
+\begin{enumerate}
+    \item Assume $x=a_1+b_1i$, $x=a_2+b_2i$, $x=a_3+b_3i$,
+
+          we have $x+y+z=a_1+a_2+a_3+(b_1+b_2+b_3)i$,
+
+          To a complex number $n=a+bi$ we have $n^*=a-bi$,
+
+          so
+
+          $|x|^2=x\cdot x^*=a_1^2-b_1^2(i)^2=a_1^2-b_1^2\cdot(-1)=a_1^2+b_1^2$,
+
+          $x^*y \\= (a_1-b_1i)\cdot(a_2+b_2i)\\=a_1a_2+a_1b_2i-a_2b_1i-b_1b_2i^2\\=a_1a_2+b_1b_2+(a_1b_2-a_2b_1)i$,
+
+          $Re(x^*y)=a_1a_2+b_1b_2$,
+
+          similarly, we have
+
+          $|y|^2=a_2^2+b_2^2$,
+
+          $|z|^2=a_3^2+b_3^2$,
+
+          $Re(y^*z)=a_2a_3+b_2b_3$
+
+          $Re(x^*z)=a_1a_3+b_1b_3$
+
+          and
+
+
+
+          $(x+y+z)^*=a_1+a_2+a_3-(b_1+b_2+b_3)i$,
+
+          $|x+y+z|^2\\=(x+y+z)\cdot(x+y+z)^*
+              \\=((a_1+a_2+a_3)+(b_1+b_2+b_3)i)\cdot((a_1+a_2+a_3)-(b_1+b_2+b_3)i)
+              \\=((a_1+a_2+a_3)^2-(b_1+b_2+b_3)^2\cdot(-1))
+              \\=((a_1+a_2+a_3)^2+(b_1+b_2+b_3)^2)
+              \\=a_1^2+a_2^2+a_3^2+2a_1a_2+2a_1a_3+2a_2a_3+b_1^2+b_2^2+b_3^2+2b_1b_2+2b_1b_3+2b_2b_3
+              \\=a_1^2+b_1^2+a_2^2+b_2^2+a_3^2+b_3^2+2(a_1a_2+b_1b_2+a_2a_3+b_2b_3+a_1a_3+b_1b_3)
+              \\=|x|^2+|y|^2+|z|^2+2[Re(x^*y)+Re(y^*z)+Re(x^*z)]
+          $
+
+          This shows that
+
+          $|x+y+z|^2=|x|^2+|y|^2+|z|^2+2[Re(x^*y)+Re(y^*z)+Re(x^*z)]$
+    \item $(i+2)(3-4i)/(2-i)
+              \\=(3i-4i^2+2*3-2*4i)/(2-i)
+              \\=(3i-4\times(-1)+2*3-2*4i)/(2-i)
+              \\=(3i+4+6-8i)/(2-i)
+              \\=(10-5i)/(2-i)
+              \\=5(2-i)/(2-i)
+              \\=5
+          $
+    \item $ (i-4)/(2i-3)
+              \\=[(i-4)(2i+3)]/[(2i-3)(2i+3)]
+              \\=(2i^2+3i-8i-4*3)/((2i)^2-3*3)
+              \\=[2\times(-1)+3i-8i-4*3]/[4\times(-1)-3*3]
+              \\=(-2-5i-12)/(-4-9)
+              \\=(-14-5i)/(-13)
+              \\=[(-1)(14+5i)]/(-1\times13)
+              \\=(14+5i)/13
+              \\=14/13+5/13i
+          $
+
+          so, the real part is $14/13$ and imaginary pary is $5/13$.
+    \item $i^{33}
+    \\=i^{32}i
+    \\=i^{2\times16}i
+    \\=(i^2)^{16}i
+    \\=(-1)^{16}i
+    \\=i
+    $
+
+    so, the absolute value of $i^{33}$ is $|i|$
+
+    $|i| = |0+i| = \sqrt{|0+i|^2} = \sqrt{(0+i)(0+i)^*}=\sqrt{(0+i)(0-i)}=\sqrt{-i^2}=\sqrt{-(-1)}=\sqrt{1}=1$
+    \item \begin{enumerate}
+        \item[i.] 
+    \end{enumerate}
+\end{enumerate}
+\end{document}
