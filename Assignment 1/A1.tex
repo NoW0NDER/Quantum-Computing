@@ -71,48 +71,110 @@
 
           so, the real part is $14/13$ and imaginary pary is $5/13$.
     \item $i^{33}
-    \\=i^{32}i
-    \\=i^{2\times16}i
-    \\=(i^2)^{16}i
-    \\=(-1)^{16}i
-    \\=i
-    $
+              \\=i^{32}i
+              \\=i^{2\times16}i
+              \\=(i^2)^{16}i
+              \\=(-1)^{16}i
+              \\=i
+          $
 
-    so, the absolute value of $i^{33}$ is $|i|$
+          so, the absolute value of $i^{33}$ is $|i|$
 
-    $|i| = |0+i| = \sqrt{|0+i|^2} = \sqrt{(0+i)(0+i)^*}=\sqrt{(0+i)(0-i)}=\sqrt{-i^2}=\sqrt{-(-1)}=\sqrt{1}=1$
+          $|i| = |0+i| = \sqrt{|0+i|^2} = \sqrt{(0+i)(0+i)^*}=\sqrt{(0+i)(0-i)}=\sqrt{-i^2}=\sqrt{-(-1)}=\sqrt{1}=1$
     \item \begin{enumerate}
-        \item[i.] For complex number $c_1=a_1+b_1i$ and $c_2=a_2+b_2i$, we have
-        \[|c_1|^2=a_1^2+b_1^2\]
-        \[|c_2|^2=a_2^2+b_2^2\]
-        \[|c_1+c2|^2=(a_1+a_2)^2+(b_1+b_2)^2
-        \\=a_1^2+a_2^2+2a_1a_2+b_1^2+b_2^2+2b_1b_2\]
-        
-        so we need to find $a_1,a_2,b_1,b_2$ that makes 
-        \[a_1^2+a_2^2+2a_1a_2+b_1^2+b_2^2+2b_1b_2\geq a_1^2+b_1^2\]
-        and
-        \[a_1^2+a_2^2+2a_1a_2+b_1^2+b_2^2+2b_1b_2<a_2^2+b_2^2\]
-        so we have
-        \[a_2^2+2a_1a_2+b_2^2+2b_1b_2\geq 0\]
-        and
-        \[a_1^2+2a_1a_2+b_1^2+2b_1b_2<0\]
-        so, we need $2a_1a_2+2b_1b_2\geq-(a_2^2+b_2^2)$ and $2a_1a_2+2b_1b_2<-(a_1^2+b_1^2)$,
+              \item[i.] For complex number $c_1=a_1+b_1i$ and $c_2=a_2+b_2i$, we have
+                    \[|c_1|^2=a_1^2+b_1^2\]
+                    \[|c_2|^2=a_2^2+b_2^2\]
+                    \[|c_1+c2|^2=(a_1+a_2)^2+(b_1+b_2)^2
+                        \\=a_1^2+a_2^2+2a_1a_2+b_1^2+b_2^2+2b_1b_2\]
 
-        which means $-(a_2^2+b_2^2)\leq 2a_1a_2+2b_1b_2<-(a_1^2+b_1^2)$,
-        
-        Through observing, it is easy to find $a_1=-1,a_2=3,b_1=1,b2=-3$ makes $|c_1+c_2|^2\geq |c_1|^2$ and $|c_1+c_2|^2< |c_2|^2$.
-        
-        \item[ii.] To make $|c_1+c_2|^2< |c_1|^2$ and $|c_1+c_2|^2< |c_2|^2$,
-        we need to make
-        \[a_1^2+a_2^2+2a_1a_2+b_1^2+b_2^2+2b_1b_2< a_1^2+b_1^2\]
-        and
-        \[a_1^2+a_2^2+2a_1a_2+b_1^2+b_2^2+2b_1b_2< a_2^2+b_2^2\]
-        so, we have
-        \[a_2^2+2a_1a_2+b_2^2+2b_1b_2< 0\]
-        and
-        \[a_1^2+2a_1a_2+b_1^2+2b_1b_2< 0\]
-        I don't think we can find $a_1,a_2,b_1,b_2$ that can make $|c_1+c_2|^2< |c_1|^2$ and $|c_1+c_2|^2< |c_2|^2$ true.
+                    so we need to find $a_1,a_2,b_1,b_2$ that makes
+                    \[a_1^2+a_2^2+2a_1a_2+b_1^2+b_2^2+2b_1b_2\geq a_1^2+b_1^2\]
+                    and
+                    \[a_1^2+a_2^2+2a_1a_2+b_1^2+b_2^2+2b_1b_2<a_2^2+b_2^2\]
+                    so we have
+                    \[a_2^2+2a_1a_2+b_2^2+2b_1b_2\geq 0\]
+                    and
+                    \[a_1^2+2a_1a_2+b_1^2+2b_1b_2<0\]
+                    so, we need $2a_1a_2+2b_1b_2\geq-(a_2^2+b_2^2)$ and $2a_1a_2+2b_1b_2<-(a_1^2+b_1^2)$,
 
-    \end{enumerate}
+                    which means $-(a_2^2+b_2^2)\leq 2a_1a_2+2b_1b_2<-(a_1^2+b_1^2)$,
+
+                    Through observing, it is easy to find $a_1=-1,a_2=3,b_1=1,b2=-3$ makes $|c_1+c_2|^2\geq |c_1|^2$ and $|c_1+c_2|^2< |c_2|^2$.
+
+              \item[ii.] To make $|c_1+c_2|^2< |c_1|^2$ and $|c_1+c_2|^2< |c_2|^2$,
+                    we need to make
+                    \[a_1^2+a_2^2+2a_1a_2+b_1^2+b_2^2+2b_1b_2< a_1^2+b_1^2\]
+                    and
+                    \[a_1^2+a_2^2+2a_1a_2+b_1^2+b_2^2+2b_1b_2< a_2^2+b_2^2\]
+                    so, we have
+                    \[a_2^2+2a_1a_2+b_2^2+2b_1b_2< 0\]
+                    and
+                    \[a_1^2+2a_1a_2+b_1^2+2b_1b_2< 0\]
+                    I don't think we can find $a_1,a_2,b_1,b_2$ that can make $|c_1+c_2|^2< |c_1|^2$ and $|c_1+c_2|^2< |c_2|^2$ true.
+
+          \end{enumerate}
+    \item Assume both $\vec{v}_1$ and $\vec{v}_2$ has a length of $n$.
+
+          $\vec{v}_1=(\psi_{10},\psi_{11},\psi_{12},\psi_{13},...,\psi_{1n})^T$,
+
+          $\vec{v}_2=(\psi_{20},\psi_{21},\psi_{22},\psi_{23},...,\psi_{2n})^T$.
+
+          For real vectors $\vec{r}_1$ and $\vec{r}_2$, we have $\langle \vec{r}_1,\vec{r}_2 \rangle=\vec{r}_1^T\vec{r}_2$.
+
+          Similarly, we can define the inner product of $\vec{v}_1,\vec{v}_2$ that
+          \[\langle \vec{v}_1,\vec{v}_2 \rangle
+              \\=\vec{v}_1^T\vec{v}_2
+          \]
+          where $\vec{v}_1^T$ is the transpose of $\vec{v}_1$.
+
+          This means
+          \[
+              \langle \vec{v}_1,\vec{v}_2 \rangle=\\=(\psi_{10},\psi_{11},\psi_{12},\psi_{13},...,\psi_{1n})(\psi_{20},\psi_{21},\psi_{22},\psi_{23},...,\psi_{2n})^T
+          \]
+          so,
+          \[\langle \vec{v}_1,\vec{v}_2 \rangle=\sum_{i=0}^{n-1}\psi_{1i}\psi_{2i}\]
+          The properties of an inner product $\langle,\rangle$ are as followed\cite{ref1}.
+          \begin{enumerate}
+            \item \textbf{Linearity:} $\langle a\mathbf{u}+b\mathbf{v},\mathbf{w}\rangle=a\langle \mathbf{u,w}\rangle+b\langle \mathbf{v,w}\rangle$
+            \item \textbf{Symmetric Property: }$\langle \mathbf{u,v}\rangle=\langle \mathbf{v,u}\rangle$
+            \item \textbf{Positive Definite Property: } For any $\mathbf{u\in V}$, $\langle \mathbf{u,u}\rangle\geq0$;
+            and $\langle \mathbf{u,u}\rangle=0$ if and only if $\mathbf{u}=0$;
+          \end{enumerate}
+          For complex vectors $\vec{v1},\vec{v_2},\vec{v_3}$, all of them have a length of n.
+          
+          $\langle a\vec{v_1}+b\vec{v_2},\vec{v_3}\rangle
+          \\=\sum_{i=0}^{n-1}(a\psi_{1i}+b\psi_{2i})(\psi_{3i})
+          \\=\sum_{i=0}^{n-1}(a\psi_{1i})(\psi_{3i})+\sum_{i=0}^{n-1}(b\psi_{2i})(\psi_{3i})
+          \\=a\sum_{i=0}^{n-1}(\psi_{1i})(\psi_{3i})+b\sum_{i=0}^{n-1}(\psi_{2i})(\psi_{3i})
+          \\=a\langle\vec{v_1},\vec{v_3}\rangle+b\langle\vec{v_2},\vec{v_3}\rangle
+          $
+
+          This proves the linearity.
+
+          Also, we have 
+          
+          $\langle \vec{v_1},\vec{v_2}\rangle
+          \\=\sum_{i=0}^{n-1}\psi_{1i}\psi_{2i}
+          \\=\sum_{i=0}^{n-1}\psi_{2i}\psi_{1i}
+          \\=\langle\vec{v_2},\vec{v_1}\rangle
+          $
+          This proves the symmetric property.
+
+          For any complex vector $\vec{v_1}$, $\langle \vec{v_1},\vec{v_1}\rangle=\sum_{i=0}^{n-1}\psi_{1i}^2$.
+          For any complex number $\psi=a+bi$, we have $\psi^2=a^2+b^2\geq0$,
+
+          so $\langle \vec{v_1},\vec{v_1}\rangle=\sum_{i=0}^{n-1}\psi_{1i}^2\geq0$ and $\vec{v_1}$ is a complex vector, so $\vec{v_1}\neq0$.
+
+          This proves the positive definite property.
+
+          So, it satisfies all the properties of an inner product.
 \end{enumerate}
+\section*{EXERCISE 2: THE TENSOR PRODUCT}
+\begin{thebibliography}{99}
+    \bibitem{ref1}HKUST Department of Mathematics. 
+    "Math111 Week 13-14 Lecture Notes." 
+    Hong Kong University of Science and Technology, n.d., 
+    https://www.math.hkust.edu.hk/~mabfchen/Math111/Week13-14.pdf.
+\end{thebibliography}
 \end{document}

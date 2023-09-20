@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.20)  20 SEP 2023 03:55
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.20)  20 SEP 2023 15:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -74,19 +74,24 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 11.
  [1
 
-] [2] [3] (./A1.aux)
+] [2] [3]
+Underfull \hbox (badness 3240) in paragraph at lines 175--179
+[]\TU/lmr/m/n/10 HKUST Department of Mathematics. ”Math111 Week 13-14 Lec-
+ []
+
+[4] (./A1.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 937 strings out of 475591
- 20685 string characters out of 5777374
- 1922432 words of memory out of 5000000
- 22325 multiletter control sequences out of 15000+600000
- 560845 words of font info for 50 fonts, out of 8000000 for 9000
+ 949 strings out of 475591
+ 20906 string characters out of 5777374
+ 1923432 words of memory out of 5000000
+ 22332 multiletter control sequences out of 15000+600000
+ 561780 words of font info for 54 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  79i,9n,93p,225b,254s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on A1.pdf (3 pages).
+Output written on A1.pdf (4 pages).
