@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{lipsum}
 \usepackage{braket}
+\usepackage{mathrsfs}
 \begin{document}
 \title{Assignment 1}
 \author{
@@ -192,12 +193,78 @@
               \\=\left(\begin{array}{c}1\times\frac{1}{\sqrt{2}}\\1\times-\frac{1}{\sqrt{2}}\\0\times\frac{1}{\sqrt{2}}\\0\times-\frac{1}{\sqrt{2}}\end{array}\right)
               \\=\left(\begin{array}{c}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\\0\\0\end{array}\right)
               \\=\left(\begin{array}{c}\frac{\sqrt{2}}{2}\\-\frac{\sqrt{2}}{2}\\0\\0\end{array}\right)$
-    \item $\ket{1}_A\otimes\ket{1}
+    \item $\ket{1}_A\otimes\ket{1}_B
               \\=\left(\begin{array}{c}0\\1\end{array}\right)\otimes\left(\begin{array}{c}0\\1\end{array}\right)
               \\=\left(\begin{array}{c}0\cdot{\left(\begin{array}{c}0\\1\end{array}\right)}\\1\cdot{\left(\begin{array}{c}0\\1\end{array}\right)}\end{array}\right)
               \\=\left(\begin{array}{c}0\times0\\0\times1\\1\times0\\1\times1\end{array}\right)
               \\=\left(\begin{array}{c}0\\0\\0\\1\end{array}\right)$
-    \item 
+    \item We have
+          $\ket{\Phi^+}
+              \\=\frac{1}{\sqrt{2}}(\ket{0}_A\otimes\ket{1}_B+\ket{1}_A\otimes\ket{0}_B)
+              \\=\frac{1}{\sqrt{2}}(\left(\begin{array}{c}1\\0\end{array}\right)\otimes\left(\begin{array}{c}0\\1\end{array}\right)+\left(\begin{array}{c}0\\1\end{array}\right)\otimes\left(\begin{array}{c}1\\0\end{array}\right))
+              \\=\frac{1}{\sqrt{2}}(\left(\begin{array}{c}0\\1\\0\\0\end{array}\right)+\left(\begin{array}{c}0\\0\\1\\0\end{array}\right))
+              \\=\frac{1}{\sqrt{2}}(\left(\begin{array}{c}0\\1\\1\\0\end{array}\right))
+          $
+
+          For $A=\left(\begin{array}{c}
+                      a_0 \\a_1
+                  \end{array}\right)$ and $B=\left(\begin{array}{c}
+                      b_0 \\b_1
+                  \end{array}\right)$,
+        we have $A\otimes B=\left(\begin{array}{c}
+            a_0b_0\\a_0b_1\\a_1b_0\\a_1b_1
+        \end{array}\right)$.
+
+        If $\ket{\Phi^+}$ can be written as $A\otimes B$, then
+        
+        $a_0b_0=0\\a_0b_1=1\\a_1b_0=1\\a_1b_1=0$.
+
+        To make $a_0b_0=0$, either $a_0=0$ or $b_0=0$ should be true.
+
+        If any of them is true, then $a_0b_1=1$ and $a_1b_0=1$ cannot be true in the same time.
+
+        So $\ket{\Phi^+}$ can not be written as $A\otimes B$.
+        \item We have $\ket{0}\ket{0}=\left(\begin{array}{c}
+            1\\0\\0\\0
+        \end{array}\right)$ and $\ket{1}\ket{1}=\left(\begin{array}{c}
+            0\\0\\0\\1
+        \end{array}\right)$.
+
+        We also have
+        $\ket{+}\ket{-}=\frac{1}{2}(\ket{0}\ket{0}-\ket{1}\ket{1})$
+
+        and $\ket{-}\ket{+}=\frac{1}{2}(\ket{0}\ket{0}-\ket{1}\ket{1})$
+        
+        $\ket{\Phi^-}=\frac{1}{\sqrt{2}}(\ket{0}_A\otimes\ket{1}_B-\ket{1}_A\otimes\ket{0}_B)$
+        
+        So, $-\ket{\Phi^-}
+        \\=\frac{1}{\sqrt{2}}(\ket{1}_A\otimes\ket{0}_B-\ket{0}_A\otimes\ket{1}_B)
+        \\=\frac{1}{\sqrt{2}}(\left(\begin{array}{c}
+            0\\0\\0\\0
+        \end{array}\right)-\left(\begin{array}{c}
+            0\\0\\0\\0
+        \end{array}\right))
+        \\=\left(\begin{array}{c}
+            0\\0\\0\\0
+        \end{array}\right)
+        \\=\frac{1}{\sqrt{2}}[\frac{1}{2}(\ket{0}\ket{0}-\ket{1}\ket{1})-\frac{1}{2}(\ket{0}\ket{0}-\ket{1}\ket{1})]
+        \\=\frac{1}{\sqrt{2}}(\ket{+}\ket{-}-\ket{-}\ket{+})
+        % \\=\frac{1}{\sqrt{2}}[(\left(\begin{array}{c}
+        %     1\\0\\0\\0
+        % \end{array}\right)-\left(\begin{array}{c}
+        %     0\\0\\0\\1
+        % \end{array}\right))-(\left(\begin{array}{c}
+        %     1\\0\\0\\0
+        % \end{array}\right)-\left(\begin{array}{c}
+        %     0\\0\\0\\1
+        % \end{array}\right))]
+        % \\==\frac{1}{\sqrt{2}}\times2\times(\ket{0}\ket{0}-\ket{1}\ket{1})
+        % \\=\frac{2}{\sqrt{2}}[(\ket{0}+\ket{1})\otimes(\ket{0}-\ket{1})]
+        % \\=
+        $
+
+        So $\ket{\Phi^-}$ in basis $\mathcal{B}_1$ is equal to $-\ket{\Phi^-}$ in basis $\mathcal{B}_2$.
+        
 \end{enumerate}
 \begin{thebibliography}{99}
     \bibitem{ref1}HKUST Department of Mathematics.
