@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{lipsum}
+\usepackage{braket}
 \begin{document}
 \title{Assignment 1}
 \author{
@@ -136,28 +137,28 @@
           \[\langle \vec{v}_1,\vec{v}_2 \rangle=\sum_{i=0}^{n-1}\psi_{1i}\psi_{2i}\]
           The properties of an inner product $\langle,\rangle$ are as followed\cite{ref1}.
           \begin{enumerate}
-            \item \textbf{Linearity:} $\langle a\mathbf{u}+b\mathbf{v},\mathbf{w}\rangle=a\langle \mathbf{u,w}\rangle+b\langle \mathbf{v,w}\rangle$
-            \item \textbf{Symmetric Property: }$\langle \mathbf{u,v}\rangle=\langle \mathbf{v,u}\rangle$
-            \item \textbf{Positive Definite Property: } For any $\mathbf{u\in V}$, $\langle \mathbf{u,u}\rangle\geq0$;
-            and $\langle \mathbf{u,u}\rangle=0$ if and only if $\mathbf{u}=0$;
+              \item \textbf{Linearity:} $\langle a\mathbf{u}+b\mathbf{v},\mathbf{w}\rangle=a\langle \mathbf{u,w}\rangle+b\langle \mathbf{v,w}\rangle$
+              \item \textbf{Symmetric Property: }$\langle \mathbf{u,v}\rangle=\langle \mathbf{v,u}\rangle$
+              \item \textbf{Positive Definite Property: } For any $\mathbf{u\in V}$, $\langle \mathbf{u,u}\rangle\geq0$;
+                    and $\langle \mathbf{u,u}\rangle=0$ if and only if $\mathbf{u}=0$;
           \end{enumerate}
           For complex vectors $\vec{v1},\vec{v_2},\vec{v_3}$, all of them have a length of n.
-          
+
           $\langle a\vec{v_1}+b\vec{v_2},\vec{v_3}\rangle
-          \\=\sum_{i=0}^{n-1}(a\psi_{1i}+b\psi_{2i})(\psi_{3i})
-          \\=\sum_{i=0}^{n-1}(a\psi_{1i})(\psi_{3i})+\sum_{i=0}^{n-1}(b\psi_{2i})(\psi_{3i})
-          \\=a\sum_{i=0}^{n-1}(\psi_{1i})(\psi_{3i})+b\sum_{i=0}^{n-1}(\psi_{2i})(\psi_{3i})
-          \\=a\langle\vec{v_1},\vec{v_3}\rangle+b\langle\vec{v_2},\vec{v_3}\rangle
+              \\=\sum_{i=0}^{n-1}(a\psi_{1i}+b\psi_{2i})(\psi_{3i})
+              \\=\sum_{i=0}^{n-1}(a\psi_{1i})(\psi_{3i})+\sum_{i=0}^{n-1}(b\psi_{2i})(\psi_{3i})
+              \\=a\sum_{i=0}^{n-1}(\psi_{1i})(\psi_{3i})+b\sum_{i=0}^{n-1}(\psi_{2i})(\psi_{3i})
+              \\=a\langle\vec{v_1},\vec{v_3}\rangle+b\langle\vec{v_2},\vec{v_3}\rangle
           $
 
           This proves the linearity.
 
-          Also, we have 
-          
+          Also, we have
+
           $\langle \vec{v_1},\vec{v_2}\rangle
-          \\=\sum_{i=0}^{n-1}\psi_{1i}\psi_{2i}
-          \\=\sum_{i=0}^{n-1}\psi_{2i}\psi_{1i}
-          \\=\langle\vec{v_2},\vec{v_1}\rangle
+              \\=\sum_{i=0}^{n-1}\psi_{1i}\psi_{2i}
+              \\=\sum_{i=0}^{n-1}\psi_{2i}\psi_{1i}
+              \\=\langle\vec{v_2},\vec{v_1}\rangle
           $
           This proves the symmetric property.
 
@@ -171,10 +172,37 @@
           So, it satisfies all the properties of an inner product.
 \end{enumerate}
 \section*{EXERCISE 2: THE TENSOR PRODUCT}
+\begin{enumerate}
+    \item
+          $\ket{0}_A\otimes\ket{1}_B
+              \\=\left(\begin{array}{c}1\\0\end{array}\right)\otimes\left(\begin{array}{c}0\\1\end{array}\right)
+              \\=\left(\begin{array}{c}1\cdot{\left(\begin{array}{c}0\\1\end{array}\right)}\\0\cdot{\left(\begin{array}{c}0\\1\end{array}\right)}\end{array}\right)
+              \\=\left(\begin{array}{c}1\times0\\1\times1\\0\times0\\0\times1\end{array}\right)
+              \\=\left(\begin{array}{c}0\\1\\0\\0\end{array}\right)$
+    \item
+          $\ket{+}_A\otimes\ket{-}_B
+              \\=\left(\begin{array}{c}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{array}\right)\otimes\left(\begin{array}{c}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\end{array}\right)
+              \\=\left(\begin{array}{c}\frac{1}{\sqrt{2}}\cdot{\left(\begin{array}{c}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\end{array}\right)}\\\frac{1}{\sqrt{2}}\cdot{\left(\begin{array}{c}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\end{array}\right)}\end{array}\right)
+              \\=\left(\begin{array}{c}\frac{1}{\sqrt{2}}\times\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\times-\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\times\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\times-\frac{1}{\sqrt{2}}\end{array}\right)
+              \\=\left(\begin{array}{c}\frac{1}{2}\\-\frac{1}{2}\\\frac{1}{2}\\-\frac{1}{2}\end{array}\right)
+          $
+    \item
+          $\ket{0}_A\otimes\ket{-}_B
+              \\=\left(\begin{array}{c}1\\0\end{array}\right)\otimes\left(\begin{array}{c}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\end{array}\right)
+              \\=\left(\begin{array}{c}1\times\frac{1}{\sqrt{2}}\\1\times-\frac{1}{\sqrt{2}}\\0\times\frac{1}{\sqrt{2}}\\0\times-\frac{1}{\sqrt{2}}\end{array}\right)
+              \\=\left(\begin{array}{c}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\\0\\0\end{array}\right)
+              \\=\left(\begin{array}{c}\frac{\sqrt{2}}{2}\\-\frac{\sqrt{2}}{2}\\0\\0\end{array}\right)$
+    \item $\ket{1}_A\otimes\ket{1}
+              \\=\left(\begin{array}{c}0\\1\end{array}\right)\otimes\left(\begin{array}{c}0\\1\end{array}\right)
+              \\=\left(\begin{array}{c}0\cdot{\left(\begin{array}{c}0\\1\end{array}\right)}\\1\cdot{\left(\begin{array}{c}0\\1\end{array}\right)}\end{array}\right)
+              \\=\left(\begin{array}{c}0\times0\\0\times1\\1\times0\\1\times1\end{array}\right)
+              \\=\left(\begin{array}{c}0\\0\\0\\1\end{array}\right)$
+    \item 
+\end{enumerate}
 \begin{thebibliography}{99}
-    \bibitem{ref1}HKUST Department of Mathematics. 
-    "Math111 Week 13-14 Lecture Notes." 
-    Hong Kong University of Science and Technology, n.d., 
+    \bibitem{ref1}HKUST Department of Mathematics.
+    "Math111 Week 13-14 Lecture Notes."
+    Hong Kong University of Science and Technology, n.d.,
     https://www.math.hkust.edu.hk/~mabfchen/Math111/Week13-14.pdf.
 \end{thebibliography}
 \end{document}
