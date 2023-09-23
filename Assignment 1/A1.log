@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.20)  23 SEP 2023 22:37
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.20)  24 SEP 2023 01:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -134,12 +134,22 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 11.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
-] [2] [3] [4] [5] [6] [7]
-Underfull \hbox (badness 3240) in paragraph at lines 405--409
-[]\TU/lmr/m/n/10 HKUST Department of Mathematics. ”Math111 Week 13-14 Lec-
+] [2] [3] [4] [5] [6] [7] [8]
+Overfull \hbox (9.4118pt too wide) in paragraph at lines 431--439
+[]\TU/lmr/m/n/10 The density matrix $\OML/cmm/m/it/10 ^^Z \OT1/cmr/m/n/10 = [] [] [] = []$ 
  []
 
-[8] [9] (./A1.aux)
+[9]
+Overfull \hbox (11.52736pt too wide) in paragraph at lines 455--468
+\OT1/cmr/m/n/10 = [] []$ 
+ []
+
+[10] [11]
+Underfull \hbox (badness 1178) in paragraph at lines 622--626
+\TU/lmr/m/n/10 thogonality” Hong Kong University of Science and Technology, n.d.,
+ []
+
+[12] (./A1.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
@@ -152,6 +162,6 @@ Here is how much of TeX's memory you used:
  23095 multiletter control sequences out of 15000+600000
  563897 words of font info for 65 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 79i,16n,93p,304b,258s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,16n,93p,317b,265s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on A1.pdf (9 pages).
+Output written on A1.pdf (12 pages).

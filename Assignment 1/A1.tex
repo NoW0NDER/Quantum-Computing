@@ -182,25 +182,25 @@
               \\=\left(\begin{array}{c}1\times0\\1\times1\\0\times0\\0\times1\end{array}\right)
               \\=\left(\begin{array}{c}0\\1\\0\\0\end{array}\right)
               \\=0(\ket{0}\otimes\ket{0})+1(\ket{0}\otimes\ket{1})+0(\ket{1}\otimes\ket{0})+0(\ket{1}\otimes\ket{1})
-              $
+          $
     \item
           $\ket{+}_A\otimes\ket{-}_B
               \\=\left(\begin{array}{c}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{array}\right)\otimes\left(\begin{array}{c}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\end{array}\right)
               \\=\left(\begin{array}{c}\frac{1}{\sqrt{2}}\cdot{\left(\begin{array}{c}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\end{array}\right)}\\\frac{1}{\sqrt{2}}\cdot{\left(\begin{array}{c}\frac{1}{\sqrt{2}}\\-\frac{1}{\sqrt{2}}\end{array}\right)}\end{array}\right)
               \\=\left(\begin{array}{c}\frac{1}{\sqrt{2}}\times\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\times-\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\times\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\times-\frac{1}{\sqrt{2}}\end{array}\right)
               \\=\left(\begin{array}{c}\frac{1}{2}\\-\frac{1}{2}\\\frac{1}{2}\\-\frac{1}{2}\end{array}\right)
-            \\=\frac{1}{2}(\ket{0}\otimes\ket{0})-\frac{1}{2}(\ket{0}\otimes\ket{1})+\frac{1}{2}(\ket{1}\otimes\ket{0})-\frac{1}{2}(\ket{1}\otimes\ket{1})
-              $
+              \\=\frac{1}{2}(\ket{0}\otimes\ket{0})-\frac{1}{2}(\ket{0}\otimes\ket{1})+\frac{1}{2}(\ket{1}\otimes\ket{0})-\frac{1}{2}(\ket{1}\otimes\ket{1})
+          $
     \item
           $\ket{0}_A\otimes\ket{-}_B
-          \\=\frac{1}{\sqrt{2}}(\ket{+}+\ket{-})\otimes\ket{-}
-          \\=\frac{1}{\sqrt{2}}\ket{+}\otimes\ket{-}+\frac{1}{\sqrt{2}}\ket{-}\otimes\ket{-}
-          \\=0\times\ket{+}\otimes\ket{+}+\frac{1}{\sqrt{2}}\ket{+}\otimes\ket{-}+0\times\ket{-}\otimes\ket{+}+\frac{1}{\sqrt{2}}\ket{-}\otimes\ket{-}
+              \\=\frac{1}{\sqrt{2}}(\ket{+}+\ket{-})\otimes\ket{-}
+              \\=\frac{1}{\sqrt{2}}\ket{+}\otimes\ket{-}+\frac{1}{\sqrt{2}}\ket{-}\otimes\ket{-}
+              \\=0\times\ket{+}\otimes\ket{+}+\frac{1}{\sqrt{2}}\ket{+}\otimes\ket{-}+0\times\ket{-}\otimes\ket{+}+\frac{1}{\sqrt{2}}\ket{-}\otimes\ket{-}
           $
     \item $\ket{1}_A\otimes\ket{1}_B
               \\=\frac{1}{\sqrt{2}}(\ket{+}-\ket{-})\otimes\frac{1}{\sqrt{2}}(\ket{+}-\ket{-})
               \\=\frac{1}{2}(\ket{+}\otimes\ket{+})-\frac{1}{2}(\ket{+}\otimes\ket{-})-\frac{1}{2}(\ket{-}\otimes\ket{+})+\frac{1}{2}(\ket{-}\otimes\ket{-})
-              $
+          $
     \item We have
           $\ket{\Phi^+}
               \\=\frac{1}{\sqrt{2}}(\ket{0}_A\otimes\ket{1}_B+\ket{1}_A\otimes\ket{0}_B)
@@ -214,196 +214,413 @@
                   \end{array}\right)$ and $B=\left(\begin{array}{c}
                       b_0 \\b_1
                   \end{array}\right)$,
-        we have $A\otimes B=\left(\begin{array}{c}
-            a_0b_0\\a_0b_1\\a_1b_0\\a_1b_1
-        \end{array}\right)$.
+          we have $A\otimes B=\left(\begin{array}{c}
+                      a_0b_0 \\a_0b_1\\a_1b_0\\a_1b_1
+                  \end{array}\right)$.
 
-        If $\ket{\Phi^+}$ can be written as $A\otimes B$, then
-        
-        $a_0b_0=0\\a_0b_1=\frac{1}{\sqrt{2}}\\a_1b_0=\frac{1}{\sqrt{2}}\\a_1b_1=0$.
+          If $\ket{\Phi^+}$ can be written as $A\otimes B$, then
 
-        To make $a_0b_0=0$, either $a_0=0$ or $b_0=0$ should be true.
+          $a_0b_0=0\\a_0b_1=\frac{1}{\sqrt{2}}\\a_1b_0=\frac{1}{\sqrt{2}}\\a_1b_1=0$.
 
-        If any of them is true, then $a_0b_1=\frac{1}{\sqrt{2}}$ and $a_1b_0=\frac{1}{\sqrt{2}}$ cannot be true in the same time.
+          To make $a_0b_0=0$, either $a_0=0$ or $b_0=0$ should be true.
 
-        So $\ket{\Phi^+}$ can not be written as $A\otimes B$.
-        \item We have $\ket{0}\ket{0}=\left(\begin{array}{c}
-            1\\0\\0\\0
-        \end{array}\right)$ and $\ket{1}\ket{1}=\left(\begin{array}{c}
-            0\\0\\0\\1
-        \end{array}\right)$.
+          If any of them is true, then $a_0b_1=\frac{1}{\sqrt{2}}$ and $a_1b_0=\frac{1}{\sqrt{2}}$ cannot be true in the same time.
 
-        We also have
-        $\ket{+}\ket{-}=\frac{1}{2}(\ket{0}\ket{0}-\ket{1}\ket{1})$
+          So $\ket{\Phi^+}$ can not be written as $A\otimes B$.
+    \item We have $\ket{0}\ket{0}=\left(\begin{array}{c}
+                      1 \\0\\0\\0
+                  \end{array}\right)$ and $\ket{1}\ket{1}=\left(\begin{array}{c}
+                      0 \\0\\0\\1
+                  \end{array}\right)$.
 
-        and $\ket{-}\ket{+}=\frac{1}{2}(\ket{0}\ket{0}-\ket{1}\ket{1})$
-        
-        $\ket{\Phi^-}=\frac{1}{\sqrt{2}}(\ket{0}_A\otimes\ket{1}_B-\ket{1}_A\otimes\ket{0}_B)$
-        
-        So, $-\ket{\Phi^-}
-        \\=\frac{1}{\sqrt{2}}(\ket{1}_A\otimes\ket{0}_B-\ket{0}_A\otimes\ket{1}_B)
-        \\=\frac{1}{\sqrt{2}}(\left(\begin{array}{c}
-            0\\0\\0\\0
-        \end{array}\right)-\left(\begin{array}{c}
-            0\\0\\0\\0
-        \end{array}\right))
-        \\=\left(\begin{array}{c}
-            0\\0\\0\\0
-        \end{array}\right)
-        \\=\frac{1}{\sqrt{2}}[\frac{1}{2}(\ket{0}\ket{0}-\ket{1}\ket{1})-\frac{1}{2}(\ket{0}\ket{0}-\ket{1}\ket{1})]
-        \\=\frac{1}{\sqrt{2}}(\ket{+}\ket{-}-\ket{-}\ket{+})
-        % \\=\frac{1}{\sqrt{2}}[(\left(\begin{array}{c}
-        %     1\\0\\0\\0
-        % \end{array}\right)-\left(\begin{array}{c}
-        %     0\\0\\0\\1
-        % \end{array}\right))-(\left(\begin{array}{c}
-        %     1\\0\\0\\0
-        % \end{array}\right)-\left(\begin{array}{c}
-        %     0\\0\\0\\1
-        % \end{array}\right))]
-        % \\==\frac{1}{\sqrt{2}}\times2\times(\ket{0}\ket{0}-\ket{1}\ket{1})
-        % \\=\frac{2}{\sqrt{2}}[(\ket{0}+\ket{1})\otimes(\ket{0}-\ket{1})]
-        % \\=
-        $
+          We also have
+          $\ket{+}\ket{-}=\frac{1}{2}(\ket{0}\ket{0}-\ket{1}\ket{1})$
 
-        So $\ket{\Phi^-}$ in basis $\mathcal{B}_1$ is equal to $-\ket{\Phi^-}$ in basis $\mathcal{B}_2$.
-        
+          and $\ket{-}\ket{+}=\frac{1}{2}(\ket{0}\ket{0}-\ket{1}\ket{1})$
+
+          $\ket{\Phi^-}=\frac{1}{\sqrt{2}}(\ket{0}_A\otimes\ket{1}_B-\ket{1}_A\otimes\ket{0}_B)$
+
+          So, $-\ket{\Phi^-}
+              \\=\frac{1}{\sqrt{2}}(\ket{1}_A\otimes\ket{0}_B-\ket{0}_A\otimes\ket{1}_B)
+              \\=\frac{1}{\sqrt{2}}(\left(\begin{array}{c}
+                      0 \\0\\0\\0
+                  \end{array}\right)-\left(\begin{array}{c}
+                      0 \\0\\0\\0
+                  \end{array}\right))
+              \\=\left(\begin{array}{c}
+                      0 \\0\\0\\0
+                  \end{array}\right)
+              \\=\frac{1}{\sqrt{2}}[\frac{1}{2}(\ket{0}\ket{0}-\ket{1}\ket{1})-\frac{1}{2}(\ket{0}\ket{0}-\ket{1}\ket{1})]
+              \\=\frac{1}{\sqrt{2}}(\ket{+}\ket{-}-\ket{-}\ket{+})
+              % \\=\frac{1}{\sqrt{2}}[(\left(\begin{array}{c}
+              %     1\\0\\0\\0
+              % \end{array}\right)-\left(\begin{array}{c}
+              %     0\\0\\0\\1
+              % \end{array}\right))-(\left(\begin{array}{c}
+              %     1\\0\\0\\0
+              % \end{array}\right)-\left(\begin{array}{c}
+              %     0\\0\\0\\1
+              % \end{array}\right))]
+              % \\==\frac{1}{\sqrt{2}}\times2\times(\ket{0}\ket{0}-\ket{1}\ket{1})
+              % \\=\frac{2}{\sqrt{2}}[(\ket{0}+\ket{1})\otimes(\ket{0}-\ket{1})]
+              % \\=
+          $
+
+          So $\ket{\Phi^-}$ in basis $\mathcal{B}_1$ is equal to $-\ket{\Phi^-}$ in basis $\mathcal{B}_2$.
+
 \end{enumerate}
 \section*{OVERLAPS OF STATES}
 \begin{enumerate}
     \item For $\ket{\psi}=\left(\begin{array}{c}
-        c_0\\c_1\\...\\c_{n-1}
-    \end{array}\right)$
-    where $c_k=a_k+b_ki$,
-    we know 
-    
-    $\lVert\psi\rVert^2_2 = \sum_{i=0}^{n-1}|c_i|^2=\sum_{i=0}^{n-1}a_i^2+b_i^2$.
+                      c_0 \\c_1\\...\\c_{n-1}
+                  \end{array}\right)$
+          where $c_k=a_k+b_ki$,
+          we know
 
-    now,
+          $\lVert\psi\rVert^2_2 = \sum_{i=0}^{n-1}|c_i|^2=\sum_{i=0}^{n-1}a_i^2+b_i^2$.
+
+          now,
 
 
-    $\braket{\psi|\psi}
-    \\=\left(c_0^*,c_1^*,...,c_{n-1}^*\right)\left(\begin{array}{c}
-        c_0\\c_1\\...\\c_{n-1}
-    \end{array}\right)
-    \\=\sum_{i=0}^{n-1}c_i^*c_imaginary
-    \\=\sum_{i=0}^{n-1}a_i^2+b_i^2
-    \\=\lVert\psi\rVert^2_2
-    $
+          $\braket{\psi|\psi}
+              \\=\left(c_0^*,c_1^*,...,c_{n-1}^*\right)\left(\begin{array}{c}
+                      c_0 \\c_1\\...\\c_{n-1}
+                  \end{array}\right)
+              \\=\sum_{i=0}^{n-1}c_i^*c_imaginary
+              \\=\sum_{i=0}^{n-1}a_i^2+b_i^2
+              \\=\lVert\psi\rVert^2_2
+          $
 
-    So, $\braket{\psi|\psi}=\lVert\psi\rVert^2_2$
-    \item 
-    \begin{enumerate}
-        \item For $\ket{\psi_1}=\frac{1}{3}\ket{-}$,
-        
-        $\lVert\psi_1\rVert^2
-        \\=\braket{\psi_1|\psi_1}
-        \\=\frac{1}{9}\braket{-|-}
-        \\=\frac{1}{9}[\frac{1}{2}\braket{0|0}+(-1)^2\frac{1}{2}\braket{1|1}]
-        \\=\frac{1}{9}(\frac{1}{2}+\frac{1}{2})
-        \\=\frac{1}{9}$
+          So, $\braket{\psi|\psi}=\lVert\psi\rVert^2_2$
+    \item
+          \begin{enumerate}
+              \item For $\ket{\psi_1}=\frac{1}{3}\ket{-}$,
 
-        so,
+                    $\lVert\psi_1\rVert^2
+                        \\=\braket{\psi_1|\psi_1}
+                        \\=\frac{1}{9}\braket{-|-}
+                        \\=\frac{1}{9}[\frac{1}{2}\braket{0|0}+(-1)^2\frac{1}{2}\braket{1|1}]
+                        \\=\frac{1}{9}(\frac{1}{2}+\frac{1}{2})
+                        \\=\frac{1}{9}$
 
-        $\lVert\psi_1\rVert=\sqrt{\lVert\psi_1\rVert^2}=\sqrt{\frac{1}{9}}=\frac{1}{3}$
-        
-        \item For $\ket{\psi_2}=\frac{1}{\sqrt{2}}(i\ket{0}+\ket{1})$
-        
-        $\lVert\psi_2\rVert^2
-        \\=\frac{1}{2}\times -(i^2\times\braket{0|0})+\frac{1}{2}\braket{1|1}
-        \\=\frac{1}{2}*1+\frac{1}{2}*1
-        \\=1
-        $
+                    so,
 
-        So, $\lVert\psi_2\rVert=\sqrt{1}=1$
-    \item $\lVert\frac{2}{5}\ket{0}+\frac{3}{5}\ket{1}\rVert
-    \\=\sqrt{\frac{2}{5}\times\frac{2}{5}\braket{0|1}+\frac{2}{5}\times\frac{3}{5}\braket{0|0}+\frac{2}{5}\times\frac{3}{5}\braket{1|1}+\frac{3}{5}\times\frac{3}{5}\braket{1|1}}
-    \\=\sqrt{\frac{4}{25}\times1+\frac{9}{25}\times1}
-    \\=\sqrt{\frac{13}{25}}
-    \\=\frac{\sqrt{13}}{5}
-    $
-    \end{enumerate}
+                    $\lVert\psi_1\rVert=\sqrt{\lVert\psi_1\rVert^2}=\sqrt{\frac{1}{9}}=\frac{1}{3}$
+
+              \item For $\ket{\psi_2}=\frac{1}{\sqrt{2}}(i\ket{0}+\ket{1})$
+
+                    $\lVert\psi_2\rVert^2
+                        \\=\frac{1}{2}\times -(i^2\times\braket{0|0})+\frac{1}{2}\braket{1|1}
+                        \\=\frac{1}{2}*1+\frac{1}{2}*1
+                        \\=1
+                    $
+
+                    So, $\lVert\psi_2\rVert=\sqrt{1}=1$
+              \item $\lVert\frac{2}{5}\ket{0}+\frac{3}{5}\ket{1}\rVert
+                        \\=\sqrt{\frac{2}{5}\times\frac{2}{5}\braket{0|1}+\frac{2}{5}\times\frac{3}{5}\braket{0|0}+\frac{2}{5}\times\frac{3}{5}\braket{1|1}+\frac{3}{5}\times\frac{3}{5}\braket{1|1}}
+                        \\=\sqrt{\frac{4}{25}\times1+\frac{9}{25}\times1}
+                        \\=\sqrt{\frac{13}{25}}
+                        \\=\frac{\sqrt{13}}{5}
+                    $
+          \end{enumerate}
     \item $\ket{\psi_2}=\frac{1}{\sqrt{2}}(i\ket{0}+\ket{1})$ is the correct normalization.
-    
-    The renormalized state $\ket{\psi_1}'=\frac{\ket{\psi_1}}{\frac{1}{3}}=\ket{-}$
 
-    The renormalized state $\ket{\psi_3}'=\frac{\ket{\psi_3}}{\frac{\sqrt{13}}{5}}=\frac{2}{\sqrt{13}}\ket{0}+\frac{3}{\sqrt{13}}\ket{1}$
+          The renormalized state $\ket{\psi_1}'=\frac{\ket{\psi_1}}{\frac{1}{3}}=\ket{-}$
+
+          The renormalized state $\ket{\psi_3}'=\frac{\ket{\psi_3}}{\frac{\sqrt{13}}{5}}=\frac{2}{\sqrt{13}}\ket{0}+\frac{3}{\sqrt{13}}\ket{1}$
     \item State $\psi=\frac{1}{\sqrt{2}}\ket{0}+\frac{1}{\sqrt{2}}\ket{1}$.
-    
-    The probability $p_1$ to find $\ket{\psi}$ in state $\ket{1}$ is:
-\[p_1=|\braket{1|\psi}|^2=|(\frac{1}{\sqrt{2}})\braket{1|1}|^2=\frac{1}{2}\]
+
+          The probability $p_1$ to find $\ket{\psi}$ in state $\ket{1}$ is:
+          \[p_1=|\braket{1|\psi}|^2=|(\frac{1}{\sqrt{2}})\braket{1|1}|^2=\frac{1}{2}\]
 
 
-The probability $p_2$ to find $\ket{\psi}$ in state $\ket{-}$ is:
-\[p_2=|\braket{-|\psi}|^2=|\braket{-|+}|^2=|\frac{1}{2}(\braket{0|0}-\braket{1|1})|^2=0\]
+          The probability $p_2$ to find $\ket{\psi}$ in state $\ket{-}$ is:
+          \[p_2=|\braket{-|\psi}|^2=|\braket{-|+}|^2=|\frac{1}{2}(\braket{0|0}-\braket{1|1})|^2=0\]
 
-\item The probability $p$ to find $\ket{\psi}=\frac{1}{\sqrt{2}}(i\ket{0}-\ket{1})$ in state $\ket{+}$ is:
+    \item The probability $p$ to find $\ket{\psi}=\frac{1}{\sqrt{2}}(i\ket{0}-\ket{1})$ in state $\ket{+}$ is:
 
-$p=|\braket{+|\psi}|^2=|\frac{1}{2}(i\braket{0|0}-\braket{1|1})|^2=\frac{1}{4}|-1+i|^2=\frac{1}{4}(1+1)=\frac{1}{2}$
+          $p=|\braket{+|\psi}|^2=|\frac{1}{2}(i\braket{0|0}-\braket{1|1})|^2=\frac{1}{4}|-1+i|^2=\frac{1}{4}(1+1)=\frac{1}{2}$
 
-\item The probability $p$ of output $\ket{\psi}$ in the state $\ket{+}$ is:
+    \item The probability $p$ of output $\ket{\psi}$ in the state $\ket{+}$ is:
 
-$p=|\braket{\phi|\psi}|^2=|[\frac{1}{\sqrt{2}}(\bra{0}+\bra{1})](\frac{2}{\sqrt{5}}\ket{0}+i\frac{1}{\sqrt{5}}\ket{1})|^2
-\\=|\frac{2}{\sqrt{10}}\braket{0|0}+0+0+i\frac{1}{\sqrt{10}}\braket{1|1}|^2
-\\=|\frac{2}{\sqrt{10}}+i\frac{1}{\sqrt{10}}|^2
-\\=\frac{4}{10}+\frac{1}{10}
-\\=\frac{1}{2}$
+          $p=|\braket{\phi|\psi}|^2=|[\frac{1}{\sqrt{2}}(\bra{0}+\bra{1})](\frac{2}{\sqrt{5}}\ket{0}+i\frac{1}{\sqrt{5}}\ket{1})|^2
+              \\=|\frac{2}{\sqrt{10}}\braket{0|0}+0+0+i\frac{1}{\sqrt{10}}\braket{1|1}|^2
+              \\=|\frac{2}{\sqrt{10}}+i\frac{1}{\sqrt{10}}|^2
+              \\=\frac{4}{10}+\frac{1}{10}
+              \\=\frac{1}{2}$
 
-$\frac{1}{2}=50\%>45\%$
+          $\frac{1}{2}=50\%>45\%$
 
-So, we accept this state.
+          So, we accept this state.
 
 \end{enumerate}
 \section*{DENSITY OPERATORS}
 \begin{enumerate}
-    \item $\ket{+}_A\otimes\ket{0}=\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})\otimes\ket{0}=\frac{1}{\sqrt{2}}(\ket{0}\otimes\ket{0}+\ket{1}\otimes\ket{0})
-    \\=\frac{1}{\sqrt{2}}(\left(\begin{array}{c}
-        1\\0\\0\\0
-    \end{array}\right)+\left(\begin{array}{c}
-        0\\0\\1\\0
-    \end{array}\right))
-    \\==\frac{1}{\sqrt{2}}(\left(\begin{array}{c}
-        1\\0\\1\\0
-    \end{array}\right))
-    $
+    \item For $\ket{\psi}=\ket{+}_A\otimes\ket{0}$
+          The density operator is $\ket{\psi}\bra{\psi}$
 
+          $\ket{+}_A\otimes\ket{0}=\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})\otimes\ket{0}=\frac{1}{\sqrt{2}}(\ket{0}\otimes\ket{0}+\ket{1}\otimes\ket{0})
+              \\=\frac{1}{\sqrt{2}}(\left(\begin{array}{c}
+                      1 \\0\\0\\0
+                  \end{array}\right)+\left(\begin{array}{c}
+                      0 \\0\\1\\0
+                  \end{array}\right))
+              \\==\frac{1}{\sqrt{2}}(\left(\begin{array}{c}
+                      1 \\0\\1\\0
+                  \end{array}\right))
+          $
 
+          The density matrix
 
-    $\rho
-    \\=\ket{+}_A\otimes\ket{0}_B\bra{+}_A\otimes\bra{0}_B
-    \\=\frac{1}{2}\left(\begin{array}{c}
-        1\\0\\1\\0
-    \end{array}\right)\left(\begin{array}{cccc}
-        1&0&1&0
-    \end{array}\right)
-    \\=\frac{1}{2}\left(
-        \begin{array}{cccc}
-            1&0&1&0\\0&0&0&0\\1&0&1&0\\0&0&0&0
-        \end{array}
-    \right)
-    $
-    % $\rho=\ket{+}_A\otimes\ket{0}_B\bra{+}_A\otimes\bra{0}_B
-    % \\=(\frac{1}{\sqrt{2}}(\ket{0}\otimes\ket{0}+\ket{1}\otimes\ket{0}))(\frac{1}{\sqrt{2}}(\bra{0}\otimes\bra{0}+\bra{0}\otimes\bra{1}))
-    % \\=\frac{1}{2}(\ket{0}\ket{0}\bra{0}\bra{0}+\ket{1}\ket{0}\bra{0}\bra{1})
-    % \\=
-    % $
+          $\rho
+              \\=\ket{+}_A\otimes\ket{0}_B\bra{+}_A\otimes\bra{0}_B
+              \\=\frac{1}{2}\left(\begin{array}{c}
+                      1 \\0\\1\\0
+                  \end{array}\right)\left(\begin{array}{cccc}
+                      1 & 0 & 1 & 0
+                  \end{array}\right)
+              \\=\frac{1}{2}\left(
+              \begin{array}{cccc}
+                      1 & 0 & 1 & 0 \\0&0&0&0\\1&0&1&0\\0&0&0&0
+                  \end{array}
+              \right)
+              \\=\left(
+              \begin{array}{cccc}
+                      \frac{1}{2} & 0 & \frac{1}{2} & 0 \\0&0&0&0\\\frac{1}{2}&0&\frac{1}{2}&0\\0&0&0&0
+                  \end{array}
+              \right)
+          $
+          % $\rho=\ket{+}_A\otimes\ket{0}_B\bra{+}_A\otimes\bra{0}_B
+          % \\=(\frac{1}{\sqrt{2}}(\ket{0}\otimes\ket{0}+\ket{1}\otimes\ket{0}))(\frac{1}{\sqrt{2}}(\bra{0}\otimes\bra{0}+\bra{0}\otimes\bra{1}))
+          % \\=\frac{1}{2}(\ket{0}\ket{0}\bra{0}\bra{0}+\ket{1}\ket{0}\bra{0}\bra{1})
+          % \\=
+          % $
     \item $\ket{\psi}=\frac{\sqrt{3}}{2}(\ket{0}_A\otimes\ket{1}_B)+\frac{1}{2}(\ket{1}\otimes\ket{0}_B)$
-    
-    The density operator is $\ket{\psi}\bra{\psi}$
 
-    $\ket{\psi}=\frac{\sqrt{3}}{2}\left(\begin{array}{c}
-        0//1//0//0
-    \end{array}\right)+\frac{1}{2}\left(\begin{array}{c}
-        0//0//1//0
-    \end{array}\right)$
-    
-    
-    \item $\rho=\frac{1}{2}(\ket{000...0}\bra{000...0}+\ket{111...1}\bra{111...1})$
+          The density operator is $\ket{\psi}\bra{\psi}$
+
+          $\ket{\psi}=\frac{\sqrt{3}}{2}\left(\begin{array}{c}
+                      0 \\1\\0\\0
+                  \end{array}\right)+\frac{1}{2}\left(\begin{array}{c}
+                      0 \\0\\1\\0
+                  \end{array}\right)=\left(\begin{array}{c}
+                      0 \\\frac{\sqrt{3}}{2}\\\frac{1}{2}\\0
+                  \end{array}\right)$
+
+          The density matrix
+
+          $\rho=\ket{\psi}\bra{\psi}=\left(\begin{array}{c}
+                      0 \\\frac{\sqrt{3}}{2}\\\frac{1}{2}\\0
+                  \end{array}\right)\left(\begin{array}{cccc}
+                      0 & \frac{\sqrt{3}}{2} & \frac{1}{2} & 0
+                  \end{array}\right)
+              \\=\left(\begin{array}{cccc}
+                      0 & 0                  & 0                  & 0 \\
+                      0 & \frac{3}{4}        & \frac{\sqrt{3}}{4} & 0 \\
+                      0 & \frac{\sqrt{3}}{4} & \frac{1}{4}        & 0 \\
+                      0 & 0                  & 0                  & 0 \\
+                  \end{array}\right)$
+
+
+    \item For $\ket{\psi}=\frac{1}{\sqrt{2}}(\ket{000...0}+\ket{111...1})=\frac{1}{\sqrt{2}}(\left(\begin{array}{c}1\\0\\0\\...\\0\end{array}\right)+\left(\begin{array}{c}0\\0\\0\\...\\1\end{array}\right))=\frac{1}{\sqrt{2}}\left(\begin{array}{c}1\\0\\...\\0\\1\end{array}\right)$
+
+
+
+          The density operator is $\ket{\psi}\bra{\psi}$
+
+          The density matrix $\rho=\frac{1}{2}\left(\begin{array}{c}1\\0\\...\\0\\1\end{array}\right)\left(\begin{array}{ccccc}1&0&...&0&1\end{array}\right)=
+              \left(\begin{array}{cccc}
+                      \frac{1}{2} & 0 & 0 & \frac{1}{2} \\
+                      0           & 0 & 0 & 0           \\
+                      0           & 0 & 0 & 0           \\
+                      \frac{1}{2} & 0 & 0 & \frac{1}{2} \\
+                  \end{array}\right)
+          $
+    \item $\ket{i}=\left(\begin{array}{c}
+                      0 \\0\\...\\1\\0\\...\\0
+                  \end{array}\right)$,the $i+1$th number in the vector is 1, others are 0.
+
+          So, $\ket{i}\otimes\ket{i}==\left(\begin{array}{c}
+                      0 \\0\\...\\\ket{i}\\0\\...\\0
+                  \end{array}\right)$, above $\ket{i}$ there are $i\times n$ zeros.
+
+          let $\ket{\psi}=\frac{1}{\sqrt{2^n}}\sum_i(\ket{i}\otimes\ket{i})=\frac{1}{\sqrt{2^n}}\left(\begin{array}{c}
+                      \ket{0} \\\ket{1}\\...\\\ket{k}\\...\\...\\\ket{2^n-1}
+                  \end{array}\right)$
+
+          the density operator is $\ket{\psi}\bra{\psi}$
+
+          the density matrix
+
+          $\rho=
+              \\=\frac{1}{2^n}\left(\begin{array}{c}
+                  \ket{0} \\\ket{1}\\...\\\ket{k}\\...\\...\\\ket{2^n-1}
+              \end{array}\right)(\bra{0},\bra{1},...,\bra{k},...,...,\bra{2^n-1})
+              \\=\frac{1}{2^n}\left(\begin{array}{cccccc}
+                      \ket{0}\bra{0}     & \ket{1}\bra{0}     & ... & \ket{k}\bra{0}     & ... & \ket{2^n-1}\bra{0}     \\
+                      \ket{0}\bra{1}     & \ket{1}\bra{1}     & ... & \ket{k}\bra{1}     & ... & \ket{2^n-1}\bra{1}     \\
+                      ...                & ...                & ... & ...                & ... & ...                    \\
+                      \ket{0}\bra{k}     & \ket{1}\bra{k}     & ... & \ket{k}\bra{k}     & ... & \ket{2^n-1}\bra{k}     \\
+                      ...                & ...                & ... & ...                & ... & ...                    \\
+                      \ket{0}\bra{2^n-1} & \ket{1}\bra{2^n-1} & ... & \ket{k}\bra{2^n-1} & ... & \ket{2^n-1}\bra{2^n-1} \\
+                  \end{array}\right)
+          $
+
+          Amng them, $\ket{i}\bra{j}=\left(\begin{array}{ccccccc}
+                      0   & 0   & ... & 0   & ... & 0   & 0 \\
+                      0   & 0   & ... & 0   & ... & 0   & 0 \\
+                      ... & ... & ... & ... & ... & ...     \\
+                      0   & 0   & ... & 1   & ... & 0   & 0 \\
+                      ... & ... & ... & ... & ... & ...     \\
+                      0   & 0   & ... & 0   & ... & 0   & 0 \\
+                  \end{array}\right)$, the $i+1$th row and $j+1$th column is 1, other elements are 0.
 \end{enumerate}
+\section*{THE BLOCH SPHERE}
+\begin{enumerate}
+    \item \begin{enumerate}
+              \item For $\ket{0}$, $\vec{r}=(0,0,1)^T$
+              \item For $\ket{1}$, $\vec{r}=(0,0,-1)^T$
+              \item For $\ket{+}$, $\vec{r}=(0,1,0)^T$
+              \item For $\ket{-}$, $\vec{r}=(0,-1,0)^T$
+              \item For $\ket{i}$, $\vec{r}=(1,0,0)^T$
+              \item For $\ket{-i}$, $\vec{r}=(-1,0,0)^T$
+          \end{enumerate}
+          $\frac{I}{2}=
+              \left(
+              \begin{array}{cc}
+                      \frac{1}{2} & 0 \\0&\frac{1}{2}
+                  \end{array}
+              \right)
+              =\frac{1}{2}\left(
+              \begin{array}{cc}
+                      1 & 0 \\0&1\\
+                  \end{array}
+              \right)
+              =\frac{1}{2}(I+O)
+          $
 
-\begin{thebibliography}{99}
+          So, $\vec{r}\vec{\sigma}=O$
+
+          Assume $\vec{r}=(a,b,c)^T$
+
+          $\vec{r}\vec{\sigma}
+              \\=(a,b,c)^T(\left(
+              \begin{array}{cc}
+                      0 & 1 \\1&0\\
+                  \end{array}
+              \right)\left(
+              \begin{array}{cc}
+                      0 & -i \\i&0\\
+                  \end{array}
+              \right)\left(
+              \begin{array}{cc}
+                      1 & 0 \\0&-1\\
+                  \end{array}
+              \right))
+              \\=\left(
+              \begin{array}{cc}
+                      0 & a \\a&0\\
+                  \end{array}
+              \right)+\left(
+              \begin{array}{cc}
+                      0 & -bi \\bi&0\\
+                  \end{array}
+              \right)+\left(
+              \begin{array}{cc}
+                      c & 0 \\0&-c\\
+                  \end{array}
+              \right)
+              \\=\left(
+              \begin{array}{cc}
+                      c & a-bi \\a+bi&-c\\
+                  \end{array}
+              \right)
+          $
+
+          So, $\left(
+              \begin{array}{cc}
+                      c & a-bi \\a+bi&-c\\
+                  \end{array}
+              \right)=O=\left(
+              \begin{array}{cc}
+                      0 & 0 \\0&0\\
+                  \end{array}
+              \right)$
+
+          which means $a=b=c=0$ and $\vec{r}=(0,0,0)^T$
+
+          So, $\frac{I}{2}$ is located in $(0,0,0)$, which is the centre of the Bloch ball.
+    \item \begin{enumerate}
+              \item $\rho_1
+                        \\=\frac{1}{2}(I+\vec{r}\vec{\sigma})
+                        \\=\frac{1}{2}(I+(0,-\frac{1}{3},0)\vec{\sigma})
+                        \\=\frac{1}{2}(I+\left(
+                        \begin{array}{cc}
+                                0 & \frac{1}{3}i \\-\frac{1}{3}i&0\\
+                            \end{array}
+                        \right))
+                        \\==\frac{1}{2}(\left(
+                        \begin{array}{cc}
+                                1 & \frac{1}{3}i \\-\frac{1}{3}i&1\\
+                            \end{array}
+                        \right))
+                        \\=(\left(
+                        \begin{array}{cc}
+                                \frac{1}{2} & \frac{1}{6}i \\-\frac{1}{6}i&\frac{1}{2}\\
+                            \end{array}
+                        \right))
+                    $
+
+                    Because $Tr(\rho_1)=\frac{1}{2}+\frac{1}{2}=1$, $\rho_1$ is a pure state.
+              \item $\rho_1
+                        \\=\frac{1}{2}(I+\vec{r}\vec{\sigma})
+                        \\=\frac{1}{2}(I+(-\frac{1}{2},\frac{1}{2},0)\vec{\sigma})
+                        \\=\frac{1}{2}(I+\left(
+                        \begin{array}{cc}
+                                0 & \frac{-1-i}{\sqrt{2}}i \\-\frac{-1+i}{\sqrt{2}}i&0\\
+                            \end{array}
+                        \right))
+                        \\==\frac{1}{2}(\left(
+                        \begin{array}{cc}
+                                1 & \frac{-1-i}{\sqrt{2}}i \\\frac{-1+i}{\sqrt{2}}i&1\\
+                            \end{array}
+                        \right))
+                        \\=(\left(
+                        \begin{array}{cc}
+                                \frac{1}{2} & \frac{-1-i}{2\sqrt{2}}i \\\frac{-1+i}{2\sqrt{2}}i&\frac{1}{2}\\
+                            \end{array}
+                        \right))
+                    $
+
+                    Because $Tr(\rho_2)=\frac{1}{2}+\frac{1}{2}=1$, $\rho_2$ is a pure state.
+          \end{enumerate}
+    \item The surface of the Bloch sphere.
+
+          \textbf{PROOF:}Assume a pure state$\ket{\psi}=a\ket{0}+b\ket{1}$, if it is in the innner side of the Bloch sphere, we have $|a|^2+|b|^2<1$;if it is in the outter side of the Bloch sphere, we have $|a|^2+|b|^2>1$.
+
+          However, according to the definition of the pure state, $|a|^2+|b|^2=1$, so it can neither be inside nor can be outside the Bloch sphere. The only location it can be is the surface of the Bloch sphere.
+
+          
+
+    \item For vector $\vec{r}$, $\rho==\frac{1}{2}(I+\vec{r}\vec{\sigma})=\left(
+              \begin{array}{cc}
+                      \frac{1+c}{2} & \frac{a-bi}{2} \\\frac{a+bi}{2}&\frac{1-c}{2}\\
+                  \end{array}
+              \right)$
+          The trace of matrix $\rho=\frac{1+c}{2}+\frac{1-c}{2}=1$.
+
+          Let's take a look at its' eigenvlues.
+
+          $\lambda_1=\frac{1+c}{2},\lambda_2=\frac{1-c}{2}$
+
+          Because $|\vec{r}|\leq1$, so $a^2+b^2+c^2\leq1$, so $|a|\leq1,|b|\leq1,|c|\leq1$,
+          this means $\lambda_1\leq1$ and $\lambda_2\leq1$.
+
+          So $\rho$ is indeed a valid density operator for any vector $\vec{r}$ satisfing $|\vec{r}|\leq1$
+\end{enumerate}
+\begin{thebibliography}{1}
     \bibitem{ref1}HKUST Department of Mathematics.
-    "Math111 Week 13-14 Lecture Notes."
+    "Inner Product Spaces and Orthogonality"
     Hong Kong University of Science and Technology, n.d.,
     https://www.math.hkust.edu.hk/~mabfchen/Math111/Week13-14.pdf.
 \end{thebibliography}
