@@ -3,6 +3,7 @@
 \usepackage{braket}
 \usepackage{mathrsfs}
 \usepackage{amsmath}
+\usepackage{graphicx}
 \begin{document}
 \title{Assignment 1}
 \author{
@@ -133,23 +134,23 @@
 
           This means
           \[
-              \langle \vec{v}_1,\vec{v}_2 \rangle=\\=(\psi_{10},\psi_{11},\psi_{12},\psi_{13},...,\psi_{1n})(\psi_{20},\psi_{21},\psi_{22},\psi_{23},...,\psi_{2n})^T
+              \langle \vec{v}_1,\vec{v}_2 \rangle=\\=(\psi_{10}^*,\psi_{11}^*,\psi_{12}^*,\psi_{13}^*,...,\psi_{1n}^*)(\psi_{20},\psi_{21},\psi_{22},\psi_{23},...,\psi_{2n})^T
           \]
           so,
           \[\langle \vec{v}_1,\vec{v}_2 \rangle=\sum_{i=0}^{n-1}\psi_{1i}\psi_{2i}\]
           The properties of an inner product $\langle,\rangle$ are as followed\cite{ref1}.
           \begin{enumerate}
               \item \textbf{Linearity:} $\langle a\mathbf{u}+b\mathbf{v},\mathbf{w}\rangle=a\langle \mathbf{u,w}\rangle+b\langle \mathbf{v,w}\rangle$
-              \item \textbf{Symmetric Property: }$\langle \mathbf{u,v}\rangle=\langle \mathbf{v,u}\rangle$
+              \item \textbf{Symmetric Property: }$\langle \mathbf{u,v}\rangle=\langle \mathbf{v,u}\rangle$ (For  complex vectors, the inner product doesn't satisfy this property.)
               \item \textbf{Positive Definite Property: } For any $\mathbf{u\in V}$, $\langle \mathbf{u,u}\rangle\geq0$;
                     and $\langle \mathbf{u,u}\rangle=0$ if and only if $\mathbf{u}=0$;
           \end{enumerate}
           For complex vectors $\vec{v1},\vec{v_2},\vec{v_3}$, all of them have a length of n.
 
           $\langle a\vec{v_1}+b\vec{v_2},\vec{v_3}\rangle
-              \\=\sum_{i=0}^{n-1}(a\psi_{1i}+b\psi_{2i})(\psi_{3i})
-              \\=\sum_{i=0}^{n-1}(a\psi_{1i})(\psi_{3i})+\sum_{i=0}^{n-1}(b\psi_{2i})(\psi_{3i})
-              \\=a\sum_{i=0}^{n-1}(\psi_{1i})(\psi_{3i})+b\sum_{i=0}^{n-1}(\psi_{2i})(\psi_{3i})
+              \\=\sum_{i=0}^{n-1}(a\psi_{1i}^*+b\psi_{2i}^*)(\psi_{3i})
+              \\=\sum_{i=0}^{n-1}(a\psi_{1i}^*)(\psi_{3i})+\sum_{i=0}^{n-1}(b\psi_{2i}^*)(\psi_{3i})
+              \\=a\sum_{i=0}^{n-1}(\psi_{1i}^*)(\psi_{3i})+b\sum_{i=0}^{n-1}(\psi_{2i}^*)(\psi_{3i})
               \\=a\langle\vec{v_1},\vec{v_3}\rangle+b\langle\vec{v_2},\vec{v_3}\rangle
           $
 
@@ -158,20 +159,23 @@
           Also, we have
 
           $\langle \vec{v_1},\vec{v_2}\rangle
-              \\=\sum_{i=0}^{n-1}\psi_{1i}\psi_{2i}
-              \\=\sum_{i=0}^{n-1}\psi_{2i}\psi_{1i}
-              \\=\langle\vec{v_2},\vec{v_1}\rangle
+              \\=\sum_{i=0}^{n-1}\psi_{1i}^*\psi_{2i}$
+
           $
-          This proves the symmetric property.
+          \langle\vec{v_2},\vec{v_1}\rangle
+              \\=\sum_{i=0}^{n-1}\psi_{2i}^*\psi_{1i}
+          $
 
-          For any complex vector $\vec{v_1}$, $\langle \vec{v_1},\vec{v_1}\rangle=\sum_{i=0}^{n-1}\psi_{1i}^2$.
-          For any complex number $\psi=a+bi$, we have $\psi^2=a^2+b^2\geq0$,
+          Because $\sum_{i=0}^{n-1}\psi_{1i}^*\psi_{2i}$ doesn't equal to $\sum_{i=0}^{n-1}\psi_{2i}^*\psi_{1i}$, the inner product of complex numbers doesn't have the symmetric property.
 
-          so $\langle \vec{v_1},\vec{v_1}\rangle=\sum_{i=0}^{n-1}\psi_{1i}^2\geq0$ and $\vec{v_1}$ is a complex vector, so $\vec{v_1}\neq0$.
+          For any complex vector $\vec{v_1}$, $\langle \vec{v_1},\vec{v_1}\rangle=\sum_{i=0}^{n-1}\psi_{1i}^*\psi_{1i}=\sum_{i=0}^{n-1}|\psi_{1i}|^2$.
+          For any complex number $\psi=a+bi$, we have $|\psi|^2=a^2+b^2\geq0$,
+
+          so $\langle \vec{v_1},\vec{v_1}\rangle=\sum_{i=0}^{n-1}|\psi_{1i}|^2\geq0$ and $\vec{v_1}$ is a complex vector, so $|\vec{v_1}|\neq0$.
 
           This proves the positive definite property.
 
-          So, it satisfies all the properties of an inner product.
+          So, it satisfies the properties of Linearity and Positive Definite of an inner product, but doesn't satisfy a property of Symmetric.
 \end{enumerate}
 \section*{EXERCISE 2: THE TENSOR PRODUCT}
 \begin{enumerate}
@@ -485,6 +489,10 @@
               \item For $\ket{i}$, $\vec{r}=(1,0,0)^T$
               \item For $\ket{-i}$, $\vec{r}=(-1,0,0)^T$
           \end{enumerate}
+          \begin{figure}
+              \centering
+              \includegraphics[height=5cm]{BS.pdf}
+          \end{figure}
           $\frac{I}{2}=
               \left(
               \begin{array}{cc}
@@ -571,8 +579,24 @@
                         \right))
                     $
 
-                    Because $Tr(\rho_1)=\frac{1}{2}+\frac{1}{2}=1$, $\rho_1$ is a pure state.
-              \item $\rho_1
+                    Because $\rho_1^2=\left(
+                        \begin{array}{cc}
+                                \frac{1}{2} & \frac{1}{6}i \\-\frac{1}{6}i&\frac{1}{2}\\
+                            \end{array}
+                        \right)\left(
+                        \begin{array}{cc}
+                                \frac{1}{2} & \frac{1}{6}i \\-\frac{1}{6}i&\frac{1}{2}\\
+                            \end{array}
+                        \right)=\left(
+                        \begin{array}{cc}
+                                \frac{11}{36} & 0 \\0&\frac{11}{36}\\
+                            \end{array}
+                        \right)
+                    $,
+
+                    $Tr(\rho_1^2)=\frac{11}{18}\neq1$,
+                    $\rho_1$ is nota pure state.
+              \item $\rho_2
                         \\=\frac{1}{2}(I+\vec{r}\vec{\sigma})
                         \\=\frac{1}{2}(I+(-\frac{1}{2},\frac{1}{2},0)\vec{\sigma})
                         \\=\frac{1}{2}(I+\left(
@@ -592,31 +616,141 @@
                         \right))
                     $
 
-                    Because $Tr(\rho_2)=\frac{1}{2}+\frac{1}{2}=1$, $\rho_2$ is a pure state.
+
+
+                    $\rho_2^2=\left(
+                        \begin{array}{cc}
+                                \frac{1}{2} & \frac{-1-i}{2\sqrt{2}}i \\\frac{-1+i}{2\sqrt{2}}i&\frac{1}{2}\\
+                            \end{array}
+                        \right)\left(
+                        \begin{array}{cc}
+                                \frac{1}{2} & \frac{-1-i}{2\sqrt{2}}i \\\frac{-1+i}{2\sqrt{2}}i&\frac{1}{2}\\
+                            \end{array}
+                        \right)=\left(
+                        \begin{array}{cc}
+                                \frac{1}{2} & \frac{-1-i}{2\sqrt{2}}i \\\frac{-1+i}{2\sqrt{2}}i&\frac{1}{2}\\
+                            \end{array}
+                        \right)
+                        =\rho_2
+                    $,
+
+                    Because $Tr(\rho_2^2)=1$, $\rho_2$ is nota pure state.
           \end{enumerate}
     \item The surface of the Bloch sphere.
 
-          \textbf{PROOF:}Assume a pure state$\ket{\psi}=a\ket{0}+b\ket{1}$, if it is in the innner side of the Bloch sphere, we have $|a|^2+|b|^2<1$;if it is in the outter side of the Bloch sphere, we have $|a|^2+|b|^2>1$.
+          \textbf{PROOF:}
 
-          However, according to the definition of the pure state, $|a|^2+|b|^2=1$, so it can neither be inside nor can be outside the Bloch sphere. The only location it can be is the surface of the Bloch sphere.
+          Assume a pure state $\ket{\psi}$'s Bloch vector $\vec{r}=(a,b,c)^T$.
+
+          $\rho=\frac{1}{2}(I+\vec{r}\vec{\sigma})
+              \\=\frac{1}{2}(I+\left(
+              \begin{array}{cc}
+                      c & a-bi \\a+bi&-c\\
+                  \end{array}
+              \right))
+              \\=\frac{1}{2}\left(
+              \begin{array}{cc}
+                      1+c & a-bi \\a+bi&1-c\\
+                  \end{array}
+              \right)
+              \\=\left(
+              \begin{array}{cc}
+                      \frac{1+c}{2} & \frac{a-bi}{2} \\\frac{a+bi}{2}&\frac{1-c}{2}\\
+                  \end{array}
+              \right)
+          $
+
+          $\rho^2=\left(
+              \begin{array}{cc}
+                      \frac{1+c}{2} & \frac{a-bi}{2} \\\frac{a+bi}{2}&\frac{1-c}{2}\\
+                  \end{array}
+              \right)\left(
+              \begin{array}{cc}
+                      \frac{1+c}{2} & \frac{a-bi}{2} \\\frac{a+bi}{2}&\frac{1-c}{2}\\
+                  \end{array}
+              \right)
+              \\=\left(
+              \begin{array}{cc}
+                      \frac{(1+c)^2+a^2-(bi)^2}{4} & \frac{(1+c)(a-bi)+(a-bi)(1-c)}{4} \\\frac{(a+bi)(1+c)+(1-c)(a+bi)}{4}&\frac{a^2-(bi)^2+(1-c)^2}{4}\\
+                  \end{array}
+              \right)
+          $
+
+          $Tr(\rho^2)
+              \\=\frac{(1+c)^2+a^2-(bi)^2}{4}+\frac{a^2-(bi)^2+(1-c)^2}{4}
+              \\=\frac{(1+c)^2+a^2-(bi)^2+a^2-(bi)^2+(1-c)^2}{4}
+              \\=\frac{2a^2+2b^2+c^2+2c+1+c^2-2c+1}{4}
+              \\=\frac{2(a^2+b^2+c^2)+2}{4}
+          $
+
+          Because $\ket{\psi}$ is a pure state, so $Tr(\rho^2)$=1, which means $\frac{2(a^2+b^2+c^2)+2}{4}=1$.
+
+          So, $a^2+b^2+c^2=1$, this means $\vec{r}=(a,b,c)^T$ is on the surface of the Bloch sphere, pure state $\ket{\psi}$ is on the surface of the Bloch sphere.
 
 
 
-    \item For vector $\vec{r}$, $\rho==\frac{1}{2}(I+\vec{r}\vec{\sigma})=\left(
+    \item The requirements of sensity matracies are as followed,
+          \begin{enumerate}
+              \item \textbf{Positive semi-definite:} all eigenvalues $\lambda_i\geq0$
+              \item \textbf{Hermitian:} $\rho=\rho^{\dag}$
+              \item \textbf{Normalization:} $Tr(\rho)=1$
+          \end{enumerate}
+
+
+          For vector $\vec{r}$, $\rho=\frac{1}{2}(I+\vec{r}\vec{\sigma})=\left(
               \begin{array}{cc}
                       \frac{1+c}{2} & \frac{a-bi}{2} \\\frac{a+bi}{2}&\frac{1-c}{2}\\
                   \end{array}
               \right)$
-          The trace of matrix $\rho=\frac{1+c}{2}+\frac{1-c}{2}=1$.
 
-          Let's take a look at its' eigenvlues.
+          Assume the eigenvalues of $\rho$ are $\lambda_1,...,\lambda_n$
 
-          $\lambda_1=\frac{1+c}{2},\lambda_2=\frac{1-c}{2}$
+          $\left|
+              \left(
+              \begin{array}{cc}
+                      \frac{1+c}{2} & \frac{a-bi}{2} \\\frac{a+bi}{2}&\frac{1-c}{2}\\
+                  \end{array}
+              \right)-\lambda I\right|=0$
 
-          Because $|\vec{r}|\leq1$, so $a^2+b^2+c^2\leq1$, so $|a|\leq1,|b|\leq1,|c|\leq1$,
-          this means $\lambda_1\leq1$ and $\lambda_2\leq1$.
+          $\left|
+              \begin{array}{cc}
+                  \frac{1+c}{2}-\lambda & \frac{a-bi}{2} \\\frac{a+bi}{2}&\frac{1-c}{2}-\lambda\\
+              \end{array}
+              \right|=0$
 
-          So $\rho$ is indeed a valid density operator for any vector $\vec{r}$ satisfing $|\vec{r}|\leq1$
+          $(\frac{1+c}{2}-\lambda )(\frac{1-c}{2}-\lambda)-(\frac{a-bi}{2})(\frac{a+bi}{2})=0$
+
+          $\frac{1-c^2}{4}-(\frac{1+c+1-c}{2}\lambda)+\lambda^2-\frac{a^2+b^2}{4}=0$
+
+          $\lambda^2-\lambda+\frac{1-a^2-b^2-c^2}{4}=0$
+
+          $\lambda=\frac{1\pm \sqrt{1-4\times\frac{1-a^2-b^2-c^2}{4}}}{2}=\frac{1\pm\sqrt{a^2+b^2+c^2}}{2}=\frac{1\pm\sqrt{|\vec{r}|^2}}{2}$
+
+          Because $|\vec{r}|\leq1$, $\frac{1\pm\sqrt{|\vec{r}|^2}}{2} \in [0,1]$, which means $0\leq\lambda\leq1$, this proves the \textbf{Positive semi-definite}.
+
+          $\rho^{\dag}=
+              \left(
+              \begin{array}{cc}
+                      \frac{1+c}{2} & (\frac{a+bi}{2})^* \\(\frac{a-bi}{2})^*&\frac{1-c}{2}\\
+                  \end{array}
+              \right)
+              =\left(
+              \begin{array}{cc}
+                      \frac{1+c}{2} & \frac{a-bi}{2} \\\frac{a+bi}{2}&\frac{1-c}{2}\\
+                  \end{array}
+              \right)=\rho$
+
+          This proves the \textbf{Hermitian}.
+
+          The trace of matrix $\rho$
+
+          $Tr(\rho)=\lambda_1+\lambda_2=\frac{1+\sqrt{|\vec{r}|^2}}{2}+\frac{1-\sqrt{|\vec{r}|^2}}{2}=1$.
+
+          This proves the \textbf{Normalization}.
+
+
+
+          So $\rho$ is indeed a valid density operator for any vector $\vec{r}$ satisfing $|\vec{r}|\leq1$.
 \end{enumerate}
 \begin{thebibliography}{1}
     \bibitem{ref1}HKUST Department of Mathematics.
