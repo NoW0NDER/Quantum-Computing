@@ -318,8 +318,25 @@ We saw in the lectures that given a multi-partite state, we obtain the state of 
 
     \item Take the state $\rho_{AB}$ from 3. and compute the reduced state $\rho_B$, both from the matrix itself (using your result from 4.) and in bra-ket notation. (*) (6 points)
 
+          Answer: $\rho_{AB} = \begin{bmatrix}
+                  \frac{1}{3}  & \frac{i}{3} & 0 & -\frac{1}{3} \\
+                  -\frac{i}{3} & \frac{1}{3} & 0 & \frac{1}{3}  \\
+                  0            & 0           & 0 & 0            \\
+                  -\frac{1}{3} & \frac{i}{3} & 0 & \frac{1}{3}  \\
+              \end{bmatrix}$
+
+          $\rho_B = (\rho_{00}+\rho_{21})\ket{0}\bra{0}+(\rho_{02}+\rho_{23})\ket{0}\bra{1}+(\rho_{10}+\rho_{31})\ket{1}\bra{0}+(\rho_{12}+\rho_{33})\ket{1}\bra{1}
+              \\= (\frac{1}{3}+0)\ket{0}\bra{0}+(0+0)\ket{0}\bra{1}+(-\frac{i}{3}+\frac{i}{3})\ket{1}\bra{0}+(\frac{1}{3}+\frac{1}{3})\ket{1}\bra{1}
+              \\= \frac{1}{3}\ket{0}\bra{0}+0\ket{0}\bra{1}+0\ket{1}\bra{0}+\frac{2}{3}\ket{1}\bra{1}
+              \\= \begin{bmatrix}
+                  \frac{1}{3} & 0           \\
+                  0           & \frac{2}{3} \\
+              \end{bmatrix}$
 \end{enumerate}
 
-
+\section{EXERCISE 2: MEASUREMENTS AND REDUCED STATES}
+\begin{enumerate}
+    \item
+\end{enumerate}
 
 \end{document}
