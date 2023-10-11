@@ -336,8 +336,15 @@ We saw in the lectures that given a multi-partite state, we obtain the state of 
 \end{enumerate}
 
 \section{EXERCISE 2: MEASUREMENTS AND REDUCED STATES}
+Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}|$, with $|\Phi^{-}\rangle = \frac{1}{\sqrt{2}}(\bra{01} - \bra{10})$.
+
 \begin{enumerate}
-    \item
+    \item Compute explicitly the post-measurement state after we performed a projective measurement $M = \{\ket{\Phi^{-}}\bra{\Phi^{-}}\}$ on $\rho_{AB}$ on system $B$, given that the outcome was $0$. Compute the same for the measurement $M = \{|+\rangle\langle+|, |-\rangle\langle-|\}$, for outcome $-$. (Hint: Using Exercise 2.6 from Assignment 1 might help (not necessary though).) (8 points)
+    
+    Answer: $M_0=\ket{+}\bra{+}$
+
+    Observe $\ket{+}$ with probability $p_0=Tr(M_0\rho)=Tr(\ket{+}\bra{+}\ket{\Phi^{-}}\bra{\Phi^{-}})=Tr(\ket{+}\bra{-})$
+
 \end{enumerate}
 
 \end{document}
