@@ -1,0 +1,43 @@
+\documentclass{article}
+
+% 导入量子计算相关的包
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{braket}
+\usepackage{qcircuit}
+
+\begin{document}
+To find the reduced state on the first $k$ qubits of A and B, tracing out the last $n - k$ qubits on each side, we can start with the $2n$-qubit state $\rho = \ket{\Psi_n}\bra{\Psi_n}$ and perform the partial trace operation.
+
+The state $\ket{\Psi_n}$ can be written as:
+
+$$\ket{\Psi_n} = \frac{1}{\sqrt{2^n}}\sum_i \ket{i}_A \otimes \ket{i}_B,$$
+
+where $\ket{i}_A$ and $\ket{i}_B$ are basis states for Alice's and Bob's qubits, respectively.
+
+To obtain the reduced state on the first $k$ qubits of A and B, we need to trace out the last $n - k$ qubits on each side. Let's denote Alice's first $k$ qubits as $A_1A_2\ldots A_k$ and Bob's first $k$ qubits as $B_1B_2\ldots B_k$. We will trace out the remaining $n - k$ qubits, which are denoted as $A_{k+1}A_{k+2}\ldots A_n$ for Alice and $B_{k+1}B_{k+2}\ldots B_n$ for Bob.
+
+To perform the partial trace, we need to sum over all possible states of the traced-out qubits and compute the inner product with the corresponding basis states on Alice's and Bob's sides.
+
+The reduced state on the first $k$ qubits of A and B can be calculated as follows:
+
+\begin{align*}
+\rho_{A_1A_2\ldots A_kB_1B_2\ldots B_k} &= \mathrm{Tr}_{A_{k+1}A_{k+2}\ldots A_nB_{k+1}B_{k+2}\ldots B_n}(\rho) \\
+&= \mathrm{Tr}_{A_{k+1}A_{k+2}\ldots A_nB_{k+1}B_{k+2}\ldots B_n}\left(\ket{\Psi_n}\bra{\Psi_n}\right) \\
+&= \frac{1}{2^n}\sum_i \sum_j \mathrm{Tr}_{A_{k+1}A_{k+2}\ldots A_nB_{k+1}B_{k+2}\ldots B_n}\left(\ket{i}_A\bra{j}_A \otimes \ket{i}_B\bra{j}_B\right) \\
+&= \frac{1}{2^n}\sum_i \sum_j \mathrm{Tr}_{A_{k+1}A_{k+2}\ldots A_n}\left(\ket{i}_A\bra{j}_A\right) \otimes \mathrm{Tr}_{B_{k+1}B_{k+2}\ldots B_n}\left(\ket{i}_B\bra{j}_B\right) \\
+&= \frac{1}{2^n}\sum_i \sum_j \left(\mathrm{Tr}_{A_{k+1}A_{k+2}\ldots A_n}\left(\ket{i}_A\bra{j}_A\right)\right) \otimes \left(\mathrm{Tr}_{B_{k+1}B_{k+2}\ldots B_n}\left(\ket{i}_B\bra{j}_B\right)\right) \\
+&= \frac{1}{2^n}\sum_i \sum_j \left(\delta_{ij}\mathbb{I}_{A_1A_2\ldots A_k}\right) \otimes \left(\delta_{ij}\mathbb{I}_{B_1B_2\ldots B_k}\right) \\
+&= \frac{1}{2^n}\sum_i \mathbb{I}_{A_1A_2\ldots A_k} \otimes \mathbb{I}_{B_1B_2\ldots B_k} \\
+&= \frac{1}{2^n} \mathbb{I}_{A_1A_2\ldots A_k} \otimes \mathbb{I}_{B_1B_2\ldots B_k},
+\end{align*}
+
+where $\mathbb{I}_{A_1A_2\ldots A_k}$ and $\mathbb{I}_{B_1B_2\ldots B_k}$ are identity operators acting on Alice's and Bob's $k$ qubits, respectively.
+
+Therefore, the reduced state on the first $k$ qubits of A and B is given by $\rho_{A_1A_2}\ldots A_kB_1B_2$The reduced state on the first $k$ qubits of A and B, tracing out the last $n-k$ qubits on each side, is given by:
+
+$$\rho_{A_1A_2\ldots A_kB_1B_2\ldots B_k} = \frac{1}{2^n} \mathbb{I}_{A_1A_2\ldots A_k} \otimes \mathbb{I}_{B_1B_2\ldots B_k},$$
+
+where $\mathbb{I}_{A_1A_2\ldots A_k}$ and $\mathbb{I}_{B_1B_2\ldots B_k}$ are identity operators acting on Alice's and Bob's $k$ qubits, respectively.
+
+\end{document}

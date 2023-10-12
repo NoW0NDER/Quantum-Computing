@@ -393,8 +393,12 @@ Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}
           $\rho_A=Tr_B
           $
 
-    \item Consider now the $2n$-qubit state $\rho = ket{\Psi_n}\bra{\Psi_n}$, with $ket{\Psi_n} = \frac{1}{\sqrt{2^n}}\sum_i \ket{i}_A \otimes \ket{i}_B$. What is the reduced $n$-qubit state on Alice's side? (Hint: look at the state in vector form and factorize it in a smart way.) (8 points)
+    \item Consider now the $2n$-qubit state $\rho = \ket{\Psi_n}\bra{\Psi_n}$, with $\ket{\Psi_n} = \frac{1}{\sqrt{2^n}}\sum_i \ket{i}_A \otimes \ket{i}_B$. What is the reduced $n$-qubit state on Alice's side? (Hint: look at the state in vector form and factorize it in a smart way.) (8 points)
 
+
+    Answer: $\rho=\ket{\Psi_n}\bra{\Psi_n}=\frac{1}{2^n}\sum_i\sum_j\ket{i}_A\otimes\ket{i}_B\bra{j}_A\otimes\bra{j}_B=\frac{1}{2^n}\sum_i\sum_j\ket{i}_A\bra{j}_A\otimes\ket{i}_B\bra{j}_B=\frac{1}{2^n}\sum_i\ket{i}_A\bra{i}_A\otimes\sum_j\ket{j}_B\bra{j}_B$
+
+    $\rho_A=Tr_B(\rho)=\frac{1}{2^n}\sum_i\ket{i}_A\bra{i}_A\otimes\sum_j\ket{j}_B\bra{j}_B$
 \end{enumerate}
 
 \end{document}
