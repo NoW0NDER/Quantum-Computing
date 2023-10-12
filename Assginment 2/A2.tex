@@ -43,7 +43,7 @@
 We saw in the lectures that given a multi-partite state, we obtain the state of a subsystem by applying the partial trace to the other systems.
 
 \begin{enumerate}
-    \item Compute the trace of the following states by applying the trace formula $ Tr(A)=\sum_i\bra{i}A\ket{i} $ T r(A) from the lectures:
+    \item Compute the trace of the following states by applying the trace formula $ Tr(A)=\sum_i\bra{i}A\ket{i} $ from the lectures:
           \begin{enumerate}
               \item $\xi = \frac{1}{2}(\ket{0}\bra{0} - i\ket{0}\bra{1} + i\ket{1}\bra{0} + \ket{1}\bra{1})$
               \item $\Lambda = \frac{I}{3}I + \frac{1}{6}(\ket{0}\bra{1} + \ket{1}\bra{0})$ (here, $I$ is the identity matrix).
@@ -339,11 +339,61 @@ We saw in the lectures that given a multi-partite state, we obtain the state of 
 Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}|$, with $|\Phi^{-}\rangle = \frac{1}{\sqrt{2}}(\bra{01} - \bra{10})$.
 
 \begin{enumerate}
-    \item Compute explicitly the post-measurement state after we performed a projective measurement $M = \{\ket{\Phi^{-}}\bra{\Phi^{-}}\}$ on $\rho_{AB}$ on system $B$, given that the outcome was $0$. Compute the same for the measurement $M = \{|+\rangle\langle+|, |-\rangle\langle-|\}$, for outcome $-$. (Hint: Using Exercise 2.6 from Assignment 1 might help (not necessary though).) (8 points)
-    
-    Answer: $M_0=\ket{+}\bra{+}$
+    \item Compute explicitly the post-measurement state after we performed a projective measurement $M = \{\ket{0}\bra{0},\ket{1}\bra{1}\}$ on $\rho_{AB}$ on system $B$, given that the outcome was $0$. Compute the same for the measurement $M = \{|+\rangle\langle+|, |-\rangle\langle-|\}$, for outcome $-$. (Hint: Using Exercise 2.6 from Assignment 1 might help (not necessary though).) (8 points)
 
-    Observe $\ket{+}$ with probability $p_0=Tr(M_0\rho)=Tr(\ket{+}\bra{+}\ket{\Phi^{-}}\bra{\Phi^{-}})=Tr(\ket{+}\bra{-})$
+          Answer: $M_0=\ket{0}\bra{0}$
+
+          Observe $\ket{0}$ with probability $p_0=Tr(M_0\rho)=Tr(\ket{0}\bra{0}\otimes I\rho)=Tr(\ket{0}\bra{0}\otimes I\ket{\Phi^{-}}\bra{\Phi^{-}})=\braket{0|0}\bra{0}\otimes I\ket{\Phi^-}\bra{\Phi^-}\ket{0}\otimes I+\braket{1|0}\bra{0}\otimes I\ket{\Phi^-}\bra{\Phi^-}\ket{1}\otimes I=\bra{0}\otimes I\ket{\Phi^-}\bra{\Phi^-}\ket{0}\otimes I$
+
+          $\rho_0'=\frac{M_0\rho M_0^{\dagger}}{Tr(M_0\rho)}
+              \\=\frac{\ket{0}\bra{0}\otimes I\ket{\Phi^{-}}\bra{\Phi^{-}}\ket{0}\bra{0}\otimes I}{\bra{0}\otimes I\ket{\Phi^-}\bra{\Phi^-}\ket{0}\otimes I}
+              \\=\ket{00}\bra{00}
+              \\=\ket{0}\bra{0}\otimes\ket{0}\bra{0}
+          $
+
+          For system B, $\rho_{0B}'=\ket{0}\bra{0}$
+
+
+          $M_1=\ket{-}\bra{-}$
+
+          Observe $\ket{-}$ with probability $p_1=Tr(M_1\rho)=Tr(\ket{-}\bra{-}\otimes I\rho)=Tr(\ket{-}\bra{-}\otimes I\ket{\Phi^{-}}\bra{\Phi^{-}})=\braket{+|-}\bra{-}\otimes I\ket{\Phi^-}\bra{\Phi^-}\ket{+}\otimes I+\braket{-|-}\bra{-}\otimes I\ket{\Phi^-}\bra{\Phi^-}\ket{-}\otimes I=\bra{+}\otimes I\ket{\Phi^-}\bra{\Phi^-}\ket{+}\otimes I$
+
+          $\rho_1'=\frac{M_1\rho M_1^{\dagger}}{Tr(M_1\rho)}
+              \\=\frac{\ket{-}\bra{-}\otimes I\ket{\Phi^{-}}\bra{\Phi^{-}}\ket{-}\bra{-}\otimes I}{\bra{+}\otimes I\ket{\Phi^-}\bra{\Phi^-}\ket{+}\otimes I}
+              \\=\ket{--}\bra{--}
+              \\=\ket{-}\bra{-}\otimes\ket{-}\bra{-}
+          $
+
+          For system B, $\rho_{1B}'=\ket{-}\bra{-}$
+
+    \item What is the post measurement state if the measurements above were destructive and yielded the same outcomes as in part 1.? (2 points)
+
+          Answer:
+
+          For the outcome 0, $\rho_0''=Tr(\rho_{0B}')=Tr(\ket{0}\bra{0})=1$
+
+
+          For the outcome -, $\rho_1''=Tr(\rho_{1B}')=Tr(\ket{-}\bra{-})=1$
+
+    \item What is the reduced state $\rho_A$ if we take state $\rho_{AB}$ and trace over system B in basis $\{\ket{0}, \ket{1}\}$? What if we trace in $\{\ket{+}, \ket{-}\}$? Hint: for the second computation it could be useful to use the basis invariance of the trace operation. (6 points)
+
+          Answer: $\rho_{AB}=\ket{\Phi^-}\bra{\Phi^-}=\frac{1}{2}(\ket{01}-\ket{10})(\bra{01}-\bra{10})
+              =\frac{1}{2}(\ket{01}\bra{01}-\ket{01}\bra{10}-\ket{10}\bra{01}+\ket{10}\bra{10})
+          $
+
+
+          $\rho_A=Tr_B(\rho_{AB})=\frac{1}{2}(\bra{0}\otimes\bra{0}\rho_{AB}\ket{0}\otimes\ket{0}+\bra{1}\otimes\bra{1}\rho_{AB}\ket{1}\otimes{1})
+              \\=\frac{1}{2}(\bra{0}\otimes\bra{0}(\ket{01}\bra{01}-\ket{01}\bra{10}-\ket{10}\bra{01}+\ket{10}\bra{10})\ket{0}\otimes\ket{0}+\bra{1}\otimes\bra{1}(\ket{01}\bra{01}-\ket{01}\bra{10}-\ket{10}\bra{01}+\ket{10}\bra{10})\ket{1}\otimes\ket{1})
+              \\=\frac{1}{2}(\ket{0}\bra{0}+\ket{1}\bra{1})
+          $
+
+
+          In the basis $\{\ket{+},\ket{-}\}$, $\Phi=\frac{1}{2}(\ket{+}\otimes\ket{-}-\ket{-}\otimes\ket{+})$
+
+          $\rho_A=Tr_B
+          $
+
+    \item Consider now the $2n$-qubit state $\rho = |\Psi_n\rangle\langle\Psi_n|$, with $|\Psi_n\rangle = \frac{1}{\sqrt{2^n}}\sum_{i=0}^{2^n-1} |i\rangle_A \otimes |i\rangle_B$. What is the reduced $n$-qubit state on Alice's side? (Hint: look at the state in vector form and factorize it in a smart way.) (8 points)
 
 \end{enumerate}
 
