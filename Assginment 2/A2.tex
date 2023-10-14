@@ -435,7 +435,7 @@ The initial states are the two qubits $|+\rangle$ and $|-\rangle$. The upper wir
     \item What is the state of the system before the measurement M? (4 points)
 
           Answer: $H(\ket{-})=(\frac{1}{\sqrt{2}}\ket{0}\bra{0}+\frac{1}{\sqrt{2}}\ket{0}\bra{1}+\frac{1}{\sqrt{2}}\ket{1}\bra{0}-\frac{1}{\sqrt{2}}\ket{1}\bra{1})\ket{-}
-              \\=\frac{1}{2}(\ket{0}+\ket{1}-ket{0}+ket{1})
+              \\=\frac{1}{2}(\ket{0}+\ket{1}-\ket{0}+\ket{1})
               \\=\ket{1}$
 
           So the output of gate H is $\ket{1}$, which means gate X will be applied to the upper wire.
@@ -452,7 +452,13 @@ The initial states are the two qubits $|+\rangle$ and $|-\rangle$. The upper wir
 
           Answer: The possible measurement outcomes of $M$ are $\ket{01}$ and $\ket{11}$.
 
-          $P(01)=\ket{01}\bra{01}\ket{text}$
+          $P(\ket{01})=|\frac{1}{\sqrt{2}}\bra{01}{\ket{10}+\ket{11}}|^2
+          =\frac{1}{2}
+          $
+
+          $P(\ket{11})=|\frac{1}{\sqrt{2}}\bra{11}{\ket{10}+\ket{11}}|^2
+            =\frac{1}{2}
+            $
 
           The probability of $\ket{01}$ is $\frac{1}{2}$ and the probability of $\ket{11}$ is $\frac{1}{2}$.
 
@@ -461,5 +467,38 @@ The initial states are the two qubits $|+\rangle$ and $|-\rangle$. The upper wir
           In the lectures we saw the controlled $Z$ and controlled $X$ gate, where $Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$ and $X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$.
     \item Are the following two circuits the same? How about when we replace Z with X? (6 points)
 
+
+    Answer:
+    Assume the input of the upper wire is $\ket{\psi}_A$ and the input of the lower wire is $\ket{\psi}_B$.
+
+    When $\ket{\psi}_A=0$, $\ket{\psi}_B=0$, for the first circuit, the upper output is $\ket{0}$, and Z gate is not activated, the lower output is $\ket{0}$. For the second circuit, the output of lower wire is $\ket{0}$, the Z gate is not activated, the output of upper wire is $\ket{0}$.
+
+    When $\ket{\psi}_A=0$, $\ket{\psi}_B=1$, for the first circuit, the upper output is $\ket{0}$, and Z gate is not activated, the lower output is $\ket{1}$. For the second circuit, the output of lower wire is $\ket{1}$, the Z gate is activated, the output of upper wire is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{0}=\ket{0}$.
+
+    When $\ket{\psi}_A=1$, $\ket{\psi}_B=0$, for the first circuit, the upper output is $\ket{1}$, and Z gate is activated, the lower output is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{0}=\ket{0}$. For the second circuit, the output of lower wire is $\ket{0}$, the Z gate is activated, the output of upper wire is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{1}=\ket{1}$.
+    
+    When $\ket{\psi}_A=1$, $\ket{\psi}_B=1$, for the first circuit, the upper output is $\ket{1}$, and Z gate is activated, the lower output is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{1}=\ket{1}$. For the second circuit, the output of lower wire is $\ket{1}$, the Z gate is activated, the output of upper wire is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{1}=\ket{1}$. 
+    
+    So for gate Z, the two circuits are the same.
+
+    If we replace Z with X, the two circuits are not the same.
+    When $\ket{\psi}_A=0$, $\ket{\psi}_B=0$, the output of the upper wire of the first circuit is $\ket{0}$ and the output of the lower wire is $\ket{0}$. The output of the upper wire of the second circuit is $\ket{0}$ and the output of the lower wire is $\ket{0}$.
+    When $\ket{\psi}_A=0$, $\ket{\psi}_B=1$, the output of the upper wire of the first circuit is $\ket{0}$ and the output of the lower wire is $\ket{1}$. The output of the upper wire of the second circuit is $\ket{0}$ and the output of the lower wire is $\ket{1}$.
+    When $\ket{\psi}_A=1$, $\ket{\psi}_B=0$, the output of the upper wire of the first circuit is $\ket{1}$ and the output of the lower wire is $\ket{1}$. The output of the upper wire of the second circuit is $\ket{0}$ and the output of the lower wire is $\ket{1}$.
+    When $\ket{\psi}_A=1$, $\ket{\psi}_B=1$, the output of the upper wire of the first circuit is $\ket{1}$ and the output of the lower wire is $\ket{0}$. The output of the upper wire of the second circuit is $\ket{0}$ and the output of the lower wire is $\ket{1}$.
+
+    So for gate X, the two circuits are not the same.
+
+    \item The SWAP gate acts on a quantum state $\ket{i} \otimes \ket{j}$ as $\text{SWAP} \ket{ij} = \ket{ji}$. Show that the following circuit implements the SWAP gate (the symbol L is often used in the literature for the X gate). (8 points)
+    
+    Answer: Assume the input of the upper wire is $\ket{\psi}_A$ and the input of the lower wire is $\ket{\psi}_B$.
+    
+    When $\ket{\psi}_A=0$, $\ket{\psi}_B=0$, the output of the upper wire is $\ket{0}$ and the output of the lower wire is $\ket{0}$.
+    
+    When $\ket{\psi}_A=0$, $\ket{\psi}_B=1$, the output of the upper wire is $\ket{1}$ and the output of the lower wire is $\ket{0}$.
+    
+    When $\ket{\psi}_A=1$, $\ket{\psi}_B=0$, the output of the upper wire is $\ket{0}$ and the output of the lower wire is $\ket{1}$.
+    
+    When $\ket{\psi}_A=1$, $\ket{\psi}_B=1$, the output of the upper wire is $\ket{1}$ and the output of the lower wire is $\ket{1}$.
 \end{enumerate}
 \end{document}
