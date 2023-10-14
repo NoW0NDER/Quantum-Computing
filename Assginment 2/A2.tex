@@ -274,45 +274,11 @@ We saw in the lectures that given a multi-partite state, we obtain the state of 
 
           $\sigma_B =
               \\=\mathrm{Tr}_A(\sigma_{AB})
-              \\= \sum_i\bra{i}\sigma_{AB}\ket{i}
-              \\= \bra{0}\sigma_{AB}\ket{0}+\bra{1}\sigma_{AB}\ket{1}
-              \\= \bra{0}(\sigma_{00}\ket{00}\bra{00} + \sigma_{01}\ket{00}\bra{01} + ... + \sigma_{33}\ket{11}\bra{11})\ket{0}+\bra{1}(\sigma_{00}\ket{00}\bra{00} + \sigma_{01}\ket{00}\bra{01} + ... + \sigma_{33}\ket{11}\bra{11})\ket{1}
-              \\=
-              \sigma_{00}\braket{0|00}\braket{00|0}+
-              \sigma_{01}\braket{0|00}\braket{01|0}+
-              \sigma_{02}\braket{0|00}\braket{10|0}+
-              \sigma_{03}\braket{0|00}\braket{11|0}+
-              \sigma_{10}\braket{0|01}\braket{00|0}+
-              \sigma_{11}\braket{0|01}\braket{01|0}+
-              \sigma_{12}\braket{0|01}\braket{10|0}+
-              \sigma_{13}\braket{0|01}\braket{11|0}+
-              \sigma_{20}\braket{0|10}\braket{00|0}+
-              \sigma_{21}\braket{0|10}\braket{01|0}+
-              \sigma_{22}\braket{0|10}\braket{10|0}+
-              \sigma_{23}\braket{0|10}\braket{11|0}+
-              \sigma_{30}\braket{0|11}\braket{00|0}+
-              \sigma_{31}\braket{0|11}\braket{01|0}+
-              \sigma_{32}\braket{0|11}\braket{10|0}+
-              \sigma_{33}\braket{0|11}\braket{11|0}+
-              \sigma_{00}\braket{1|00}\braket{00|1}+
-              \sigma_{01}\braket{1|00}\braket{01|1}+
-              \sigma_{02}\braket{1|00}\braket{10|1}+
-              \sigma_{03}\braket{1|00}\braket{11|1}+
-              \sigma_{10}\braket{1|01}\braket{00|1}+
-              \sigma_{11}\braket{1|01}\braket{01|1}+
-              \sigma_{12}\braket{1|01}\braket{10|1}+
-              \sigma_{13}\braket{1|01}\braket{11|1}+
-              \sigma_{20}\braket{1|10}\braket{00|1}+
-              \sigma_{21}\braket{1|10}\braket{01|1}+
-              \sigma_{22}\braket{1|10}\braket{10|1}+
-              \sigma_{23}\braket{1|10}\braket{11|1}+
-              \sigma_{30}\braket{1|11}\braket{00|1}+
-              \sigma_{31}\braket{1|11}\braket{01|1}+
-              \sigma_{32}\braket{1|11}\braket{10|1}+
-              \sigma_{33}\braket{1|11}\braket{11|1}
-              \\=
-              \sigma_{00}\ket{0}\bra{0}+\sigma_{02}\ket{0}\bra{1}+\sigma_{10}\ket{1}\bra{0}+\sigma_{12}\ket{1}\bra{1}+\sigma_{21}\ket{0}\bra{0}+\sigma_{23}\ket{0}\bra{1}+\sigma_{31}\ket{1}\bra{0}+\sigma_{33}\ket{1}\bra{1}
-              \\=(\sigma_{00}+\sigma_{21})\ket{0}\bra{0}+(\sigma_{02}+\sigma_{23})\ket{0}\bra{1}+(\sigma_{10}+\sigma_{31})\ket{1}\bra{0}+(\sigma_{12}+\sigma_{33})\ket{1}\bra{1}
+              \\= \sum_i\bra{i}_A\sigma_{AB}\ket{i}_A
+              \\= \bra{0}_A\sigma_{AB}\ket{0}_A+\bra{1}_A\sigma_{AB}\ket{1}_A
+              \\= \bra{0}_A(\sigma_{00}\ket{00}_{AB}\bra{00} + \sigma_{01}\ket{00}_{AB}\bra{01}_{AB} + ... + \sigma_{33}\ket{11}_{AB}\bra{11}_{AB})\ket{0}+\bra{1}(\sigma_{00}\ket{00}_{AB}\bra{00}_{AB} + \sigma_{01}\ket{00}_{AB}\bra{01}_{AB} + ... + \sigma_{33}\ket{11}_{AB}\bra{11}_{AB})\ket{1}_A
+              \\=\sigma_{00}\ket{0}\bra{0}+\sigma_{01}\ket{0}\bra{1}+\sigma_{10}\ket{1}\bra{0}+\sigma_{11}\ket{1}\bra{1}+\sigma_{22}\ket{0}\bra{0}+\sigma_{23}\ket{0}\bra{1}+\sigma_{32}\ket{1}\bra{0}+\sigma_{33}\ket{1}\bra{1}
+              \\=(\sigma_{00}+\sigma_{22})\ket{0}\bra{0}+(\sigma_{01}+\sigma_{23})\ket{0}\bra{1}+(\sigma_{10}+\sigma_{32})\ket{1}\bra{0}+(\sigma_{12}+\sigma_{33})\ket{1}\bra{1}
           $
 
           This is the sum of the upper left block and lower right block matrices of $\sigma_{AB}$.
@@ -396,9 +362,104 @@ Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}
     \item Consider now the $2n$-qubit state $\rho = \ket{\Psi_n}\bra{\Psi_n}$, with $\ket{\Psi_n} = \frac{1}{\sqrt{2^n}}\sum_i \ket{i}_A \otimes \ket{i}_B$. What is the reduced $n$-qubit state on Alice's side? (Hint: look at the state in vector form and factorize it in a smart way.) (8 points)
 
 
-    Answer: $\rho=\ket{\Psi_n}\bra{\Psi_n}=\frac{1}{2^n}\sum_i\sum_j\ket{i}_A\otimes\ket{i}_B\bra{j}_A\otimes\bra{j}_B=\frac{1}{2^n}\sum_i\sum_j\ket{i}_A\bra{j}_A\otimes\ket{i}_B\bra{j}_B=\frac{1}{2^n}\sum_i\ket{i}_A\bra{i}_A\otimes\sum_j\ket{j}_B\bra{j}_B$
+          Answer: $\rho=\frac{1}{2^n}\sum_i\ket{i}_A\otimes \ket{i}_B\sum_j \bra{j}_A\bra{j}_B
+              \\=\frac{1}{2^n}\sum_i\sum_j\ket{i}_A\otimes\ket{i}_B\bra{j}_A\otimes\bra{j}_B
+          $
 
-    $\rho_A=Tr_B(\rho)=\frac{1}{2^n}\sum_i\ket{i}_A\bra{i}_A\otimes\sum_j\ket{j}_B\bra{j}_B$
+          $Tr_B(\rho)=\frac{1}{2^n}\sum_k\sum_i\sum_j\bra{k}\ket{i}\bra{j}\otimes\ket{i}\bra{j}\ket{k}$
+
+          If $i\neq k$, $\bra{k}\ket{i}=0$, if $i\neq j$, $\bra{i}\ket{j}=0$, if $j\neq k$, $\bra{j}\ket{k}=0$
+
+
+          $Tr_B(\rho)=\frac{1}{2^n}\sum_i\bra{i}\ket{i}\otimes\ket{i}\bra{i}\otimes\bra{i}\ket{k}
+              \\=\frac{1}{2^n}\sum_i\ket{i}\bra{i}
+              \\=\frac{I_n}{2^n}
+          $
+    \item What is the reduced state on the first $k$ qubits of A and B (i.e. tracing out the last $n - k$ qubits on each side)?(4 points)
+
+          Answer: $\rho_{0 to k} = Tr_{\rho_{k to n}}(\rho_{AB}) = \sum_{m=0}^{n-k}\bra{m}\ket{\Psi_n}\bra{\Psi_n}\ket{m}
+              \\=\frac{1}{2^n}\sum_{m=0}^{n-k}\sum_i\sum_j\bra{m}\ket{i}_A\otimes\ket{i}_B\bra{j}_A\otimes\bra{j}_B\ket{m}
+          $
+
+          if $m\neq i$ or $m\neq j$, $\bra{m}\ket{i}=0$ or $\bra{m}\ket{j}=0$
+
+          So, $\rho_{0 to k}=\frac{1}{2^n}\sum_{i=0}^{n-k}\ket{i}\bra{i}=\frac{I_{n-k}}{2^n}$
+\end{enumerate}
+\section{EXERCISE 3: EVOLUTIONS AND KRAUS OPERATORS}
+\begin{enumerate}
+    \item Consider the following channel $C$. It maps the classical state $\ket{0}$ to the state $\ket{0}$ with probability $(1-p)$ and to $\ket{1}$ with probability $p$. Symmetrically, the state $\ket{1}$ is mapped to the state $\ket{1}$ with probability $(1-p)$ and to $\ket{0}$ with probability $p$. Find a Kraus operator representation of the channel and show that your choice is valid, and that it maps the classical states $\ket{0}$ and $\ket{1}$ correctly. (4 points)
+
+          Answer: $\{E_0,E_1,E_2,E_3\}=
+              \{
+              \sqrt{1-p}\ket{0}\bra{0}, \sqrt{p}\ket{0}\bra{1},\sqrt{p}\ket{1}\bra{0},\sqrt{1-p}\ket{1}\bra{1}$
+          \}
+
+          $\sum_i E_i^\dagger E_i=(1-p)\ket{0}\braket{0|0}\bra{0}+p\ket{1}\braket{0|0}\bra{1}+(1-p)\ket{0}\bra{1}\ket{1}\bra{0}+p\ket{1}\bra{1}\ket{1}\bra{1}
+              \\=\ket{0}\bra{0}+\ket{1}\bra{1}=I$
+
+          $C(\rho)=\sum_i E_i\rho E_i^\dagger$
+
+          $C(\ket{0}\bra{0})=(1-p)\ket{0}\bra{0}\ket{0}\bra{0}\ket{0}\bra{0}+p\ket{1}\bra{0}\ket{0}\bra{0}\ket{0}\bra{1}+p\ket{0}\bra{1}\ket{0}\bra{0}\ket{1}\bra{0}+(1-p)\ket{1}\bra{1}\ket{0}\bra{0}\ket{1}\bra{1}
+              \\=(1-p)\ket{0}\bra{0}+p\ket{1}\bra{1}$
+
+          $C(\ket{1}\bra{1})=(1-p)\ket{0}\bra{0}\ket{1}\bra{1}\ket{0}\bra{0}+p\ket{1}\bra{0}\ket{1}\bra{1}\ket{0}\bra{1}+p\ket{0}\bra{1}\ket{1}\bra{1}\ket{1}\bra{0}+(1-p)\ket{1}\bra{1}\ket{1}\bra{1}\ket{1}\bra{1}
+              \\=p\ket{0}\bra{0}+(1-p)\ket{1}\bra{1}$
+
+    \item Apply the classical channel C to a general quantum state $\rho = \sum_{i,j} \alpha_{i,j} \ket{i}\bra{j}$ (using the Kraus operators found above) and demonstrate that the off-diagonal terms vanish.
+
+          $C(\rho)=\sum_k E_k\rho E_k^\dagger
+              \\=\sum_k E_k\sum_{i,j} \alpha_{i,j} \ket{i}\bra{j} E_k^\dagger
+              \\=(1-p)\ket{0}\bra{0}\sum_{i,j} \alpha_{i,j} \ket{i}\bra{j}\ket{0}\bra{0}+p\ket{0}\bra{1}\sum_{i,j} \alpha_{i,j} \ket{i}\bra{j}\ket{1}\bra{0}+p\ket{1}\bra{0}\sum_{i,j} \alpha_{i,j} \ket{i}\bra{j}\ket{0}\bra{1}+(1-p)\ket{1}\bra{1}\sum_{i,j} \alpha_{i,j} \ket{i}\bra{j}\ket{1}\bra{1}
+          $
+
+          If $i\neq k$ or $j\neq k$, $\braket{k|i}\braket{j|k}=0$
+
+          $C(\rho)=(1-p)\alpha_{00}\ket{0}\bra{0}+p\alpha_{11}\ket{0}\bra{0}+p\alpha_{00}\ket{1}\bra{1}+(1-p)\alpha_{11}\ket{1}\bra{1}
+              \\=[(1-p)\alpha_{00}+p\alpha_{11}]\ket{0}\bra{0}+[(1-p)\alpha_{11}+p\alpha_{00}]\ket{1}\bra{1}
+          $
+
+          This equation shows that the off-diagonal terms vanish.
+
+
+    \item Can you think of a quantum version of the channel, which operates correctly on the coherent (off-diagonal) terms of $\rho$? Write it down and show that it is valid and correct. Hint: apply the new set of Kraus operators first to the classical states $\ket{0}$ and $\ket{1}$ to check correctness. Then, apply it to $\rho$ and show that it preserves coherence. (8 points)
+
+
+
 \end{enumerate}
 
+\section{EXERCISE 4: THE GATE MODEL}
+Consider the following circuit diagram:
+
+The initial states are the two qubits $|+\rangle$ and $|-\rangle$. The upper wire is initialized in state $|+\rangle$ and experiences a controlled X gate. The lower wire is initialized in state $|-\rangle$, then first transformed by the Hadamard gate, and afterwards acts as a control state for the controlled X gate. Finally, a measurement $M$ measures each qubit in the computational basis.
+\begin{enumerate}
+    \item What is the state of the system before the measurement M? (4 points)
+
+          Answer: $H(\ket{-})=(\frac{1}{\sqrt{2}}\ket{0}\bra{0}+\frac{1}{\sqrt{2}}\ket{0}\bra{1}+\frac{1}{\sqrt{2}}\ket{1}\bra{0}-\frac{1}{\sqrt{2}}\ket{1}\bra{1})\ket{-}
+              \\=\frac{1}{2}(\ket{0}+\ket{1}-ket{0}+ket{1})
+              \\=\ket{1}$
+
+          So the output of gate H is $\ket{1}$, which means gate X will be applied to the upper wire.
+
+          $X(\ket{+})=(\ket{0}\bra{1}+\ket{1}\bra{0})\ket{+}
+              \\=(\ket{0}\bra{1}+\ket{1}\bra{0})\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})
+              \\=\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})
+          $
+
+          So the state before measurement is $\ket{1} \otimes \frac{1}{\sqrt{2}}(\ket{0}+\ket{1})$.
+
+
+    \item Which are the possible measurement outcomes of $M$ and what are their probabilities? (4 points)
+
+          Answer: The possible measurement outcomes of $M$ are $\ket{01}$ and $\ket{11}$.
+
+          $P(01)=\ket{01}\bra{01}\ket{text}$
+
+          The probability of $\ket{01}$ is $\frac{1}{2}$ and the probability of $\ket{11}$ is $\frac{1}{2}$.
+
+
+
+          In the lectures we saw the controlled $Z$ and controlled $X$ gate, where $Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$ and $X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$.
+    \item Are the following two circuits the same? How about when we replace Z with X? (6 points)
+
+\end{enumerate}
 \end{document}

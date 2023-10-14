@@ -177,6 +177,9 @@ INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT c:/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd
+INPUT c:/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd
+INPUT c:/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd
 INPUT A2.aux
 INPUT ./A2.out
 INPUT ./A2.out

@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1697119939 "c:/WorkSpace/web/dexin_tube/Quantum-Computing/Assginment 2/A2.tex" "A2.pdf" "A2" 1697119941 0
-  "A2.aux" 1697119940 820 7e8b060ed5c4f5c3b5a0a8ae318ffb02 "pdflatex"
-  "A2.out" 1697119940 473 a7fa09585f23350fad49d1329987deeb "pdflatex"
-  "A2.tex" 1697119938 19121 6607e9e19b3d88604ca64d23df484c7b ""
-  "c:/WorkSpace/web/dexin_tube/Quantum-Computing/Assginment 2/A2.tex" 1697119938 19121 6607e9e19b3d88604ca64d23df484c7b ""
+["pdflatex"] 1697297585 "c:/WorkSpace/web/dexin_tube/Quantum-Computing/Assginment 2/A2.tex" "A2.pdf" "A2" 1697297586 0
+  "A2.aux" 1697297586 1082 dee514171d7cd1b9c4c1a3afe72e811d "pdflatex"
+  "A2.out" 1697297586 926 f9d95304d97bb03108db66759b4bf589 "pdflatex"
+  "A2.tex" 1697297583 23576 f8a3f6a7879657308a0652ba7034d829 ""
+  "c:/WorkSpace/web/dexin_tube/Quantum-Computing/Assginment 2/A2.tex" 1697297583 23576 f8a3f6a7879657308a0652ba7034d829 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1696919956 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1696918365 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1696918365 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -66,6 +66,7 @@
   "c:/texlive/2023/texmf-dist/tex/latex/base/article.cls" 1696920688 20144 fbcf51733730d8f1a62143512ff5b1fe ""
   "c:/texlive/2023/texmf-dist/tex/latex/base/atbegshi-ltx.sty" 1696920688 3045 909ba7bc518ac6e8e7ef69971d52f389 ""
   "c:/texlive/2023/texmf-dist/tex/latex/base/atveryend-ltx.sty" 1696920688 2462 91a1cb69153367feea29040eef0c27f4 ""
+  "c:/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd" 1696920688 2469 7cf25c0dd8ba984c37b877b83027725f ""
   "c:/texlive/2023/texmf-dist/tex/latex/base/size10.clo" 1696920688 8448 74078c4a887f2cdcd57c3ec111622740 ""
   "c:/texlive/2023/texmf-dist/tex/latex/braket/braket.sty" 1696918844 3601 193635d942bc4777a5acaaeeffdce692 ""
   "c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1696919690 13886 d1306dcf79a944f6988e688c1785f9ce ""
