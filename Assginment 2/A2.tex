@@ -118,15 +118,15 @@ We saw in the lectures that given a multi-partite state, we obtain the state of 
               \end{bmatrix}
               \\=\frac{1}{3}\begin{bmatrix}
                   1  & -i & 0 & -1 \\
-                  i  & 1  & 0 & 1  \\
+                  i  & 1  & 0 & -i \\
                   0  & 0  & 0 & 0  \\
-                  -1 & 1  & 0 & 1  \\
+                  -1 & -i & 0 & 1  \\
               \end{bmatrix}
-              \\=\begin{bmatrix}
+              \\= \begin{bmatrix}
                   \frac{1}{3}  & -\frac{i}{3} & 0 & -\frac{1}{3} \\
-                  \frac{i}{3}  & \frac{1}{3}  & 0 & \frac{1}{3}  \\
+                  \frac{i}{3}  & \frac{1}{3}  & 0 & -\frac{i}{3} \\
                   0            & 0            & 0 & 0            \\
-                  -\frac{1}{3} & \frac{1}{3}  & 0 & \frac{1}{3}  \\
+                  -\frac{1}{3} & \frac{i}{3}  & 0 & \frac{1}{3}  \\
               \end{bmatrix}
           $
 
@@ -148,11 +148,11 @@ We saw in the lectures that given a multi-partite state, we obtain the state of 
 
     \item Take the state $\rho_{AB}$ from 3. and compute the reduced state $\rho_B$, both from the matrix itself (using your result from 4.) and in bra-ket notation. (*) (6 points)
 
-          Answer: $\rho_{AB} = \begin{bmatrix}
+          Answer: $\begin{bmatrix}
                   \frac{1}{3}  & -\frac{i}{3} & 0 & -\frac{1}{3} \\
-                  \frac{i}{3}  & \frac{1}{3}  & 0 & \frac{1}{3}  \\
+                  \frac{i}{3}  & \frac{1}{3}  & 0 & -\frac{i}{3} \\
                   0            & 0            & 0 & 0            \\
-                  -\frac{1}{3} & \frac{1}{3}  & 0 & \frac{1}{3}  \\
+                  -\frac{1}{3} & \frac{i}{3}  & 0 & \frac{1}{3}  \\
               \end{bmatrix}$
 
           $\rho_B = (\sigma_{00}+\sigma_{22})\ket{0}\bra{0}+(\sigma_{01}+\sigma_{23})\ket{0}\bra{1}+(\sigma_{10}+\sigma_{32})\ket{1}\bra{0}+(\sigma_{12}+\sigma_{33})\ket{1}\bra{1}
@@ -164,7 +164,7 @@ We saw in the lectures that given a multi-partite state, we obtain the state of 
 \end{enumerate}
 
 \section{EXERCISE 2: MEASUREMENTS AND REDUCED STATES}
-Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}|$, with $|\Phi^{-}\rangle = \frac{1}{\sqrt{2}}(\bra{01} - \bra{10})$.
+Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}|$, with $|\Phi^{-}\rangle = \frac{1}{\sqrt{2}}(\ket{01} - \ket{10})$.
 
 \begin{enumerate}
     \item Compute explicitly the post-measurement state after we performed a projective measurement $M = \{\ket{0}\bra{0},\ket{1}\bra{1}\}$ on $\rho_{AB}$ on system $B$, given that the outcome was $0$. Compute the same for the measurement $M = \{|+\rangle\langle+|, |-\rangle\langle-|\}$, for outcome $-$. (Hint: Using Exercise 2.6 from Assignment 1 might help (not necessary though).) (8 points)
@@ -184,12 +184,15 @@ Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}
 
           $M_1=\ket{-}\bra{-}$
 
-          Observe $\ket{-}$ with probability $p_1=Tr(M_1\rho)=Tr(\ket{-}\bra{-}\otimes I\rho)=Tr(\ket{-}\bra{-}\otimes I\ket{\Phi^{-}}\bra{\Phi^{-}})=\braket{+|-}\bra{-}\otimes I\ket{\Phi^-}\bra{\Phi^-}\ket{+}\otimes I+\braket{-|-}\bra{-}\otimes I\ket{\Phi^-}\bra{\Phi^-}\ket{-}\otimes I=\bra{+}\otimes I\ket{\Phi^-}\bra{\Phi^-}\ket{+}\otimes I$
+          Observe $\ket{-}$ with probability $p_1=Tr(M_1\rho)=Tr(I\otimes \ket{-}\bra{-}\rho)=Tr(I\otimes \ket{-}\bra{-}\ket{\Phi^{-}}\bra{\Phi^{-}})=
+              Tr(I\otimes \ket{-}\bra{+}\frac{1}{2}(\ket{+-}\bra{-+}-\ket{+-}\bra{+-}-\ket{-+}\bra{-+}+\ket{-+}\bra{+-}))
+              \\=\frac{1}{2}Tr(\ket{+-}\bra{-+}-\ket{+-}\bra{+-})=-\frac{1}{2}
+          $
 
           $\rho_1'=\frac{M_1\rho M_1^{\dagger}}{Tr(M_1\rho)}
-              \\=\frac{\ket{-}\bra{-}\otimes I\ket{\Phi^{-}}\bra{\Phi^{-}}\ket{-}\bra{-}\otimes I}{\bra{+}\otimes I\ket{\Phi^-}\bra{\Phi^-}\ket{+}\otimes I}
-              \\=\ket{--}\bra{--}
-              \\=\ket{-}\bra{-}\otimes\ket{-}\bra{-}
+              \\=\frac{(\ket{+-}\bra{-+}-\ket{+-}\bra{+-})I\otimes \ket{-}\bra{-}}{\bra{+}\otimes I\ket{\Phi^-}\bra{\Phi^-}\ket{+}\otimes I}
+              \\=\ket{+-}\bra{+-}
+              \\=\ket{+}\bra{-}\otimes\ket{+}\bra{-}
           $
 
           For system B, $\rho_{1B}'=\ket{-}\bra{-}$
@@ -198,10 +201,10 @@ Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}
 
           Answer:
 
-          For the outcome 0, $\rho_0''=\frac{M_0\rho_{0B}'M_0^\dagger}{Tr(\ket{0}\braket{0|0}\braket{0|0}\bra{0})}=\frac{\ket{0}\braket{0|0}\braket{0|0}\bra{0}}{1}=\ket{0}\bra{0}$
+          For the outcome 0, $\rho_0''=\frac{M_0\rho_{0}'M_0^\dagger}{Tr(M_0\rho_{0})}=\frac{M_0\ket{10}\bra{10}M_0^\dagger}{Tr(M_0\ket{10}\bra{10})}=\frac{I\otimes\ket{0}\bra{0}\ket{10}\bra{10}I\otimes\ket{0}\bra{0}}{Tr(I\otimes\ket{0}\bra{0}\ket{10}\bra{10})}=\ket{10}\bra{10}$
 
 
-          For the outcome -, $\rho_1''=\frac{M_1\rho_{1B}'M_1^\dagger}{Tr(\ket{-}\braket{-|-}\braket{-|-}\bra{-})}=\frac{\ket{-}\braket{-|-}\braket{-|-}\bra{-}}{1}=\ket{-}\bra{-}$
+          For the outcome -, $\rho_-''=\frac{M_1\rho_{1}'M_1^\dagger}{Tr(M_1\rho_{1})}=\frac{M_1\ket{+-}\bra{+-}M_1^\dagger}{Tr(M_1\ket{+-}\bra{+-})}=\frac{I\otimes\ket{-}\bra{-}\ket{+-}\bra{+-}I\otimes\ket{-}\bra{-}}{Tr(I\otimes\ket{-}\bra{-}\ket{+-}\bra{+-})}=\ket{+-}\bra{+-}$
 
     \item What is the reduced state $\rho_A$ if we take state $\rho_{AB}$ and trace over system B in basis $\{\ket{0}, \ket{1}\}$? What if we trace in $\{\ket{+}, \ket{-}\}$? Hint: for the second computation it could be useful to use the basis invariance of the trace operation. (6 points)
 
@@ -210,7 +213,7 @@ Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}
           $
 
 
-          $\rho_A=Tr_B(\rho_{AB})=\bra{0}_B\rho_{AB}\ket{0}_B+\bra{1}_B\rho_{AB}\ket{1}_B=\frac{1}{2}\ket{0}\bra{0}-\frac{1}{2}\ket{1}\bra{1}
+          $\rho_A=Tr_B(\rho_{AB})=\bra{0}_B\rho_{AB}\ket{0}_B+\bra{1}_B\rho_{AB}\ket{1}_B=-\frac{1}{2}\ket{0}\bra{0}-\frac{1}{2}\ket{1}\bra{1}
           $
 
 
@@ -221,7 +224,7 @@ Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}
               \\=\frac{1}{2}(\bra{0}_B\rho_{AB}\ket{0}_B+\bra{0}_B\rho_{AB}\ket{1}_B+\bra{1}_B\rho_{AB}\ket{0}_B+\bra{1}_B\rho_{AB}\ket{1}_B+\bra{0}_B\rho_{AB}\ket{0}_B-\bra{0}_B\rho_{AB}\ket{1}_B-\bra{1}_B\rho_{AB}\ket{0}_B+\bra{1}_B\rho_{AB}\ket{1}_B)
               \\=\frac{1}{2}(2\bra{0}_B\rho_{AB}\ket{0}_B+2\bra{1}_B\rho_{AB}\ket{1}_B)
               \\=\bra{0}_B\rho_{AB}\ket{0}_B+\bra{1}_B\rho_{AB}\ket{1}_B
-              \\=\frac{1}{2}\ket{0}\bra{0}-\frac{1}{2}\ket{1}\bra{1}
+              \\=-\frac{1}{2}\ket{0}\bra{0}-\frac{1}{2}\ket{1}\bra{1}
           $
 
     \item Consider now the $2n$-qubit state $\rho = \ket{\Psi_n}\bra{\Psi_n}$, with $\ket{\Psi_n} = \frac{1}{\sqrt{2^n}}\sum_i \ket{i}_A \otimes \ket{i}_B$. What is the reduced $n$-qubit state on Alice's side? (Hint: look at the state in vector form and factorize it in a smart way.) (8 points)
@@ -250,6 +253,7 @@ Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}
 
           So, $\rho_{0 \to k}=\frac{1}{2^n}\sum_{i=k}^{n-1}\ket{i}\bra{i}=\frac{I_{n-k-1}}{2^n}$
 \end{enumerate}
+
 \section{EXERCISE 3: EVOLUTIONS AND KRAUS OPERATORS}
 \begin{enumerate}
     \item Consider the following channel $C$. It maps the classical state $\ket{0}$ to the state $\ket{0}$ with probability $(1-p)$ and to $\ket{1}$ with probability $p$. Symmetrically, the state $\ket{1}$ is mapped to the state $\ket{1}$ with probability $(1-p)$ and to $\ket{0}$ with probability $p$. Find a Kraus operator representation of the channel and show that your choice is valid, and that it maps the classical states $\ket{0}$ and $\ket{1}$ correctly. (4 points)
@@ -272,9 +276,10 @@ Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}
 
           Assume a coherent state $\rho=\frac{1}{2}(\ket{0}\bra{0}+\ket{0}\bra{1}+\ket{1}\bra{0}+\ket{1}\bra{1})$
 
+          $C(\rho)=\sum_iE_i\rho E_i^\dagger=\frac{1}{2}((1-p)\ket{0}\bra{0}+p\ket{0}\bra{0}+p\ket{1}\bra{1}+(1-p)\ket{1}\bra{1})=\frac{1}{2}\ket{0}\bra{0}+\frac{1}{2}\ket{1}\bra{1}$
 
           So, this Kraus operator representation of the channel is valid, and it maps the classical states $\ket{0}$ and $\ket{1}$ correctly.
-          $C(\rho)=\sum_iE_i\rho E_i^\dagger=\frac{1}{2}((1-p)\ket{0}\bra{0}+p\ket{0}\bra{0}+p\ket{1}\bra{1}+(1-p)\ket{1}\bra{1})=\frac{1}{2}\ket{0}\bra{0}+\frac{1}{2}\ket{1}\bra{1}$
+
     \item Apply the classical channel C to a general quantum state $\rho = \sum_{i,j} \alpha_{i,j} \ket{i}\bra{j}$ (using the Kraus operators found above) and demonstrate that the off-diagonal terms vanish.
 
           $C(\rho)=\sum_k E_k\rho E_k^\dagger
@@ -293,17 +298,25 @@ Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}
 
     \item Can you think of a quantum version of the channel, which operates correctly on the coherent (off-diagonal) terms of $\rho$? Write it down and show that it is valid and correct. Hint: apply the new set of Kraus operators first to the classical states $\ket{0}$ and $\ket{1}$ to check correctness. Then, apply it to $\rho$ and show that it preserves coherence. (8 points)
 
-          Answer: $\{E_0,E_1\}=\{\ket{0}\bra{1},\ket{1}\bra{0}\}$
+          Answer: $\{E_0,E_1\}=\{\sqrt{p}\ket{0}\bra{0}+\sqrt{p}\ket{1}\bra{1},\sqrt{1-p}\ket{0}\bra{1}+\sqrt{1-p}\ket{1}\bra{0}\}$
 
-          $\sum_i E_i^\dagger E_i=\ket{1}\braket{0|0}\bra{1}+\ket{0}\braket{1|1}\bra{0}=\ket{1}\bra{1}+\ket{0}\bra{0}=I$
+          $\sum_i E_i^\dagger E_i=(1-p)\ket{0}\bra{0}+(1-p)\ket{1}\bra{1}+p\ket{0}\bra{0}+p\ket{1}\bra{1}=I$
 
-          $C(\ket{0}\bra{0})=E_0\ket{0}\bra{0}E_0^\dagger+E_1\ket{0}\bra{0}E_1^\dagger=\ket{1}\bra{1}$
+          $C(\ket{0}\bra{0})=E_0\ket{0}\bra{0}E_0^\dagger+E_1\ket{0}\bra{0}E_1^\dagger=p\ket{1}\bra{1}+(1-p)\ket{0}\bra{0}$
 
-          $C(\ket{1}\bra{1})=E_0\ket{1}\bra{1}E_0^\dagger+E_1\ket{1}\bra{1}E_1^\dagger=\ket{0}\bra{0}$
+          $C(\ket{1}\bra{1})=E_0\ket{1}\bra{1}E_0^\dagger+E_1\ket{1}\bra{1}E_1^\dagger=p\ket{0}\bra{0}+(1-p)\ket{1}\bra{1}$
 
-          For a coherent state $\rho=\frac{1}{2}(\ket{0}\bra{0}+\ket{0}\bra{1}+\ket{1}\bra{0}+\ket{1}\bra{1})$
 
-          $C(\rho)=\sum_i E_i\rho E_i^\dagger=\ket{0}\bra{1}\frac{1}{2}(\ket{0}\bra{0}+\ket{0}\bra{1}+\ket{1}\bra{0}+\ket{1}\bra{1})\ket{1}\bra{0}+\ket{1}\bra{0}\frac{1}{2}(\ket{0}\bra{0}+\ket{0}\bra{1}+\ket{1}\bra{0}+\ket{1}\bra{1})\ket{0}\bra{1}$
+          For a classical state the off-diagonal terms vanish.
+
+          For a coherent state $\rho=\alpha_{00}\ket{0}\bra{0}+\alpha_{01}\ket{0}\bra{1}+\alpha_{10}\ket{1}\bra{0}+\alpha_{11}\ket{1}\bra{1}$
+
+          $C(\rho)=\sum_i E_i\rho E_i^\dagger=p\alpha_{00}\ket{0}\bra{0}+p\alpha\ket{1}\bra{1}+(1-p)\alpha_{10}\ket{0}\bra{1}+(1-p)\alpha_{01}\ket{1}\bra{0}$
+
+          For a quantum state, the off-diagonal terms do not vanish.
+
+          So, this channel is valid and correct and it operates correctly on the coherent (off-diagonal) terms of $\rho$.
+
 \end{enumerate}
 
 \section{EXERCISE 4: THE GATE MODEL}
@@ -324,18 +337,18 @@ The initial states are the two qubits $|+\rangle$ and $|-\rangle$. The upper wir
               \\=\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})
           $
 
-          So the state before measurement is $\ket{1} \otimes \frac{1}{\sqrt{2}}(\ket{0}+\ket{1})$.
+          So the state before measurement is $\ket{+} \otimes \ket{1}$.
 
 
     \item Which are the possible measurement outcomes of $M$ and what are their probabilities? (4 points)
 
           Answer: The possible measurement outcomes of $M$ are $\ket{01}$ and $\ket{11}$.
 
-          $P(\ket{01})=|\frac{1}{\sqrt{2}}\bra{01}{\ket{10}+\ket{11}}|^2
+          $P(\ket{01})=|\frac{1}{\sqrt{2}}\bra{10}(\ket{01}+\ket{11})|^2
               =\frac{1}{2}
           $
 
-          $P(\ket{11})=|\frac{1}{\sqrt{2}}\bra{11}{\ket{10}+\ket{11}}|^2
+          $P(\ket{11})=|\frac{1}{\sqrt{2}}\bra{11}{\ket{01}+\ket{11}}|^2
               =\frac{1}{2}
           $
 
@@ -354,11 +367,11 @@ The initial states are the two qubits $|+\rangle$ and $|-\rangle$. The upper wir
 
           When $\ket{\psi}_A=0$, $\ket{\psi}_B=1$, for the first circuit, the upper output is $\ket{0}$, and Z gate is not activated, the lower output is $\ket{1}$. For the second circuit, the output of lower wire is $\ket{1}$, the Z gate is activated, the output of upper wire is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{0}=\ket{0}$.
 
-          When $\ket{\psi}_A=1$, $\ket{\psi}_B=0$, for the first circuit, the upper output is $\ket{1}$, and Z gate is activated, the lower output is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{0}=\ket{0}$. For the second circuit, the output of lower wire is $\ket{0}$, the Z gate is activated, the output of upper wire is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{1}=\ket{1}$.
+          When $\ket{\psi}_A=1$, $\ket{\psi}_B=0$, for the first circuit, the upper output is $\ket{1}$, and Z gate is activated, the lower output is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{0}=\ket{0}$. For the second circuit, the output of lower wire is $\ket{0}$, the Z gate is activated, the output of upper wire is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{1}=-\ket{1}$.
 
-          When $\ket{\psi}_A=1$, $\ket{\psi}_B=1$, for the first circuit, the upper output is $\ket{1}$, and Z gate is activated, the lower output is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{1}=\ket{1}$. For the second circuit, the output of lower wire is $\ket{1}$, the Z gate is activated, the output of upper wire is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{1}=\ket{1}$.
+          When $\ket{\psi}_A=1$, $\ket{\psi}_B=1$, for the first circuit, the upper output is $\ket{1}$, and Z gate is activated, the lower output is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{1}=\ket{1}$. For the second circuit, the output of lower wire is $\ket{1}$, the Z gate is activated, the output of upper wire is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{1}=-\ket{1}$.
 
-          So for gate Z, the two circuits are the same.
+          So for gate Z, the two circuits are not the same.
 
           If we replace Z with X, the two circuits are not the same.
           When $\ket{\psi}_A=0$, $\ket{\psi}_B=0$, the output of the upper wire of the first circuit is $\ket{0}$ and the output of the lower wire is $\ket{0}$. The output of the upper wire of the second circuit is $\ket{0}$ and the output of the lower wire is $\ket{0}$.
@@ -379,5 +392,52 @@ The initial states are the two qubits $|+\rangle$ and $|-\rangle$. The upper wir
           When $\ket{\psi}_A=1$, $\ket{\psi}_B=0$, the output of the upper wire is $\ket{0}$ and the output of the lower wire is $\ket{1}$.
 
           When $\ket{\psi}_A=1$, $\ket{\psi}_B=1$, the output of the upper wire is $\ket{1}$ and the output of the lower wire is $\ket{1}$.
+
+
+
+    \item Construct a controlled X gate by using Hadamard gates and controlled Z gates (you can use either as often as you like). Draw your circuit diagram. (6 points)
+
+
+          Answer: the picture is shown as figure 1.
+
+          I designed the circuit because for input $\rho$, $H(Z(H(\rho)))
+              =\frac{1}{2}\begin{bmatrix}
+                  1 & 1  \\
+                  1 & -1 \\
+              \end{bmatrix}\begin{bmatrix}
+                  1 & 0  \\
+                  0 & -1 \\
+              \end{bmatrix}\begin{bmatrix}
+                  1 & 1  \\
+                  1 & -1 \\
+              \end{bmatrix}
+              \\=\frac{1}{2}\begin{bmatrix}
+                  1 & 1  \\
+                  1 & -1 \\
+              \end{bmatrix}\begin{bmatrix}
+                  1  & 1 \\
+                  -1 & 1 \\
+              \end{bmatrix}
+              \\=\frac{1}{2}\begin{bmatrix}
+                  0 & 2 \\
+                  2 & 0 \\
+              \end{bmatrix}
+              \\=\begin{bmatrix}
+                  0 & 1 \\
+                  1 & 0 \\
+              \end{bmatrix}
+              \\=X
+          $
+
+          and the upper wire controls the gates.
+
+          \begin{figure}[b]
+              \centering
+              \includegraphics[width=0.7\textwidth]{circuit.pdf}
+              \caption{c-X circuit}
+          \end{figure}
+
+
+
 \end{enumerate}
 \end{document}

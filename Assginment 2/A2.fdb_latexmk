@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1697360893 "c:/WorkSpace/web/dexin_tube/Quantum-Computing/Assginment 2/A2.tex" "A2.pdf" "A2" 1697360895 0
-  "A2.aux" 1697360895 1082 36fdeded19c2f4f3ca5e5a3f27d74b20 "pdflatex"
-  "A2.out" 1697360895 926 f9d95304d97bb03108db66759b4bf589 "pdflatex"
-  "A2.tex" 1697360893 24498 28f6b0c7c58c7b71c22f16ddb0fcca23 ""
-  "c:/WorkSpace/web/dexin_tube/Quantum-Computing/Assginment 2/A2.tex" 1697360893 24498 28f6b0c7c58c7b71c22f16ddb0fcca23 ""
+["pdflatex"] 1697376027 "c:/WorkSpace/web/dexin_tube/Quantum-Computing/Assginment 2/A2.tex" "A2.pdf" "A2" 1697376029 0
+  "A2.aux" 1697376029 1204 8b90e952ed42fc7feebe3c3db33228c5 "pdflatex"
+  "A2.out" 1697376029 926 f9d95304d97bb03108db66759b4bf589 "pdflatex"
+  "A2.tex" 1697376026 26380 fedc9654d0931daad3dbac584a3b13ed ""
+  "c:/WorkSpace/web/dexin_tube/Quantum-Computing/Assginment 2/A2.tex" 1697376026 26380 fedc9654d0931daad3dbac584a3b13ed ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1696919956 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1696918365 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1696918365 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -102,6 +102,7 @@
   "c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1696923831 4750280 f48571cebc263e8ce46fc4b29e82313c ""
   "c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1696924140 8183281 1df0e75cd49c7eea7db589b98a326f53 ""
   "c:/texlive/2023/texmf.cnf" 1696923796 713 e69b156964470283e0530f5060668171 ""
+  "circuit.pdf" 1697367720 19536 93a4485288aa9742cd882f8b7ec3c355 ""
   (generated)
   "A2.aux"
   "A2.log"
