@@ -50,128 +50,26 @@ We saw in the lectures that given a multi-partite state, we obtain the state of 
 
                     Which of the states is normalized correctly? (*) (4 points)
           \end{enumerate}
-          Answer: $\xi = \frac{1}{2}(\ket{0}\bra{0} - i\ket{0}\bra{1} + i\ket{1}\bra{0} + \ket{1}\bra{1})
-              \\= \frac{1}{2}(\begin{bmatrix}
-                  1 & 0 \\
-                  0 & 0
-              \end{bmatrix} - i\begin{bmatrix}
-                  0 & 1 \\
-                  0 & 0
-              \end{bmatrix} + i\begin{bmatrix}
-                  0 & 0 \\
-                  1 & 0
-              \end{bmatrix} + \begin{bmatrix}
-                  0 & 0 \\
-                  0 & 1
-              \end{bmatrix})
-              \\= \frac{1}{2}(\begin{bmatrix}
-                  1 & -i \\
-                  i & 1
-              \end{bmatrix})
-              \\= \begin{bmatrix}
-                  \frac{1}{2} & -\frac{i}{2} \\
-                  \frac{i}{2} & \frac{1}{2}
-              \end{bmatrix}$
+          Answer: $\xi = \frac{1}{2}(\ket{0}\bra{0} - i\ket{0}\bra{1} + i\ket{1}\bra{0} + \ket{1}\bra{1})$
 
-          $Tr(\xi) = \ket{0}\xi\bra{0}+\ket{1}\xi\bra{1}
-              \\= \begin{bmatrix}
-                  1 & 0
-              \end{bmatrix}\begin{bmatrix}
-                  \frac{1}{2} & -\frac{i}{2} \\
-                  \frac{i}{2} & \frac{1}{2}
-              \end{bmatrix}\begin{bmatrix}
-                  1 \\
-                  0
-              \end{bmatrix}+\begin{bmatrix}
-                  0 & 1
-              \end{bmatrix}\begin{bmatrix}
-                  \frac{1}{2} & -\frac{i}{2} \\
-                  \frac{i}{2} & \frac{1}{2}
-              \end{bmatrix}\begin{bmatrix}
-                  0 \\
-                  1
-              \end{bmatrix}
-              \\= \begin{bmatrix}
-                  1 & 0
-              \end{bmatrix}\begin{bmatrix}
-                  \frac{1}{2} \\
-                  \frac{i}{2}
-              \end{bmatrix}+\begin{bmatrix}
-                  0 & 1
-              \end{bmatrix}\begin{bmatrix}
-                  -\frac{i}{2} \\
-                  \frac{1}{2}
-              \end{bmatrix}
-              \\= \frac{1}{2}+\frac{1}{2}
-              \\= 1$
+          $Tr(\xi) = \bra{0}\xi\ket{0}+\bra{1}\xi\ket{1}
+              =\frac{1}{2}(\braket{0|0}\braket{0|0}-i\braket{text|0}\braket{1|0}+i\braket{0|1}\braket{0|0}+\braket{0|1}\braket{1|0}
+              +\braket{1|0}\braket{0|1}-i\braket{1|0}\braket{1|1}+i\braket{1|1}\braket{0|1}+\braket{1|1}\braket{1|1})
+              =\frac{1}{2}(1+1)
+              =1
+          $
 
           $\Lambda = \frac{I}{3}I + \frac{1}{6}(\ket{0}\bra{1} + \ket{1}\bra{0})
-              \\=\frac{I}{3}+\frac{1}{6}(\begin{bmatrix}
-                  1 & 0 \\
-              \end{bmatrix}\begin{bmatrix}
-                  0 \\
-                  1
-              \end{bmatrix}+\begin{bmatrix}
-                  0 & 1
-              \end{bmatrix}\begin{bmatrix}
-                  1 \\
-                  0
-              \end{bmatrix})
-              \\=\frac{I}{3}+\frac{1}{6}(\begin{bmatrix}
-                  0 & 0 \\
-                  1 & 0
-              \end{bmatrix}+\begin{bmatrix}
-                  0 & 1 \\
-                  0 & 0
-              \end{bmatrix})
-              \\=\frac{I}{3}+\frac{1}{6}(\begin{bmatrix}
-                  0 & 1 \\
-                  1 & 0
-              \end{bmatrix})
-              \\=\begin{bmatrix}
-                  0           & \frac{1}{3} \\
-                  \frac{1}{3} & 0
-              \end{bmatrix}+\begin{bmatrix}
-                  0           & \frac{1}{6} \\
-                  \frac{1}{6} & 0
-              \end{bmatrix}
-              \\=\begin{bmatrix}
-                  \frac{1}{3} & \frac{1}{6} \\
-                  \frac{1}{6} & \frac{1}{3}
-              \end{bmatrix}$
+              =\frac{1}{3}\ket{0}\bra{0}+\frac{1}{6}\ket{0}\bra{1}+\frac{1}{6}\ket{1}\bra{0}+\frac{1}{3}\ket{1}\bra{1}
+          $
 
 
-          $Tr(\Lambda) = \ket{0}\Lambda\bra{0}+\ket{1}\Lambda\bra{1}
-              \\= \begin{bmatrix}
-                  1 & 0
-              \end{bmatrix}\begin{bmatrix}
-                  \frac{1}{3} & \frac{1}{6} \\
-                  \frac{1}{6} & \frac{1}{3}
-              \end{bmatrix}\begin{bmatrix}
-                  1 \\
-                  0
-              \end{bmatrix}+\begin{bmatrix}
-                  0 & 1
-              \end{bmatrix}\begin{bmatrix}
-                  \frac{1}{3} & \frac{1}{6} \\
-                  \frac{1}{6} & \frac{1}{3}
-              \end{bmatrix}\begin{bmatrix}
-                  0 \\
-                  1
-              \end{bmatrix}
-              \\= \begin{bmatrix}
-                  1 & 0
-              \end{bmatrix}\begin{bmatrix}
-                  \frac{1}{3} \\
-                  \frac{1}{6}
-              \end{bmatrix}+\begin{bmatrix}
-                  0 & 1
-              \end{bmatrix}\begin{bmatrix}
-                  \frac{1}{6} \\
-                  \frac{1}{3}
-              \end{bmatrix}
-              \\= \frac{1}{3}+\frac{1}{3}
-              \\= \frac{2}{3}$
+          $Tr(\Lambda) = \bra{0}\Lambda\ket{0}+\bra{1}\Lambda\ket{1}
+              \\=\frac{1}{3}\braket{0|0}\braket{0|0}+\frac{1}{6}\braket{0|0}\braket{1|0}+\frac{1}{6}\braket{0|1}\braket{0|0}+\frac{1}{3}\braket{0|1}\braket{1|0}
+              +\frac{1}{3}\braket{1|0}\braket{0|1}+\frac{1}{6}\braket{1|0}\braket{1|1}+\frac{1}{6}\braket{1|1}\braket{0|1}+\frac{1}{3}\braket{1|1}\braket{1|1}
+              \\=\frac{1}{3}(1+1)
+              \\=\frac{2}{3}
+          $
 
           So $\xi$ is normalized correctly.
 
@@ -195,78 +93,43 @@ We saw in the lectures that given a multi-partite state, we obtain the state of 
     \item Consider the bipartite state $\ket{\phi}_{AB} = \frac{1}{\sqrt{3}}(\ket{00}_{AB} + i\ket{01}_{AB} - \ket{11}_{AB})$. Write the density operator $\rho_{AB} = \ket{\phi}_{AB}\bra{\phi}_{AB}$ explicitly in matrix form. (*) (4 points)
 
           Answer:
-          $\rho_{AB}
-              \\= \ket{\phi}_{AB}\bra{\phi}_{AB}
-              \\= \frac{1}{\sqrt{3}}(\ket{00}_{AB} + i\ket{01}_{AB} - \ket{11}_{AB})(\bra{00}_{AB} - i\bra{01}_{AB} - \bra{11}_{AB})
-              \\= \frac{1}{3}(\ket{00}\bra{00}-i\ket{00}\bra{01}-\ket{00}\bra{11}+i\ket{01}\bra{00}+\ket{01}\bra{01}+\ket{01}\bra{11}-\ket{11}\bra{00}-\ket{11}\bra{01}+\ket{11}\bra{11})
-              \\= \frac{1}{3}(\begin{bmatrix}
-                  1 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-              \end{bmatrix}
-              -i\begin{bmatrix}
-                  0 & 0 & 0 & 0 \\
-                  1 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-              \end{bmatrix}
-              -\begin{bmatrix}
-                  0 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-                  1 & 0 & 0 & 0 \\
+          $\phi_{AB}=\frac{1}{\sqrt{3}}(\ket{00}_{AB} + i\ket{01}_{AB} - \ket{11}_{AB})
+              \\=\frac{1}{\sqrt{3}}(
+              \begin{bmatrix}
+                  1 \\ 0 \\ 0 \\ 0 \\
               \end{bmatrix}
               +i\begin{bmatrix}
-                  0 & 1 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-              \end{bmatrix}
-              +\begin{bmatrix}
-                  0 & 0 & 0 & 0 \\
-                  0 & 1 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-              \end{bmatrix}
-              +\begin{bmatrix}
-                  0 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-                  0 & 1 & 0 & 0 \\
+                  0 \\ 1 \\ 0 \\ 0 \\
               \end{bmatrix}
               -\begin{bmatrix}
-                  0 & 0 & 0 & 1 \\
-                  0 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-              \end{bmatrix}
-              +\begin{bmatrix}
-                  0 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 1 \\
-                  0 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-              \end{bmatrix}
-              -\begin{bmatrix}
-                  0 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 0 \\
-                  0 & 0 & 0 & 1 \\
-              \end{bmatrix}
-              )
-              \\=\frac{1}{3}\begin{bmatrix}
-                  1  & i & 0 & -1 \\
-                  -i & 1 & 0 & 1  \\
-                  0  & 0 & 0 & 0  \\
-                  -1 & i & 0 & 1  \\
-              \end{bmatrix}
-              \\=\begin{bmatrix}
-                  \frac{1}{3}  & \frac{i}{3} & 0 & -\frac{1}{3} \\
-                  -\frac{i}{3} & \frac{1}{3} & 0 & \frac{1}{3}  \\
-                  0            & 0           & 0 & 0            \\
-                  -\frac{1}{3} & \frac{i}{3} & 0 & \frac{1}{3}  \\
+                  0 \\ 0 \\ 0 \\ 1 \\
+              \end{bmatrix})
+              \\=\frac{1}{\sqrt{3}}\begin{bmatrix}
+                  1 \\ i \\ 0 \\ -1 \\
               \end{bmatrix}
           $
+
+          $\rho_{AB}
+              \\= \ket{\phi}_{AB}\bra{\phi}_{AB}
+              \\=\frac{1}{3}\begin{bmatrix}
+                  1 \\ i \\ 0 \\ -1 \\
+              \end{bmatrix}\begin{bmatrix}
+                  1 & -i & 0 & -1 \\
+              \end{bmatrix}
+              \\=\frac{1}{3}\begin{bmatrix}
+                  1  & -i & 0 & -1 \\
+                  i  & 1  & 0 & 1  \\
+                  0  & 0  & 0 & 0  \\
+                  -1 & 1  & 0 & 1  \\
+              \end{bmatrix}
+              \\=\begin{bmatrix}
+                  \frac{1}{3}  & -\frac{i}{3} & 0 & -\frac{1}{3} \\
+                  \frac{i}{3}  & \frac{1}{3}  & 0 & \frac{1}{3}  \\
+                  0            & 0            & 0 & 0            \\
+                  -\frac{1}{3} & \frac{1}{3}  & 0 & \frac{1}{3}  \\
+              \end{bmatrix}
+          $
+
     \item Let $\sigma_{AB}$ be a general 2-qubit state. The $4\times4$ matrix describing $\sigma_{AB}$ can be split into four sub-matrices of size $2\times2$ (upper left block, upper right block, lower left block, lower right block). Show that the reduced single qubit state $\sigma_B = \mathrm{Tr}_A(\sigma_{AB})$ is described by a $2\times2$ matrix that is the sum of the upper left block and lower right block matrices of $\sigma_{AB}$. Hint: start from $\sigma_{AB} = \sigma_{00}|00\rangle\langle00| + \sigma_{01}|00\rangle\langle01| + ... + \sigma_{33}|11\rangle\langle11|$ and compute the partial trace in bra-ket notation. Write $\sigma_{AB}$ as a matrix and compare. (8 points)
 
           Answer: $\sigma_{AB} = \sigma_{00}\ket{00}\bra{00} + \sigma_{01}\ket{00}\bra{01} + ... + \sigma_{33}\ket{11}\bra{11}$
@@ -286,18 +149,17 @@ We saw in the lectures that given a multi-partite state, we obtain the state of 
     \item Take the state $\rho_{AB}$ from 3. and compute the reduced state $\rho_B$, both from the matrix itself (using your result from 4.) and in bra-ket notation. (*) (6 points)
 
           Answer: $\rho_{AB} = \begin{bmatrix}
-                  \frac{1}{3}  & \frac{i}{3} & 0 & -\frac{1}{3} \\
-                  -\frac{i}{3} & \frac{1}{3} & 0 & \frac{1}{3}  \\
-                  0            & 0           & 0 & 0            \\
-                  -\frac{1}{3} & \frac{i}{3} & 0 & \frac{1}{3}  \\
+                  \frac{1}{3}  & -\frac{i}{3} & 0 & -\frac{1}{3} \\
+                  \frac{i}{3}  & \frac{1}{3}  & 0 & \frac{1}{3}  \\
+                  0            & 0            & 0 & 0            \\
+                  -\frac{1}{3} & \frac{1}{3}  & 0 & \frac{1}{3}  \\
               \end{bmatrix}$
 
-          $\rho_B = (\rho_{00}+\rho_{21})\ket{0}\bra{0}+(\rho_{02}+\rho_{23})\ket{0}\bra{1}+(\rho_{10}+\rho_{31})\ket{1}\bra{0}+(\rho_{12}+\rho_{33})\ket{1}\bra{1}
-              \\= (\frac{1}{3}+0)\ket{0}\bra{0}+(0+0)\ket{0}\bra{1}+(-\frac{i}{3}+\frac{i}{3})\ket{1}\bra{0}+(\frac{1}{3}+\frac{1}{3})\ket{1}\bra{1}
-              \\= \frac{1}{3}\ket{0}\bra{0}+0\ket{0}\bra{1}+0\ket{1}\bra{0}+\frac{2}{3}\ket{1}\bra{1}
+          $\rho_B = (\sigma_{00}+\sigma_{22})\ket{0}\bra{0}+(\sigma_{01}+\sigma_{23})\ket{0}\bra{1}+(\sigma_{10}+\sigma_{32})\ket{1}\bra{0}+(\sigma_{12}+\sigma_{33})\ket{1}\bra{1}
+              \\= \frac{1}{3}\ket{0}\bra{0}-\frac{i}{3}\ket{0}\bra{1}+\frac{i}{3}\ket{1}\bra{0}+0\ket{1}\bra{1}
               \\= \begin{bmatrix}
-                  \frac{1}{3} & 0           \\
-                  0           & \frac{2}{3} \\
+                  \frac{1}{3} & -\frac{i}{3} \\
+                  \frac{i}{3} & \frac{2}{3}  \\
               \end{bmatrix}$
 \end{enumerate}
 
@@ -309,12 +171,12 @@ Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}
 
           Answer: $M_0=\ket{0}\bra{0}$
 
-          Observe $\ket{0}$ with probability $p_0=Tr(M_0\rho)=Tr(\ket{0}\bra{0}\otimes I\rho)=Tr(\ket{0}\bra{0}\otimes I\ket{\Phi^{-}}\bra{\Phi^{-}})=\braket{0|0}\bra{0}\otimes I\ket{\Phi^-}\bra{\Phi^-}\ket{0}\otimes I+\braket{1|0}\bra{0}\otimes I\ket{\Phi^-}\bra{\Phi^-}\ket{1}\otimes I=\bra{0}\otimes I\ket{\Phi^-}\bra{\Phi^-}\ket{0}\otimes I$
+          Observe $\ket{0}$ with probability $p_0=Tr(M_0\rho)=Tr(I\otimes \ket{0}\bra{0}\rho)=Tr(I\otimes \ket{0}\bra{0}\ket{\Phi^{-}}\bra{\Phi^{-}})=Tr(I\otimes \ket{0}\bra{0}\frac{1}{2}(\ket{01}\bra{10}-\ket{01}\bra{01}-\ket{10}\bra{10}+\ket{10}\bra{01}))=Tr(\frac{1}{2}(-\ket{10}\bra{10}+\ket{10}\bra{01}))=-\frac{1}{2}$
 
           $\rho_0'=\frac{M_0\rho M_0^{\dagger}}{Tr(M_0\rho)}
-              \\=\frac{\ket{0}\bra{0}\otimes I\ket{\Phi^{-}}\bra{\Phi^{-}}\ket{0}\bra{0}\otimes I}{\bra{0}\otimes I\ket{\Phi^-}\bra{\Phi^-}\ket{0}\otimes I}
-              \\=\ket{00}\bra{00}
-              \\=\ket{0}\bra{0}\otimes\ket{0}\bra{0}
+              \\=\frac{I\otimes \ket{0}\bra{0}\ket{\Phi^{-}}\bra{\Phi^{-}}I\otimes \ket{0}\bra{0}}{Tr(\frac{1}{2}(-\ket{10}\bra{10}+\ket{10}\bra{01}))}
+              \\=\frac{\frac{1}{2}(-\ket{10}\bra{10}+\ket{10}\bra{01})I\otimes \ket{0}\bra{0}}{-\frac{1}{2}}
+              \\=\ket{10}\bra{10}
           $
 
           For system B, $\rho_{0B}'=\ket{0}\bra{0}$
@@ -336,54 +198,57 @@ Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}
 
           Answer:
 
-          For the outcome 0, $\rho_0''=Tr(\rho_{0B}')=Tr(\ket{0}\bra{0})=1$
+          For the outcome 0, $\rho_0''=\frac{M_0\rho_{0B}'M_0^\dagger}{Tr(\ket{0}\braket{0|0}\braket{0|0}\bra{0})}=\frac{\ket{0}\braket{0|0}\braket{0|0}\bra{0}}{1}=\ket{0}\bra{0}$
 
 
-          For the outcome -, $\rho_1''=Tr(\rho_{1B}')=Tr(\ket{-}\bra{-})=1$
+          For the outcome -, $\rho_1''=\frac{M_1\rho_{1B}'M_1^\dagger}{Tr(\ket{-}\braket{-|-}\braket{-|-}\bra{-})}=\frac{\ket{-}\braket{-|-}\braket{-|-}\bra{-}}{1}=\ket{-}\bra{-}$
 
     \item What is the reduced state $\rho_A$ if we take state $\rho_{AB}$ and trace over system B in basis $\{\ket{0}, \ket{1}\}$? What if we trace in $\{\ket{+}, \ket{-}\}$? Hint: for the second computation it could be useful to use the basis invariance of the trace operation. (6 points)
 
-          Answer: $\rho_{AB}=\ket{\Phi^-}\bra{\Phi^-}=\frac{1}{2}(\ket{01}-\ket{10})(\bra{01}-\bra{10})
-              =\frac{1}{2}(\ket{01}\bra{01}-\ket{01}\bra{10}-\ket{10}\bra{01}+\ket{10}\bra{10})
+          Answer: $\rho_{AB}=\ket{\Phi^-}\bra{\Phi^-}=\frac{1}{2}(\ket{01}-\ket{10})(\bra{10}-\bra{01})
+              =\frac{1}{2}(\ket{01}\bra{10}-\ket{01}\bra{01}-\ket{10}\bra{10}+\ket{10}\bra{01})
           $
 
 
-          $\rho_A=Tr_B(\rho_{AB})=\frac{1}{2}(\bra{0}\otimes\bra{0}\rho_{AB}\ket{0}\otimes\ket{0}+\bra{1}\otimes\bra{1}\rho_{AB}\ket{1}\otimes{1})
-              \\=\frac{1}{2}(\bra{0}\otimes\bra{0}(\ket{01}\bra{01}-\ket{01}\bra{10}-\ket{10}\bra{01}+\ket{10}\bra{10})\ket{0}\otimes\ket{0}+\bra{1}\otimes\bra{1}(\ket{01}\bra{01}-\ket{01}\bra{10}-\ket{10}\bra{01}+\ket{10}\bra{10})\ket{1}\otimes\ket{1})
-              \\=\frac{1}{2}(\ket{0}\bra{0}+\ket{1}\bra{1})
+          $\rho_A=Tr_B(\rho_{AB})=\bra{0}_B\rho_{AB}\ket{0}_B+\bra{1}_B\rho_{AB}\ket{1}_B=\frac{1}{2}\ket{0}\bra{0}-\frac{1}{2}\ket{1}\bra{1}
           $
 
 
           In the basis $\{\ket{+},\ket{-}\}$, $\Phi=\frac{1}{2}(\ket{+}\otimes\ket{-}-\ket{-}\otimes\ket{+})$
 
-          $\rho_A=Tr_B
+          $\rho_A=Tr_B(\rho_{AB})=\bra{+}_B\rho_{AB}\ket{+}_B+\bra{-}_B\rho_{AB}\ket{-}_B
+              \\=\frac{1}{2}((\bra{0}_B+\bra{1}_B)\rho_{AB}(\ket{0}_B+\ket{1}_B))+\frac{1}{2}((\bra{0}_B-\bra{1}_B)\rho_{AB}(\ket{0}_B-\ket{1}_B))
+              \\=\frac{1}{2}(\bra{0}_B\rho_{AB}\ket{0}_B+\bra{0}_B\rho_{AB}\ket{1}_B+\bra{1}_B\rho_{AB}\ket{0}_B+\bra{1}_B\rho_{AB}\ket{1}_B+\bra{0}_B\rho_{AB}\ket{0}_B-\bra{0}_B\rho_{AB}\ket{1}_B-\bra{1}_B\rho_{AB}\ket{0}_B+\bra{1}_B\rho_{AB}\ket{1}_B)
+              \\=\frac{1}{2}(2\bra{0}_B\rho_{AB}\ket{0}_B+2\bra{1}_B\rho_{AB}\ket{1}_B)
+              \\=\bra{0}_B\rho_{AB}\ket{0}_B+\bra{1}_B\rho_{AB}\ket{1}_B
+              \\=\frac{1}{2}\ket{0}\bra{0}-\frac{1}{2}\ket{1}\bra{1}
           $
 
     \item Consider now the $2n$-qubit state $\rho = \ket{\Psi_n}\bra{\Psi_n}$, with $\ket{\Psi_n} = \frac{1}{\sqrt{2^n}}\sum_i \ket{i}_A \otimes \ket{i}_B$. What is the reduced $n$-qubit state on Alice's side? (Hint: look at the state in vector form and factorize it in a smart way.) (8 points)
 
 
-          Answer: $\rho=\frac{1}{2^n}\sum_i\ket{i}_A\otimes \ket{i}_B\sum_j \bra{j}_A\bra{j}_B
-              \\=\frac{1}{2^n}\sum_i\sum_j\ket{i}_A\otimes\ket{i}_B\bra{j}_A\otimes\bra{j}_B
+          Answer: $\rho=\frac{1}{2^n}\sum_i\ket{i}_A\otimes \ket{i}_B\bra{i}_A\bra{i}_B
+              \\=\frac{1}{2^n}\sum_i\ket{i}_A\otimes\ket{i}_B\bra{i}_A\otimes\bra{i}_B
           $
 
-          $Tr_B(\rho)=\frac{1}{2^n}\sum_k\sum_i\sum_j\bra{k}\ket{i}\bra{j}\otimes\ket{i}\bra{j}\ket{k}$
+          $Tr_B(\rho)=\frac{1}{2^n}\sum_k\sum_i\bra{k}\ket{i}\bra{i}\otimes\ket{i}\bra{i}\ket{k}$
 
-          If $i\neq k$, $\bra{k}\ket{i}=0$, if $i\neq j$, $\bra{i}\ket{j}=0$, if $j\neq k$, $\bra{j}\ket{k}=0$
+          If $i\neq k$, $\bra{k}\ket{i}=0$
 
 
-          $Tr_B(\rho)=\frac{1}{2^n}\sum_i\bra{i}\ket{i}\otimes\ket{i}\bra{i}\otimes\bra{i}\ket{k}
+          $Tr_B(\rho)=\frac{1}{2^n}\sum_i\bra{i}\ket{i}\otimes\ket{i}\bra{i}\otimes\bra{i}\ket{i}
               \\=\frac{1}{2^n}\sum_i\ket{i}\bra{i}
               \\=\frac{I_n}{2^n}
           $
     \item What is the reduced state on the first $k$ qubits of A and B (i.e. tracing out the last $n - k$ qubits on each side)?(4 points)
 
-          Answer: $\rho_{0 to k} = Tr_{\rho_{k to n}}(\rho_{AB}) = \sum_{m=0}^{n-k}\bra{m}\ket{\Psi_n}\bra{\Psi_n}\ket{m}
-              \\=\frac{1}{2^n}\sum_{m=0}^{n-k}\sum_i\sum_j\bra{m}\ket{i}_A\otimes\ket{i}_B\bra{j}_A\otimes\bra{j}_B\ket{m}
+          Answer: $\rho_{0 \to k-1} = Tr_{\rho_{k \to n-1}}(\rho_{AB}) = \sum_{m=k}^{n-1}\bra{m}\ket{\Psi_n}\bra{\Psi_n}\ket{m}
+              \\=\frac{1}{2^n}\sum_{m=k}^{n-1}\sum_i\bra{m}\ket{i}_A\otimes\ket{i}_B\bra{i}_A\otimes\bra{i}_B\ket{m}
           $
 
-          if $m\neq i$ or $m\neq j$, $\bra{m}\ket{i}=0$ or $\bra{m}\ket{j}=0$
+          if $m\neq i$, $\bra{m}\ket{i}=0$.
 
-          So, $\rho_{0 to k}=\frac{1}{2^n}\sum_{i=0}^{n-k}\ket{i}\bra{i}=\frac{I_{n-k}}{2^n}$
+          So, $\rho_{0 \to k}=\frac{1}{2^n}\sum_{i=k}^{n-1}\ket{i}\bra{i}=\frac{I_{n-k-1}}{2^n}$
 \end{enumerate}
 \section{EXERCISE 3: EVOLUTIONS AND KRAUS OPERATORS}
 \begin{enumerate}
@@ -405,6 +270,11 @@ Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}
           $C(\ket{1}\bra{1})=(1-p)\ket{0}\bra{0}\ket{1}\bra{1}\ket{0}\bra{0}+p\ket{1}\bra{0}\ket{1}\bra{1}\ket{0}\bra{1}+p\ket{0}\bra{1}\ket{1}\bra{1}\ket{1}\bra{0}+(1-p)\ket{1}\bra{1}\ket{1}\bra{1}\ket{1}\bra{1}
               \\=p\ket{0}\bra{0}+(1-p)\ket{1}\bra{1}$
 
+          Assume a coherent state $\rho=\frac{1}{2}(\ket{0}\bra{0}+\ket{0}\bra{1}+\ket{1}\bra{0}+\ket{1}\bra{1})$
+
+
+          So, this Kraus operator representation of the channel is valid, and it maps the classical states $\ket{0}$ and $\ket{1}$ correctly.
+          $C(\rho)=\sum_iE_i\rho E_i^\dagger=\frac{1}{2}((1-p)\ket{0}\bra{0}+p\ket{0}\bra{0}+p\ket{1}\bra{1}+(1-p)\ket{1}\bra{1})=\frac{1}{2}\ket{0}\bra{0}+\frac{1}{2}\ket{1}\bra{1}$
     \item Apply the classical channel C to a general quantum state $\rho = \sum_{i,j} \alpha_{i,j} \ket{i}\bra{j}$ (using the Kraus operators found above) and demonstrate that the off-diagonal terms vanish.
 
           $C(\rho)=\sum_k E_k\rho E_k^\dagger
@@ -423,8 +293,17 @@ Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}
 
     \item Can you think of a quantum version of the channel, which operates correctly on the coherent (off-diagonal) terms of $\rho$? Write it down and show that it is valid and correct. Hint: apply the new set of Kraus operators first to the classical states $\ket{0}$ and $\ket{1}$ to check correctness. Then, apply it to $\rho$ and show that it preserves coherence. (8 points)
 
+          Answer: $\{E_0,E_1\}=\{\ket{0}\bra{1},\ket{1}\bra{0}\}$
 
+          $\sum_i E_i^\dagger E_i=\ket{1}\braket{0|0}\bra{1}+\ket{0}\braket{1|1}\bra{0}=\ket{1}\bra{1}+\ket{0}\bra{0}=I$
 
+          $C(\ket{0}\bra{0})=E_0\ket{0}\bra{0}E_0^\dagger+E_1\ket{0}\bra{0}E_1^\dagger=\ket{1}\bra{1}$
+
+          $C(\ket{1}\bra{1})=E_0\ket{1}\bra{1}E_0^\dagger+E_1\ket{1}\bra{1}E_1^\dagger=\ket{0}\bra{0}$
+
+          For a coherent state $\rho=\frac{1}{2}(\ket{0}\bra{0}+\ket{0}\bra{1}+\ket{1}\bra{0}+\ket{1}\bra{1})$
+
+          $C(\rho)=\sum_i E_i\rho E_i^\dagger=\ket{0}\bra{1}\frac{1}{2}(\ket{0}\bra{0}+\ket{0}\bra{1}+\ket{1}\bra{0}+\ket{1}\bra{1})\ket{1}\bra{0}+\ket{1}\bra{0}\frac{1}{2}(\ket{0}\bra{0}+\ket{0}\bra{1}+\ket{1}\bra{0}+\ket{1}\bra{1})\ket{0}\bra{1}$
 \end{enumerate}
 
 \section{EXERCISE 4: THE GATE MODEL}
@@ -453,12 +332,12 @@ The initial states are the two qubits $|+\rangle$ and $|-\rangle$. The upper wir
           Answer: The possible measurement outcomes of $M$ are $\ket{01}$ and $\ket{11}$.
 
           $P(\ket{01})=|\frac{1}{\sqrt{2}}\bra{01}{\ket{10}+\ket{11}}|^2
-          =\frac{1}{2}
+              =\frac{1}{2}
           $
 
           $P(\ket{11})=|\frac{1}{\sqrt{2}}\bra{11}{\ket{10}+\ket{11}}|^2
-            =\frac{1}{2}
-            $
+              =\frac{1}{2}
+          $
 
           The probability of $\ket{01}$ is $\frac{1}{2}$ and the probability of $\ket{11}$ is $\frac{1}{2}$.
 
@@ -468,37 +347,37 @@ The initial states are the two qubits $|+\rangle$ and $|-\rangle$. The upper wir
     \item Are the following two circuits the same? How about when we replace Z with X? (6 points)
 
 
-    Answer:
-    Assume the input of the upper wire is $\ket{\psi}_A$ and the input of the lower wire is $\ket{\psi}_B$.
+          Answer:
+          Assume the input of the upper wire is $\ket{\psi}_A$ and the input of the lower wire is $\ket{\psi}_B$.
 
-    When $\ket{\psi}_A=0$, $\ket{\psi}_B=0$, for the first circuit, the upper output is $\ket{0}$, and Z gate is not activated, the lower output is $\ket{0}$. For the second circuit, the output of lower wire is $\ket{0}$, the Z gate is not activated, the output of upper wire is $\ket{0}$.
+          When $\ket{\psi}_A=0$, $\ket{\psi}_B=0$, for the first circuit, the upper output is $\ket{0}$, and Z gate is not activated, the lower output is $\ket{0}$. For the second circuit, the output of lower wire is $\ket{0}$, the Z gate is not activated, the output of upper wire is $\ket{0}$.
 
-    When $\ket{\psi}_A=0$, $\ket{\psi}_B=1$, for the first circuit, the upper output is $\ket{0}$, and Z gate is not activated, the lower output is $\ket{1}$. For the second circuit, the output of lower wire is $\ket{1}$, the Z gate is activated, the output of upper wire is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{0}=\ket{0}$.
+          When $\ket{\psi}_A=0$, $\ket{\psi}_B=1$, for the first circuit, the upper output is $\ket{0}$, and Z gate is not activated, the lower output is $\ket{1}$. For the second circuit, the output of lower wire is $\ket{1}$, the Z gate is activated, the output of upper wire is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{0}=\ket{0}$.
 
-    When $\ket{\psi}_A=1$, $\ket{\psi}_B=0$, for the first circuit, the upper output is $\ket{1}$, and Z gate is activated, the lower output is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{0}=\ket{0}$. For the second circuit, the output of lower wire is $\ket{0}$, the Z gate is activated, the output of upper wire is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{1}=\ket{1}$.
-    
-    When $\ket{\psi}_A=1$, $\ket{\psi}_B=1$, for the first circuit, the upper output is $\ket{1}$, and Z gate is activated, the lower output is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{1}=\ket{1}$. For the second circuit, the output of lower wire is $\ket{1}$, the Z gate is activated, the output of upper wire is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{1}=\ket{1}$. 
-    
-    So for gate Z, the two circuits are the same.
+          When $\ket{\psi}_A=1$, $\ket{\psi}_B=0$, for the first circuit, the upper output is $\ket{1}$, and Z gate is activated, the lower output is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{0}=\ket{0}$. For the second circuit, the output of lower wire is $\ket{0}$, the Z gate is activated, the output of upper wire is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{1}=\ket{1}$.
 
-    If we replace Z with X, the two circuits are not the same.
-    When $\ket{\psi}_A=0$, $\ket{\psi}_B=0$, the output of the upper wire of the first circuit is $\ket{0}$ and the output of the lower wire is $\ket{0}$. The output of the upper wire of the second circuit is $\ket{0}$ and the output of the lower wire is $\ket{0}$.
-    When $\ket{\psi}_A=0$, $\ket{\psi}_B=1$, the output of the upper wire of the first circuit is $\ket{0}$ and the output of the lower wire is $\ket{1}$. The output of the upper wire of the second circuit is $\ket{0}$ and the output of the lower wire is $\ket{1}$.
-    When $\ket{\psi}_A=1$, $\ket{\psi}_B=0$, the output of the upper wire of the first circuit is $\ket{1}$ and the output of the lower wire is $\ket{1}$. The output of the upper wire of the second circuit is $\ket{0}$ and the output of the lower wire is $\ket{1}$.
-    When $\ket{\psi}_A=1$, $\ket{\psi}_B=1$, the output of the upper wire of the first circuit is $\ket{1}$ and the output of the lower wire is $\ket{0}$. The output of the upper wire of the second circuit is $\ket{0}$ and the output of the lower wire is $\ket{1}$.
+          When $\ket{\psi}_A=1$, $\ket{\psi}_B=1$, for the first circuit, the upper output is $\ket{1}$, and Z gate is activated, the lower output is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{1}=\ket{1}$. For the second circuit, the output of lower wire is $\ket{1}$, the Z gate is activated, the output of upper wire is $(\ket{0}\bra{0}-\ket{1}\bra{1})\ket{1}=\ket{1}$.
 
-    So for gate X, the two circuits are not the same.
+          So for gate Z, the two circuits are the same.
+
+          If we replace Z with X, the two circuits are not the same.
+          When $\ket{\psi}_A=0$, $\ket{\psi}_B=0$, the output of the upper wire of the first circuit is $\ket{0}$ and the output of the lower wire is $\ket{0}$. The output of the upper wire of the second circuit is $\ket{0}$ and the output of the lower wire is $\ket{0}$.
+          When $\ket{\psi}_A=0$, $\ket{\psi}_B=1$, the output of the upper wire of the first circuit is $\ket{0}$ and the output of the lower wire is $\ket{1}$. The output of the upper wire of the second circuit is $\ket{0}$ and the output of the lower wire is $\ket{1}$.
+          When $\ket{\psi}_A=1$, $\ket{\psi}_B=0$, the output of the upper wire of the first circuit is $\ket{1}$ and the output of the lower wire is $\ket{1}$. The output of the upper wire of the second circuit is $\ket{0}$ and the output of the lower wire is $\ket{1}$.
+          When $\ket{\psi}_A=1$, $\ket{\psi}_B=1$, the output of the upper wire of the first circuit is $\ket{1}$ and the output of the lower wire is $\ket{0}$. The output of the upper wire of the second circuit is $\ket{0}$ and the output of the lower wire is $\ket{1}$.
+
+          So for gate X, the two circuits are not the same.
 
     \item The SWAP gate acts on a quantum state $\ket{i} \otimes \ket{j}$ as $\text{SWAP} \ket{ij} = \ket{ji}$. Show that the following circuit implements the SWAP gate (the symbol L is often used in the literature for the X gate). (8 points)
-    
-    Answer: Assume the input of the upper wire is $\ket{\psi}_A$ and the input of the lower wire is $\ket{\psi}_B$.
-    
-    When $\ket{\psi}_A=0$, $\ket{\psi}_B=0$, the output of the upper wire is $\ket{0}$ and the output of the lower wire is $\ket{0}$.
-    
-    When $\ket{\psi}_A=0$, $\ket{\psi}_B=1$, the output of the upper wire is $\ket{1}$ and the output of the lower wire is $\ket{0}$.
-    
-    When $\ket{\psi}_A=1$, $\ket{\psi}_B=0$, the output of the upper wire is $\ket{0}$ and the output of the lower wire is $\ket{1}$.
-    
-    When $\ket{\psi}_A=1$, $\ket{\psi}_B=1$, the output of the upper wire is $\ket{1}$ and the output of the lower wire is $\ket{1}$.
+
+          Answer: Assume the input of the upper wire is $\ket{\psi}_A$ and the input of the lower wire is $\ket{\psi}_B$.
+
+          When $\ket{\psi}_A=0$, $\ket{\psi}_B=0$, the output of the upper wire is $\ket{0}$ and the output of the lower wire is $\ket{0}$.
+
+          When $\ket{\psi}_A=0$, $\ket{\psi}_B=1$, the output of the upper wire is $\ket{1}$ and the output of the lower wire is $\ket{0}$.
+
+          When $\ket{\psi}_A=1$, $\ket{\psi}_B=0$, the output of the upper wire is $\ket{0}$ and the output of the lower wire is $\ket{1}$.
+
+          When $\ket{\psi}_A=1$, $\ket{\psi}_B=1$, the output of the upper wire is $\ket{1}$ and the output of the lower wire is $\ket{1}$.
 \end{enumerate}
 \end{document}
