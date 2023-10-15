@@ -76,7 +76,15 @@ We saw in the lectures that given a multi-partite state, we obtain the state of 
 
     \item In the last assignment we found the probability to find a state $\ket{\gamma}$ in another state $\ket{\delta}$ to be $p = |\braket{\gamma|\delta}|^2$. Show here that this expression coincides with $\mathrm{Tr}(\gamma\delta)$, for $\gamma = \ket{\gamma}\bra{\gamma}$ and $\delta = \ket{\delta}\bra{\delta}$. Hint: Apply the trace formula $\mathrm{Tr}(A) = \sum_i \braket{i|A|i}$ from the lectures. Use a suitable basis of your choice. (4 points)
 
-          Answer: $\mathrm{Tr}(\gamma\delta)
+          Answer:
+
+          Assume $\ket{\gamma}=\alpha_0\ket{0}+\alpha_1\ket{1}$ and $\ket{\delta}=\beta_0\ket{0}+\beta_1\ket{1}$
+
+
+          $\braket{\gamma|\delta}=\alpha_0^*\beta_0+\alpha_1^*\beta_1$
+
+
+          $\mathrm{Tr}(\gamma\delta)
               \\= \mathrm{Tr}(\ket{\gamma}\bra{\gamma}\ket{\delta}\bra{\delta})
               \\= \mathrm{Tr}(\ket{\gamma}\braket{\gamma|\delta}\bra{\delta})
               \\= \mathrm{Tr}(\braket{\gamma|\delta}\ket{\gamma}\bra{\delta})
@@ -84,9 +92,10 @@ We saw in the lectures that given a multi-partite state, we obtain the state of 
               \\= \braket{\gamma|\delta}\sum_i\braket{i|\ket{\gamma}\bra{\delta}|i}
               \\= \braket{\gamma|\delta}(\bra{0}\ket{\gamma}\bra{\delta}\ket{0}+\bra{1}\ket{\gamma}\bra{\delta}\ket{1})
               \\= \braket{\gamma|\delta}(\braket{0|\gamma}\braket{\delta|0}+\braket{1|\gamma}\braket{\delta|1})
-              \\= \braket{\gamma|\delta}(\braket{\gamma|0}\braket{0|\delta}+\braket{\gamma|1}\braket{1|\delta})
-              \\= \braket{\gamma|\delta}(\braket{\gamma|\delta})
-              \\= |\braket{\gamma|\delta}|^2$
+              \\= \braket{\gamma|\delta}(\alpha_0^*\beta_0+\alpha_1^*\beta_1)
+              \\= (\alpha_0^*\beta_0+\alpha_1^*\beta_1)(\alpha_0^*\beta_0+\alpha_1^*\beta_1)
+              \\= (\alpha_0^*\beta_0+\alpha_1^*\beta_1)^2
+              \\=|\braket{\gamma|\delta}|^2$
 
           So, $\mathrm{Tr}(\gamma\delta) = |\braket{\gamma|\delta}|^2 = p$.
 
@@ -251,7 +260,11 @@ Let us look at the density operator $\rho_{AB} = |\Phi^{-}\rangle\langle\Phi^{-}
 
           if $m\neq i$, $\bra{m}\ket{i}=0$.
 
-          So, $\rho_{0 \to k}=\frac{1}{2^n}\sum_{i=k}^{n-1}\ket{i}\bra{i}=\frac{I_{n-k-1}}{2^n}$
+          So, $\rho_{0 \to k-1}=\frac{1}{2^n}\sum_{i=k}^{n-1}\ket{i}\bra{i}=\frac{I_{n-1-k+1}}{2^n}=\frac{n-k}{2^n}$
+
+          $Tr(\rho_{0 \to k-1})=\frac{n-k}{2^n}$
+
+          So, the reduced state $\rho'=\sum_i=\frac{\sum_{i=0}^{k-1}\sum_{j=0}^{k-1}\ket{i}\bra{i}\ket{i}\bra{j}}{1-\frac{n-k}{2^n}}$
 \end{enumerate}
 
 \section{EXERCISE 3: EVOLUTIONS AND KRAUS OPERATORS}
