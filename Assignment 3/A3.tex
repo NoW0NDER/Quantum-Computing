@@ -1,0 +1,523 @@
+\documentclass[12pt]{article}
+
+% 导入宏包
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{braket} % braket宏包
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% % 设置页面边距
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+% 设置页眉页脚
+% \pagestyle{fancy}
+% \fancyhf{}
+
+% 设置代码块样式
+\lstset{
+    basicstyle=\small\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    breaklines=true,
+    breakatwhitespace=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    frame=single,
+    rulecolor=\color{black},
+    backgroundcolor=\color{white},
+    captionpos=b,
+    tabsize=4,
+    language=Python
+}
+
+% 定义新命令
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\rank}{\mathrm{rank}}
+\newcommand{\proj}{\mathrm{proj}}
+\newcommand{\sgn}{\mathrm{sgn}}
+\newcommand{\Span}{\mathrm{span}}
+\newcommand{\im}{\mathrm{im}}
+\newcommand{\kernel}{\mathrm{ker}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Inn}{\mathrm{Inn}}
+\newcommand{\Out}{\mathrm{Out}}
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\Gal}{\mathrm{Gal}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\inner}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\diff}{\,\mathrm{d}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\defeq}{\stackrel{\mathrm{def}}{=}}
+
+% 设置标题
+\title{\textbf{Assignment 3: Quantum computing}}
+\author{\textbf{Wang Dingrui}}
+\date{\textbf{\today}}
+
+% 正文部分
+\begin{document}
+
+\maketitle
+
+\section{EXERCISE 1: CLASSICAL MIXTURE VS COHERENT SUPERPOSITION}
+Let's assume we have two states, state 1 and state 2. There is a fundamental conceptual difference for a system to be in a coherent superposition of two distinct states or to be in a classical mixture of them. In the former case, the system is, at the same time, both in state 1 and in state 2, while in the latter the system is either in state 1 or in state 2. This conceptual difference is then made manifest by a different mathematical representation.
+\begin{enumerate}
+    \item Write the pure qubit state $\rho = |\psi\rangle\langle\psi|$ representing a coherent superposition of state $|0\rangle$ and state $|1\rangle$ with generic amplitudes $\alpha$ and $\beta$, both in bra-ket notation and in matrix form. (2 points)
+
+          \textbf{Solution:}
+          $\ket{\psi} = \alpha\ket{0}+\beta\ket{1}$
+
+          $\rho = \ket{\psi}\bra{\psi} =
+              (\alpha\ket{0}+\beta\ket{1})(\alpha^*\bra{0}+\beta^*\bra{1})=\alpha\alpha^*\ket{0}\bra{0}+
+              \alpha\beta^*\ket{0}\bra{1}+\beta\alpha^*\ket{1}\bra{0}+\beta\beta^*\ket{1}\bra{1}=
+              \begin{pmatrix}
+                  \alpha \\
+                  \beta
+              \end{pmatrix}\begin{pmatrix}
+                  \alpha^* & \beta^*
+              \end{pmatrix} = \begin{pmatrix}
+                  \alpha\alpha^* & \alpha\beta^* \\
+                  \beta\alpha^*  & \beta\beta^*
+              \end{pmatrix}
+              =\begin{pmatrix}
+                  |\alpha|^2    & \alpha\beta^* \\
+                  \beta\alpha^* & |\beta|^2
+              \end{pmatrix}
+          $
+
+    \item Write the state $\sigma$ representing a classical mixture of state $\ket{0}$ and state $\ket{1}$ with probabilities $|\alpha|^2$ and $|\beta|^2$, both in bra-ket notation and in matrix form. (2 points)
+
+          \textbf{Solution:}
+          $\sigma = |\alpha|^2\ket{0}\bra{0}+|\beta|^2\ket{1}\bra{1}=
+              \begin{pmatrix}
+                  |\alpha|^2 & 0         \\
+                  0          & |\beta|^2
+              \end{pmatrix}$
+
+    \item Given the POVM $M := \{M_0, M_1\}$, where $M_i = |i\rangle\langle i|$ for $i = 0, 1$, is it possible to distinguish the two states $\rho$ and $\sigma$ based on the outcome probabilities of the above measurement $M$? (4 points)
+
+
+          \textbf{Solution:}
+          $p_{\rho0}=Tr(M_0\rho)=Tr(\ket{0}\bra{0}(\alpha\alpha^*\ket{0}\bra{0}+
+              \alpha\beta^*\ket{0}\bra{1}+\beta\alpha^*\ket{1}\bra{0}+\beta\beta^*\ket{1}\bra{1}))=Tr(\alpha\alpha^*\ket{0}\bra{0}+\alpha\beta^*\ket{0}\bra{1})=\alpha\alpha^*=|\alpha|^2$
+
+          $p_{\rho1} = Tr(M_1\rho) = Tr(\ket{1}\bra{1}(\alpha\alpha^*\ket{0}\bra{0}+
+              \alpha\beta^*\ket{0}\bra{1}+\beta\alpha^*\ket{1}\bra{0}+\beta\beta^*\ket{1}\bra{1})) = Tr(\beta\alpha^*\ket{1}\bra{0}+\beta\beta^*\ket{1}\bra{1}) = \beta\beta^* = |\beta|^2$
+
+          $p_{\sigma0} = Tr(M_0\sigma) = Tr(\ket{0}\bra{0}(|\alpha|^2\ket{0}\bra{0}+|\beta|^2\ket{1}\bra{1})) = Tr(|\alpha|^2\ket{0}\bra{0}) = |\alpha|^2$
+
+          $p_{\sigma1} = Tr(M_1\sigma) = Tr(\ket{1}\bra{1}(|\alpha|^2\ket{0}\bra{0}+|\beta|^2\ket{1}\bra{1})) = Tr(|\beta|^2\ket{1}\bra{1}) = |\beta|^2$
+
+          So, it is impossible to distinguish the two states $\rho$ and $\sigma$ based on the outcome probabilities of the above measurement $M$.
+
+          \vspace{\dimexpr\itemsep+\baselineskip}
+\end{enumerate}
+
+A quantum physicist in a laboratory cannot directly read the mathematical representation of a quantum state. In fact, he needs to perform experiments, i.e. measurements, to obtain the state of a system. However, it looks like it is not straightforward to distinguish between $\rho$ and $\sigma$, at least not through the measurement $M$ in the computational basis.
+
+\begin{enumerate}[start=4]
+    \item Given the state $\ket{\phi} := \gamma\ket{0}+\delta\ket{1}$, calculate the overlap squared between $\ket{\phi}$ and $\ket{\psi}$, namely $|\langle\phi|\psi\rangle|^2$. For which values of $\gamma$ and $\delta$ is there the maximum overlap? (4 points)
+
+          \textbf{Solution:}
+          $\braket{\phi|\psi} = (\gamma^*\bra{0}+\sigma^*\bra{0})(\alpha\ket{0}+\beta\ket{1}) = \gamma^*\alpha+\delta^*\beta$
+
+          $|\braket{\phi|\psi}|^2 = (\gamma^*\alpha+\delta^*\beta)(\gamma\alpha^*+\delta\beta^*) = |\gamma|^2|\alpha|^2+|\delta|^2|\beta|^2+\gamma^*\delta\alpha\beta^*+\gamma\delta^*\alpha^*\beta$
+
+          To get the maximum overlap, we have $\gamma=\alpha$ and $\delta=\beta$.
+    \item Build a two-outcome measurement $N = \{N_0, N_1\}$ such that the probability of having outcome "0" on $\rho$ is equal to 1 and the probability of having outcome "1" on $\rho$ is equal to 0. Express the POVM elements $N_0$ and $N_1$ explicitly in bra-ket notation and in matrix form. Hint: A measurement is a POVM, namely a collection of positive semi-definite hermitian matrices, that sum up to the identity. Density operators/matrices are an example of matrices that are positive and semi-definite. (6 points)
+
+          \textbf{Solution:}
+
+          $N_0 = \rho, N_1 = I - \rho$
+
+          $N_0 = \ket{\psi}\bra{\psi} =  \begin{pmatrix}
+                  \alpha\alpha^* & \alpha\beta^* \\
+                  \beta\alpha^*  & \beta\beta^*
+              \end{pmatrix} = N_0^{\dagger}$
+
+          $N_1 = I - N_0 = \begin{pmatrix}
+                  1-\alpha\alpha^* & -\alpha\beta^* \\
+                  -\beta\alpha^*   & 1-\beta\beta^*
+              \end{pmatrix}=N_1^{\dagger}$
+
+
+          $N_0+N_1 = I$
+
+          So, $N$ is a POVM.
+
+
+
+    \item Suppose that our quantum physicist is given many copies of either state $\rho$ or state $\sigma$. What can he do to find out if he had received many copies of state $\rho$ or of state $\sigma$? Hint: The assumption of having many copies is crucial! There is no way he can do it in a single shot. (4 points)
+
+          \textbf{Solution:}
+
+
+          If perform the measurement $N$ on $\sigma$, the probability of getting the outcome "0" is $|\alpha|^2$, and the probability of getting the outcome "1" is $|\beta|^2$. If perform the measurement $N$ on $\rho$, the probability of getting the outcome "0" is $|\alpha|^2+|\beta|^2=1$, and the probability of getting the outcome "1" is 0. So, if he only gets the outcome "0", he can assume that he had received many copies of state $\rho$, but he can't conclude. If he gets the outcome "1" even if only once, he can conclude that he had received many copies of state $\sigma$.
+
+
+
+\end{enumerate}
+
+\section{EXERCISE 2: QUANTUM FOURIER TRANSFORM}
+
+We defined the Quantum Fourier Transform (QFT) as the operator $U_{QFT} = \frac{1}{\sqrt{N}} \sum_{m,n=0}^{N-1} e^{\frac{2\pi i mn}{N}} |n\rangle\langle m|$, which transforms a state as $|x\rangle \rightarrow U_{QFT}|x\rangle = |y\rangle$.
+
+\begin{enumerate}
+    \item Compute explicitly the QFT of the states $\ket{0}$, $\ket{1}$, and $\ket{\circlearrowright} = \frac{1}{\sqrt{2}}(\ket{0}+i\ket{1})$? Express the answer in the computational basis $\{\ket{0}, \ket{1}\}$. (6 points)
+
+          \textbf{Solution:}
+
+          $U_{QFT}\ket{0} = \frac{1}{\sqrt{N}}\sum_{m,n=0}^{N-1}e^{\frac{2\pi imn}{2}}\ket{n}\bra{m}\ket{0}=\frac{1}{\sqrt{2}}\sum_{n=0}^{1}e^{\frac{2\pi i\times0\times n}{2}}\ket{n}=\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})$
+
+          $U_{QFT}\ket{1} = \frac{1}{\sqrt{N}}\sum_{m,n=0}^{N-1}e^{\frac{2\pi imn}{2}}\ket{n}\bra{m}\ket{1}=\frac{1}{\sqrt{2}}\sum_{n=0}^{1}e^{\frac{2\pi i\times1\times n}{2}}\ket{n}=\frac{1}{\sqrt{2}}(\ket{0}-\ket{1})$
+
+          $U_{QFT}\ket{\circlearrowright} = U_{QFT}\frac{1}{\sqrt{2}}(\ket{0}+i\ket{1})=\frac{1}{\sqrt{2}}\sum_{m,n=0}^{1}e^{\pi imn}\ket{n}\bra{m}\frac{1}{\sqrt{2}}(\ket{0}+i\ket{1})=\frac{1}{2}\sum_{n=0}^{1}e^{\pi in}\ket{n}+\frac{i}{2}\sum_{n=0}^{1}e^{\pi in}\ket{n}=\frac{1}{2}(\ket{0}+\ket{1})+\frac{i}{2}(\ket{0}-\ket{1})=\frac{1+i}{2}\ket{0}+\frac{1-i}{2}\ket{1}$
+
+    \item Compute the quantum Fourier transform of the n-qubit state $\ket{00...0}$. Simplify your expression.
+
+          \textbf{Solution:}
+
+          $U_{QFT}\ket{00...0} = \frac{1}{\sqrt{2^n}}\sum_{j,k=0}^{2^n-1}e^{2\pi i\frac{jk}{2^n}}\ket{j}\bra{k}\ket{00...0}=\frac{1}{\sqrt{2^n}}\sum_j^{2^n-1}\ket{j}$
+
+    \item Write the explicit matrix of the QFT for transforming (i) one qubit, and (ii) two qubits. Which gate does the single-qubit matrix correspond to? Hint: the following identities might be useful. $e^{2\pi i} = 1$, $e^{\pi i} = -1$, $e^{\pi i/2} = i$. (6 points)
+
+          \textbf{Solution:}
+
+          (i) $U_{QFT} = \frac{1}{\sqrt{2}}\sum_{m,n=0}^{1}e^{\frac{2\pi imn}{2}}\ket{n}\bra{m}=\frac{1}{\sqrt{2}}\sum_{m,n=0}e^{\pi imn}\ket{n}\bra{m}=\frac{1}{\sqrt{2}}\begin{pmatrix}
+                  1 & 1  \\
+                  1 & -1
+              \end{pmatrix}$
+
+          (ii) $U_{QFT} = \frac{1}{\sqrt{4}}\sum_{m,n=0}^{3}e^{\frac{2\pi imn}{4}}\ket{n}\bra{m}=\frac{1}{2}\sum_{m,n=0}^{3}e^{\frac{\pi imn}{2}}\ket{n}\bra{m}=\frac{1}{2}\begin{pmatrix}
+                  1 & 1  & 1  & 1  \\
+                  1 & i  & -1 & -i \\
+                  1 & -1 & 1  & -1 \\
+                  1 & -i & -1 & i
+              \end{pmatrix}$
+\end{enumerate}
+
+Next, we look at the link between QFT and quantum phase estimation. In the lectures, we saw that the QFT acts on a state $|j\rangle$, $j \in \{0, 1, ..., 2^{n} - 1\}$, as
+
+$$
+    QFT|j\rangle = \frac{1}{\sqrt{2^n}}(|0\rangle + e^{2\pi i(0.j_n)}|1\rangle) \otimes (|0\rangle + e^{2\pi i(0.j_{n-1}j_n)}|1\rangle) \otimes ... \otimes (|0\rangle + e^{2\pi i(0.j_1j_2...j_n)}|1\rangle).
+$$
+
+\begin{enumerate}[start=4]
+    \item We want to estimate the eigenvalue $\lambda = e^{2\pi i\varphi}$, with $\varphi < 1$. Assume that $\varphi$ has an exact representation in binary with $t$ bits. Prove explicitly (shortcuts will result in deduction of points) the last step of quantum phase estimation, namely (8 points)
+          $$
+              QFT^{-1}\frac{1}{\sqrt{2^t}}\sum_{k=0}^{2^t-1}e^{2\pi i\varphi k}|k\rangle = |\varphi_1\varphi_2...\varphi_t\rangle.
+          $$
+
+
+          \textbf{Solution:}
+
+          $QFT\ket{\varphi}
+              \\=\frac{1}{\sqrt{2^t}}(\ket{0}+e^{2\pi i(0.\varphi_t)}\ket{1})\otimes \frac{1}{\sqrt{2^t}}(\ket{0}+e^{2\pi i(0.\varphi_{t-1}\varphi_{t})}\ket{1}) \otimes ... \otimes \frac{1}{\sqrt{2^t}}(\ket{0}+e^{2\pi i(0.\varphi_{1}\varphi_{2}...\varphi_{t})}\ket{1})
+              \\=\frac{1}{\sqrt{2^t}}(\ket{0...0}+(e^{2\pi i(0.\varphi_t+0.\varphi_{t-1}\varphi_{t}+...+0.\varphi_{1}\varphi_{2}...\varphi_{t})})\ket{1...1})
+          $
+\end{enumerate}
+
+\section{EXERCISE 3: QUANTUM TELEPORTATION (26 POINTS)}
+
+Alice wants to send a state $\ket{\psi}_S = \alpha\ket{0}_S + \beta\ket{1}_S$ to Bob, who lives on Mars. Yet, shipping a qubit all the way over with a space rocket would be too expensive. In this exercise we will explore one of the most striking phenomena of quantum mechanics: teleportation. More precisely, we show that if Alice and Bob share an entangled state (for instance, they prepared the state and when Bob took the rocket to Mars he took his particle of the entangled state pair with him), Alice can perfectly transfer the state $\ket{\psi}_S$ by sending two classical bits.
+
+\begin{enumerate}
+    \item Let Alice and Bob share the maximally entangled state such that the overall state reads $|\rho\rangle = |\psi\rangle_S \otimes \frac{1}{\sqrt{2}}(|0\rangle_A|0\rangle_B + |1\rangle_A|1\rangle_B)$. First, Alice performs a measurement in her laboratory (on the system $S$ and $A$), with the POVM elements $\{M_i\}_{i=0}^3$, where
+          \begin{align*}
+              M_0 & = |\phi_0\rangle\langle\phi_0|, \quad |\phi_0\rangle = \frac{1}{\sqrt{2}}(|0\rangle_S|0\rangle_A + |1\rangle_S|1\rangle_A)  \\
+              M_1 & = |\phi_1\rangle\langle\phi_1|, \quad |\phi_1\rangle = \frac{1}{\sqrt{2}}(|0\rangle_S|0\rangle_A - |1\rangle_S|1\rangle_A)  \\
+              M_2 & = |\phi_2\rangle\langle\phi_2|, \quad |\phi_2\rangle = \frac{1}{\sqrt{2}}(|0\rangle_S|1\rangle_A + |1\rangle_S|0\rangle_A)  \\
+              M_3 & = |\phi_3\rangle\langle\phi_3|, \quad |\phi_3\rangle = \frac{1}{\sqrt{2}}(|0\rangle_S|1\rangle_A - |1\rangle_S|0\rangle_A).
+          \end{align*}
+          If Alice measures the outcome "0", corresponding to the POVM element $M_0$, what is the state after the measurement? The measurement is projective. (6 points)
+
+          \textbf{Solution:}
+
+
+          $\ket{\rho} = (\alpha\ket{0}_S+\beta\ket{1}_S)\otimes\frac{1}{\sqrt{2}}(\ket{00}_{AB}+\ket{11}_{AB})
+              =\frac{1}{\sqrt{2}}(\alpha\ket{000}_{SAB}+\alpha\ket{011}_{SAB}+\beta\ket{100}_{SAB}+\beta\ket{111}_{SAB})$
+
+          $\bra{\rho} = (\alpha^*\bra{0}_S+\beta^*\bra{1}_S)\otimes\frac{1}{\sqrt{2}}(\bra{00}_{AB}+\bra{11}_{AB})
+              =\frac{1}{\sqrt{2}}(\alpha^*\bra{000}_{SAB}+\alpha^*\bra{011}_{SAB}+\beta^*\bra{100}_{SAB}+\beta^*\bra{111}_{SAB})$
+
+          $M_0 = \ket{\phi_0}\bra{\phi_0} = \frac{1}{2}(\ket{00}_{SA}+\ket{11}_{SA})(\bra{00}_{SA}+\bra{11}_{SA})$
+
+
+
+          $
+              \sqrt{M_0}\rho \sqrt{M_0^{\dagger}} = M_0\rho M_0^{\dagger}=M_0\rho M_0                                                                                                                            \\
+              = \frac{1}{8}(\ket{00}_{SA}+\ket{11}_{SA})(\bra{00}_{SA}+\bra{11}_{SA})(\alpha\ket{000}_{SAB}+\alpha\ket{011}_{SAB}+\beta\ket{100}_{SAB}+\beta\ket{111}_{SAB}) \\
+              (\bra{000}_{SA}+\bra{011}_{SA}+\bra{100}_{SA}+\bra{111}_{SA})(\ket{00}_{SA}+\ket{11}_{SA})(\bra{00}_{SA}+\bra{11}_{SA})                                          \\
+              = \frac{1}{8}(\ket{00}_{SA}+\ket{11}_{SA})(\alpha\ket{0}_B+\beta\ket{1}_B)(\alpha^*\bra{0}_B+\beta^*\bra{1}_B)(\bra{00}_{SA}+\bra{11}_{SA})                          \\
+              =\frac{1}{4}\ket{\phi_0}\bra{\phi_0}\otimes (\alpha\ket{0}_B+\beta\ket{1}_B)(\alpha^*\bra{0}_B+\beta^*\bra{1}_B)                                                    \\
+          $
+
+
+          %   \begin{align*}
+          %       \rho  = & \ket{\psi}\bra{\psi}\otimes\frac{1}{2}(\ket{0}_A\ket{0}_B+\ket{1}_A\ket{1}_B)(\bra{0}_A\bra{0}_B+\bra{1}_A\bra{1}_B)                                              \\
+          %       =       & \frac{1}{2}(\alpha\ket{0}_S + \beta\ket{1}_S)(\alpha^*\bra{0}_S + \beta^*\bra{1}_S)(\ket{0}_A\ket{0}_B+\ket{1}_A\ket{1}_B)(\bra{0}_A\bra{0}_B+\bra{1}_A\bra{1}_B) \\                                                          \\
+          %       =       & \frac{1}{2}(\alpha\alpha^*\ket{0}_S\bra{0}_S+\alpha\beta^*\ket{0}_S\bra{1}_S+\beta\alpha^*\ket{1}_S\bra{0}_S+\beta\beta^*\ket{1}_S\bra{1}_S)                      \\
+          %               & (\ket{0}_A\ket{0}_B+\ket{1}_A\ket{1}_B)(\bra{0}_A\bra{0}_B+\bra{1}_A\bra{1}_B)                                                                                    \\
+          %       =       & \frac{1}{2}(\alpha\alpha^*(\ket{000}_{SAB}\bra{000}_{SAB}+\ket{000}_{SAB}\bra{011}_{SAB}+\ket{011}_{SAB}\bra{000}_{SAB}+\ket{011}_{SAB}\bra{011}_{SAB})+          \\
+          %               & \alpha\beta^*(\ket{000}_{SAB}\bra{100}_{SAB}+\ket{000}_{SAB}\bra{111}_{SAB}+\ket{011}_{SAB}\bra{100}_{SAB}+\ket{011}_{SAB}\bra{111}_{SAB})+                       \\
+          %               & \beta\alpha^*(\ket{100}_{SAB}\bra{000}_{SAB}+\ket{100}_{SAB}\bra{011}_{SAB}+\ket{111}_{SAB}\bra{000}_{SAB}+\ket{111}_{SAB}\bra{011}_{SAB})+                       \\
+          %               & \beta\beta^*(\ket{100}_{SAB}\bra{100}_{SAB}+\ket{100}_{SAB}\bra{111}_{SAB}+\ket{111}_{SAB}\bra{100}_{SAB}+\ket{111}_{SAB}\bra{111}_{SAB}))                        \\
+          %   \end{align*}
+
+
+          %   \begin{align*}
+          %       M_0^\dagger=M_0 = & \frac{1}{2}(|0\rangle_S|0\rangle_A + |1\rangle_S|1\rangle_A)(|0\rangle_S|0\rangle_A + |1\rangle_S|1\rangle_A)          \\
+          %       =                 & \frac{1}{2}(\ket{00}_{SA}\bra{00}_{SA}+\ket{00}_{SA}\bra{11}_{SA}+\ket{11}_{SA}\bra{00}_SA+\ket{11}_{SA}\bra{11}_{SA}) \\
+          %   \end{align*}
+
+          \begin{align*}
+              M_0\rho = & \frac{1}{4}(                                                                                                                                 \\
+                        & |\alpha|^2(\ket{000}_{SAB}\bra{000}_{SAB}+\ket{000}_{SAB}\bra{011}_{SAB}+\ket{110}_{SAB}\bra{000}_{SAB}+\ket{110}_{SAB}\bra{011}_{SAB} )+    \\
+                        & \alpha\beta^*(\ket{000}_{SAB}\bra{100}_{SAB}+\ket{000}_{SAB}\bra{111}_{SAB}+\ket{110}_{SAB}\bra{100}_{SAB}+\ket{110}_{SAB}\bra{111}_{SAB} )+ \\
+                        & \beta\alpha^*(\ket{001}_{SAB}\bra{000}_{SAB}+\ket{001}_{SAB}\bra{011}_{SAB}+\ket{111}_{SAB}\bra{000}_{SAB}+\ket{111}_{SAB}\bra{011}_{SAB} )+ \\
+                        & |\beta|^2(\ket{001}_{SAB}\bra{100}_{SAB}+\ket{001}_{SAB}\bra{111}_{SAB}+\ket{111}_{SAB}\bra{100}_{SAB}+\ket{111}_{SAB}\bra{111}_{SAB} )      \\
+              )
+          \end{align*}
+
+          \begin{align*}
+              Tr(M_0\rho) = \frac{1}{4}(|\alpha|^2+|\beta|^2) = \frac{1}{4}
+          \end{align*}
+
+
+
+          $\frac{\sqrt{M_0}\rho \sqrt{M_0^{\dagger}}}{Tr(M_0\rho)} = \frac{\frac{1}{4}\ket{\phi_0}\bra{\phi_0}\otimes (\alpha\ket{0}_B+\beta\ket{1}_B)(\alpha^*\bra{0}_B+\beta^*\bra{1}_B) }{\frac{1}{4}}
+              \\= \ket{\phi_0}\bra{\phi_0}\otimes (\alpha\ket{0}_B+\beta\ket{1}_B)(\alpha^*\bra{0}_B+\beta^*\bra{1}_B)
+              \\=\ket{\phi_0}\bra{\phi_0}\otimes \ket{\psi}_B\bra{\psi}_B
+          $
+          %   \begin{align*}
+          %       M_0\rho M_0^{\dagger} = & \frac{1}{8}(                                                                                                                                 \\
+          %                               & |\alpha|^2(\ket{000}_{SAB}\bra{000}_{SAB}+\ket{110}_{SAB}\bra{000}_{SAB}+\ket{000}_{SAB}\bra{110}_{SAB}+\ket{110}_{SAB}\bra{110}_{SAB} )+    \\
+          %                               & \alpha\beta^*(\ket{000}_{SAB}\bra{001}_{SAB}+\ket{011}_{SAB}\bra{001}_{SAB}+\ket{000}_{SAB}\bra{111}_{SAB}+\ket{011}_{SAB}\bra{111}_{SAB} )+ \\
+          %                               & \beta\alpha^*(\ket{100}_{SAB}\bra{000}_{SAB}+\ket{111}_{SAB}\bra{000}_{SAB}+\ket{100}_{SAB}\bra{110}_{SAB}+\ket{111}_{SAB}\bra{110}_{SAB} )+ \\
+          %                               & |\beta|^2(\ket{100}_{SAB}\bra{001}_{SAB}+\ket{111}_{SAB}\bra{001}_{SAB}+\ket{100}_{SAB}\bra{111}_{SAB}+\ket{111}_{SAB}\bra{111}_{SAB} )      \\
+          %       )
+          %   \end{align*}
+
+
+
+          %   \begin{align*}
+          %       \rho_0 = & \frac{\sqrt{M_0}\rho \sqrt{M_0^\dagger}}{Tr(M_0\rho)} \\
+          %       =        & \frac{M_0\rho M_0^\dagger}{Tr(M_0\rho)}               \\
+          %       =        & \frac{
+          %           \begin{align*}
+          %                & (|\alpha|^2(\ket{000}_{SAB}\bra{000}_{SAB}+\ket{110}_{SAB}\bra{000}_{SAB}+\ket{000}_{SAB}\bra{110}_{SAB}+\ket{110}_{SAB}\bra{110}_{SAB} )+   \\
+          %                & \alpha\beta^*(\ket{000}_{SAB}\bra{001}_{SAB}+\ket{011}_{SAB}\bra{001}_{SAB}+\ket{000}_{SAB}\bra{111}_{SAB}+\ket{011}_{SAB}\bra{111}_{SAB} )+ \\
+          %                & \beta\alpha^*(\ket{100}_{SAB}\bra{000}_{SAB}+\ket{111}_{SAB}\bra{000}_{SAB}+\ket{100}_{SAB}\bra{110}_{SAB}+\ket{111}_{SAB}\bra{110}_{SAB} )+ \\
+          %                & |\beta|^2(\ket{100}_{SAB}\bra{001}_{SAB}+\ket{111}_{SAB}\bra{001}_{SAB}+\ket{100}_{SAB}\bra{111}_{SAB}+\ket{111}_{SAB}\bra{111}_{SAB} ))     \\
+          %           \end{align*}
+          %       }{2(|\alpha|^2+|\beta|^2)}
+          %   \end{align*}
+
+
+    \item Which state will Alice assign to Bob? (4 points) Hint: Alice knows that the outcome was “0”, so she assigns the state according to her knowledge.
+
+
+
+          \textbf{Solution:}
+
+          Alice performs $M_0$ in her laboratory (on the system S and A) with the outcome $\ket{\phi_0}\bra{\phi_0}\otimes \ket{\psi}_B\bra{\psi}_B$.
+
+          So, the state that Alice assigns to Bob is $\ket{\psi}_B\bra{\psi}_B$.
+
+
+    \item Which state does Bob assign to himself without knowing the measurement outcome? (10 points) Hints: 1. remember the trace is independent of the basis, 2. if you have no information, all outcomes are equally likely.
+
+          \textbf{Solution:}
+
+
+          Assume Bob assigns the state $\ket{\Lambda}\bra{\Lambda}$ to himself without knowing the measurement outcome.
+
+          \begin{align}
+              \ket{\Lambda}\bra{\Lambda} = & \frac{1}{4}\sum_{i=0}^{3}\frac{\sqrt{M_i} \rho\sqrt{M_i}^{\dagger}}{Tr(M_i\rho)}                                 \\
+              =                            & \frac{1}{4}\sum_{i=0}^{3}\frac{M_i \rho M_i^{\dagger}}{Tr(M_i\rho)}                                              \\
+              =                            & \frac{1}{4}\ket{\phi_0}\bra{\phi_0}\otimes (\alpha\ket{0}_B+\beta\ket{1}_B)(\alpha^*\bra{0}_B+\beta^*\bra{1}_B)+ \\
+                                           & \frac{1}{4}\ket{\phi_1}\bra{\phi_1}\otimes (\alpha\ket{0}_B-\beta\ket{1}_B)(\alpha^*\bra{0}_B-\beta^*\bra{1}_B)+ \\
+                                           & \frac{1}{4}\ket{\phi_2}\bra{\phi_2}\otimes (\alpha\ket{1}_B+\beta\ket{0}_B)(\alpha^*\bra{1}_B+\beta^*\bra{0}_B)+ \\
+                                           & \frac{1}{4}\ket{\phi_3}\bra{\phi_3}\otimes (\alpha\ket{1}_B-\beta\ket{0}_B)(\alpha^*\bra{1}_B-\beta^*\bra{0}_B)
+          \end{align}
+
+
+
+    \item Imagine now the outcome is not necessarily “0”. Calculate the output state given that Alice obtains outcome
+          “1”. How can Bob retrieve the correct state, given that Alice tells him her measurement outcome? (6 points)
+          Hint: maybe some of the unitary gates from lectures - X or Z - can be useful.
+
+
+          \textbf{Solution:}
+
+          If Alice obtains outcome "1", the system is $\ket{\phi_1}\bra{\phi_1}\otimes (\alpha\ket{0}_B-\beta\ket{1}_B)(\alpha^*\bra{0}_B-\beta^*\bra{1}_B)$.
+
+          Bob can retrieve the correct state by applying the unitary gate $X$ on the system B.
+
+          $X(\alpha\ket{0}_B-\beta\ket{1}_B)(\alpha^*\bra{0}_B-\beta^*\bra{1}_B) = (\alpha\ket{1}_B+\beta\ket{0}_B)(\alpha^*\bra{1}_B+\beta^*\bra{0}_B)$
+          Bob retrieves the correct state $\alpha\ket{0}_B+\beta\ket{1}_B$.
+
+
+\end{enumerate}
+
+It can be shown that, analogously to the case where Alice obtained outcome “1”, that Bob can always apply some local unitary operation on his state in order to retrieve $\ket{\psi}_S$ perfectly. For that reason, it is necessary for Alice to send Bob her measurement outcome with two classical bits. Hence, Alice teleported a quantum state without actually ever leaving the earth, simply by sending classical information!
+
+
+\section{EXERCISE 4: UNDERSTANDING GROVER SEARCH (28 POINTS)}
+In the lectures, we introduced Grover search as a quantum search that finds an element in a list of length $N$ in time $O(\sqrt{N})$.
+\begin{enumerate}
+    \item After the oracle marked the item in the list corresponding to the search query, the diffusion operator $D = 2|\psi\rangle\langle\psi| - I$, with $|\psi\rangle = \frac{1}{\sqrt{N}}\sum_{x=0}^{N-1}|x\rangle$, causes an amplitude amplification of the marked state. Write $D$ in matrix form. (4 points)
+
+          \textbf{Solution:}
+
+          $\ket{\psi} = \frac{1}{\sqrt{N}}\sum_{x=0}^{N-1}\ket{x}$
+
+          $\ket{\psi}\bra{\psi} = \frac{1}{N}\sum_{x=0}^{N-1}\sum_{y=0}^{N-1}\ket{x}\bra{y}=\frac{1}{N}\begin{pmatrix}
+                  1      & 1      & 1      & \cdots & 1      \\
+                  1      & 1      & 1      & \cdots & 1      \\
+                  1      & 1      & 1      & \cdots & 1      \\
+                  \vdots & \vdots & \vdots & \ddots & \vdots \\
+                  1      & 1      & 1      & \cdots & 1
+              \end{pmatrix}$
+
+
+          $D = 2\ket{\psi}\bra{\psi}-I = \begin{pmatrix}
+                  \frac{2}{N}-1 & \frac{2}{N}   & \frac{2}{N}   & \cdots & \frac{2}{N}   \\
+                  \frac{2}{N}   & \frac{2}{N}-1 & \frac{2}{N}   & \cdots & \frac{2}{N}   \\
+                  \frac{2}{N}   & \frac{2}{N}   & \frac{2}{N}-1 & \cdots & \frac{2}{N}   \\
+                  \vdots        & \vdots        & \vdots        & \ddots & \vdots        \\
+                  \frac{2}{N}   & \frac{2}{N}   & \frac{2}{N}   & \cdots & \frac{2}{N}-1
+              \end{pmatrix}$
+    \item The diffusion operator is called “inversion around average”. Show that for a general input state $|\phi\rangle = \sum_{k=0}^{N-1} \alpha_k |k\rangle$, $D$ acts as $D|\phi\rangle = \sum_{k=0}^{N-1} (-\alpha_k + 2\langle\alpha\rangle) |k\rangle$, where $\langle\alpha\rangle$ is the average value of the values $\alpha_0, \alpha_1, ..., \alpha_{N-1}$. (6 points)
+
+
+
+          \begin{align}
+              D\ket{\phi} = & 2\ket{\psi}\bra{\psi}\ket{\phi}-\ket{\phi}                                                                               \\
+              =             & \frac{2}{N}\sum_{x=0}^{N-1}\sum_{y=0}^{N-1}\sum_{k=0}^{N-1}\alpha_k\ket{x}\bra{y}\ket{k}-\sum_{k=0}^{N-1}\alpha_k\ket{k} \\
+              =             & \frac{2}{N}\sum_{x=0}^{N-1}\sum_{y=0}^{N-1}\alpha_y\ket{x}-\sum_{k=0}^{N-1}\alpha_k\ket{k}                               \\
+              =             & \frac{2}{N}\sum_{k=0}^{N-1}\sum_{y=0}^{N-1}\alpha_y\ket{k}-\sum_{k=0}^{N-1}\alpha_k\ket{k}                               \\
+              =             & \sum_{k=0}^{N-1}(\frac{2}{N}\sum_{y=0}^{N-1}\alpha_y+\alpha_k)\ket{k}                                                    \\
+              =             & \sum_{k=0}^{N-1}(2\langle\alpha\rangle-\alpha_k)\ket{k}                                                                  \\
+              =             & \sum_{k=0}^{N-1}(-\alpha_k+2\langle\alpha\rangle)\ket{k}
+          \end{align}
+
+
+
+
+
+\end{enumerate}
+
+
+To analyze how Grover search works, we wrote the input state $\ket{\Psi} = \frac{1}{\sqrt{N}}\sum_{x=1}^{N} \ket{x}$ as $\ket{\Psi} = \sqrt{\frac{N-M}{N}}\ket{\alpha} + \sqrt{\frac{M}{N}}\ket{\beta}$ by splitting the list elements into a coherent part of $M$ solutions $\ket{\beta} = \frac{1}{\sqrt{M}}\sum_{x}^{'} \ket{x}$ and a coherent part of $N-M$ wrong answers $\ket{\alpha} = \frac{1}{\sqrt{N-M}}\sum_{x}^{''} \ket{x}$.
+
+
+\begin{enumerate}[start=3]
+    \item Show that the state $\ket{\Psi} = \sqrt{\frac{N-M}{N}}\ket{\alpha} + \sqrt{\frac{M}{N}}\ket{\beta}$ is normalized. (4 points)
+
+          \textbf{Solution:}
+
+
+
+          $\ket{\Psi} = \sqrt{\frac{N-M}{N}}\ket{\alpha} + \sqrt{\frac{M}{N}}\ket{\beta}
+              \\=\sqrt{\frac{N-M}{N}}\frac{1}{\sqrt{N-M}}\sum_{x}^{''} \ket{x}+\sqrt{\frac{M}{N}}\frac{1}{\sqrt{M}}\sum_{x}^{'} \ket{x}
+              \\=\frac{1}{\sqrt{N}}\sum_{x}^{''} \ket{x}+\frac{1}{\sqrt{N}}\sum_{x}^{'} \ket{x}
+              \\=\frac{1}{\sqrt{N}}\sum_{x=0}^{N-1} \ket{x}
+          $
+
+
+          $\braket{\Psi|\Psi} = \frac{1}{N}\sum_{x=0}^{N-1} \bra{x}\sum_{y=0}^{N-1} \ket{y}
+              \\=\frac{1}{N}\sum_{x=0}^{N-1} \sum_{y=0}^{N-1} \braket{x|y}
+              \\=\frac{1}{N}N
+              \\=1$
+
+
+
+
+
+
+          $|\braket{\Psi|\Psi}|^2 = 1$
+
+
+          So, the state $\ket{\Psi} = \sqrt{\frac{N-M}{N}}\ket{\alpha} + \sqrt{\frac{M}{N}}\ket{\beta}$ is normalized.
+
+\end{enumerate}
+
+
+
+Imagine you have a list of only four elements, encoded into the quantum states $|0\rangle$, $|1\rangle$, $|2\rangle$, $|3\rangle$. We saw that Grover search consists of $k^*$ iterations, where each iteration applies first an oracle $O$, followed by the diffusion operator $D$.
+
+
+\begin{enumerate}[start=4]
+    \item Perform the first part of the Grover iteration by letting $O$ act on the initial state $|\psi\rangle = \frac{1}{2}(|0\rangle + |1\rangle + |2\rangle + |3\rangle)$ of the search algorithm. You can assume that exactly one element is marked, and choose yourself which one. (6 points)
+
+          \textbf{Solution:}
+
+          Assume the element $\ket{0}$ is marked.
+
+          $O\ket{\psi} = O\frac{1}{2}(\ket{0}+\ket{1}+\ket{2}+\ket{3}) = \frac{1}{2}(-\ket{0}+\ket{1}+\ket{2}+\ket{3})$
+
+    \item  Take your marked state from 1. and complete the first iteration of Grover search. What is the probability of detecting the correct list element after the iteration? (4 points)
+
+          \textbf{Solution:}
+
+
+          $\ket{\psi'} = \frac{1}{2}(-\ket{0}+\ket{1}+\ket{2}+\ket{3})$
+
+          $D = \frac{1}{2}\sum_{x=0}^{3}\sum_{y=0}^{3}\ket{x}\bra{y}-I$
+
+
+          $D\ket{\psi'} = (\frac{1}{2}\sum_{x=0}^{3}\sum_{y=0}^{3}\ket{x}\bra{y}-I)(\frac{1}{2}(-\ket{0}+\ket{1}+\ket{2}+\ket{3}))
+              \\=\frac{1}{4}\sum_{x=0}^3\ket{x}(-1+1+1+1)-\frac{1}{2}(-\ket{0}+\ket{1}+\ket{2}+\ket{3})
+              \\=\frac{1}{2}(\ket{0}+\ket{1}+\ket{2}+\ket{3})-\frac{1}{2}(-\ket{0}+\ket{1}+\ket{2}+\ket{3})
+              \\=\ket{0}
+          $
+
+
+          $p = |\bra{0}|D\ket{\psi'}|^2 = |\braket{0|0}|^2 =1$
+
+          So, the probability of detecting the correct list element after the iteration is 1.
+
+    \item What happens if we do one more iteration? Show this explicitly with your Grover search example. (4 points)
+
+          $D'D\ket{\psi'} = \sum_{x=0}^{0}(-1+2)\ket{x} = \ket{0}$
+
+
+          $p = |\bra{0}|D'D\ket{\psi'}|^2 = |\braket{0|0}|^2 =1$
+
+          So, the probability of detecting the correct list element after the iteration is still 1.
+
+\end{enumerate}
+
+
+\end{document}

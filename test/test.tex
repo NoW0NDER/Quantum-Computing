@@ -7,37 +7,43 @@
 \usepackage{qcircuit}
 
 \begin{document}
-To find the reduced state on the first $k$ qubits of A and B, tracing out the last $n - k$ qubits on each side, we can start with the $2n$-qubit state $\rho = \ket{\Psi_n}\bra{\Psi_n}$ and perform the partial trace operation.
-
-The state $\ket{\Psi_n}$ can be written as:
-
-$$\ket{\Psi_n} = \frac{1}{\sqrt{2^n}}\sum_i \ket{i}_A \otimes \ket{i}_B,$$
-
-where $\ket{i}_A$ and $\ket{i}_B$ are basis states for Alice's and Bob's qubits, respectively.
-
-To obtain the reduced state on the first $k$ qubits of A and B, we need to trace out the last $n - k$ qubits on each side. Let's denote Alice's first $k$ qubits as $A_1A_2\ldots A_k$ and Bob's first $k$ qubits as $B_1B_2\ldots B_k$. We will trace out the remaining $n - k$ qubits, which are denoted as $A_{k+1}A_{k+2}\ldots A_n$ for Alice and $B_{k+1}B_{k+2}\ldots B_n$ for Bob.
-
-To perform the partial trace, we need to sum over all possible states of the traced-out qubits and compute the inner product with the corresponding basis states on Alice's and Bob's sides.
-
-The reduced state on the first $k$ qubits of A and B can be calculated as follows:
+To calculate the expression $M_0\rho M_0^\dagger$, we need to substitute the provided expressions for $M_0$ and $\rho$ and perform the matrix operations. Let's proceed with the calculation:
 
 \begin{align*}
-\rho_{A_1A_2\ldots A_kB_1B_2\ldots B_k} &= \mathrm{Tr}_{A_{k+1}A_{k+2}\ldots A_nB_{k+1}B_{k+2}\ldots B_n}(\rho) \\
-&= \mathrm{Tr}_{A_{k+1}A_{k+2}\ldots A_nB_{k+1}B_{k+2}\ldots B_n}\left(\ket{\Psi_n}\bra{\Psi_n}\right) \\
-&= \frac{1}{2^n}\sum_i \sum_j \mathrm{Tr}_{A_{k+1}A_{k+2}\ldots A_nB_{k+1}B_{k+2}\ldots B_n}\left(\ket{i}_A\bra{j}_A \otimes \ket{i}_B\bra{j}_B\right) \\
-&= \frac{1}{2^n}\sum_i \sum_j \mathrm{Tr}_{A_{k+1}A_{k+2}\ldots A_n}\left(\ket{i}_A\bra{j}_A\right) \otimes \mathrm{Tr}_{B_{k+1}B_{k+2}\ldots B_n}\left(\ket{i}_B\bra{j}_B\right) \\
-&= \frac{1}{2^n}\sum_i \sum_j \left(\mathrm{Tr}_{A_{k+1}A_{k+2}\ldots A_n}\left(\ket{i}_A\bra{j}_A\right)\right) \otimes \left(\mathrm{Tr}_{B_{k+1}B_{k+2}\ldots B_n}\left(\ket{i}_B\bra{j}_B\right)\right) \\
-&= \frac{1}{2^n}\sum_i \sum_j \left(\delta_{ij}\mathbb{I}_{A_1A_2\ldots A_k}\right) \otimes \left(\delta_{ij}\mathbb{I}_{B_1B_2\ldots B_k}\right) \\
-&= \frac{1}{2^n}\sum_i \mathbb{I}_{A_1A_2\ldots A_k} \otimes \mathbb{I}_{B_1B_2\ldots B_k} \\
-&= \frac{1}{2^n} \mathbb{I}_{A_1A_2\ldots A_k} \otimes \mathbb{I}_{B_1B_2\ldots B_k},
+    M_0\rho M_0^\dagger & = |\phi_0\rangle\langle\phi_0|\rho|\phi_0\rangle\langle\phi_0|                                                                                                                                                                                         \\
+                        & = \left(\frac{1}{\sqrt{2}}(|0\rangle_S|0\rangle_A + |1\rangle_S|1\rangle_A)\right) \left(\frac{1}{\sqrt{2}}(|0\rangle_S\langle0| + |1\rangle_S\langle1|)\psi_S\right) \left(\frac{1}{\sqrt{2}}(\langle0|_S\langle0|_A + \langle1|_S\langle1|_A)\right) \\
+                        & = \frac{1}{2}(|0\rangle_S\langle0|_S + |1\rangle_S\langle1|_S)(|0\rangle_S\langle0|_S + |1\rangle_S\langle1|_S)\psi_S(|0\rangle_S\langle0|_S + |1\rangle_S\langle1|_S)                                                                                 \\
+                        & = \frac{1}{2}(|0\rangle_S\langle0|_S\psi_S\langle0|_S\langle0|_S + |0\rangle_S\langle0|_S\psi_S\langle0|_S\langle1|_S + |0\rangle_S\langle1|_S\psi_S\langle0|_S\langle0|_S + |0\rangle_S\langle1|_S\psi_S\langle0|_S\langle1|_S                        \\
+                        & \quad + |1\rangle_S\langle0|_S\psi_S\langle1|_S\langle0|_S + |1\rangle_S\langle0|_S\psi_S\langle1|_S\langle1|_S + |1\rangle_S\langle1|_S\psi_S\langle1|_S\langle0|_S + |1\rangle_S\langle1|_S\psi_S\langle1|_S\langle1|_S)                             \\
+                        & = \frac{1}{2}(|0\rangle_S\langle0|_S\psi_S\langle0|_S + |1\rangle_S\langle1|_S\psi_S\langle0|_S + |0\rangle_S\langle0|_S\psi_S\langle1|_S + |1\rangle_S\langle1|_S\psi_S\langle1|_S)                                                                   \\
+                        & = \frac{1}{2}(|0\rangle_S\langle0|_S\psi_S\langle0|_S + |1\rangle_S\langle1|_S\psi_S\langle0|_S + |0\rangle_S\langle0|_S\psi_S\langle1|_S + |1\rangle_S\langle1|_S\psi_S\langle1|_S).
 \end{align*}
 
-where $\mathbb{I}_{A_1A_2\ldots A_k}$ and $\mathbb{I}_{B_1B_2\ldots B_k}$ are identity operators acting on Alice's and Bob's $k$ qubits, respectively.
+Next, let's calculate the trace of $M_0\rho$:
 
-Therefore, the reduced state on the first $k$ qubits of A and B is given by $\rho_{A_1A_2}\ldots A_kB_1B_2$The reduced state on the first $k$ qubits of A and B, tracing out the last $n-k$ qubits on each side, is given by:
 
-$$\rho_{A_1A_2\ldots A_kB_1B_2\ldots B_k} = \frac{1}{2^n} \mathbb{I}_{A_1A_2\ldots A_k} \otimes \mathbb{I}_{B_1B_2\ldots B_k},$$
+\begin{align*}
+    \text{Tr}(M_0\rho) & = \frac{1}{2}\left(\text{Tr}(|0\rangle_S\langle0|_S\psi_S\langle0|_S) + \text{Tr}(|1\rangle_S\langle1|_S\psi_S\langle0|_S) + \text{Tr}(|0\rangle_S\langle0|_S\psi_S\langle1|_S) + \text{Tr}(|1\rangle_S\langle1|_S\psi_S\langle1|_S)\right)     \\
+                       & = \frac{1}{2}\left(\langle0|\langle0|\psi\rangle_S|0\rangle\langle0|_S + \langle1|\langle1|\psi\rangle_S|0\rangle\langle0|_S + \langle0|\langle0|\psi\rangle_S|1\rangle\langle1|_S + \langle1|\langle1|\psi\rangle_S|1\rangle\langle1|_S\right) \\
+                       & = \frac{1}{2}\left(|\langle0|\psi\rangle_S|^2\langle0|_S\langle0|_S + |\langle1|\psi\rangle_S|^2\langle1|_S\langle1|_S\right)                                                                                                                   \\
+                       & = \frac{1}{2}\left(|\alpha|^2\langle0|_S\langle0|_S + |\beta|^2\langle1|_S\langle1|_S\right)                                                                                                                                                    \\
+                       & = \frac{1}{2}\left(|\alpha|^2|0\rangle_S\langle0|_S + |\beta|^2|1\rangle_S\langle1|_S\right)                                                                                                                                                    \\
+                       & = \frac{1}{2}\left(|\alpha|^2\ket{0}_S\bra{0}_S + |\beta|^2\ket{1}_S\bra{1}_S\right).
+\end{align*}
 
-where $\mathbb{I}_{A_1A_2\ldots A_k}$ and $\mathbb{I}_{B_1B_2\ldots B_k}$ are identity operators acting on Alice's and Bob's $k$ qubits, respectively.
+Therefore, we have obtained the expression for $M_0\rho M_0^{\dagger}$ and $\text{Tr}(M_0\rho)$ as:
+
+\[
+    M_0\rho M_0^{\dagger} = \frac{1}{2}(|\phi_0\rangle\langle\phi_0|\psi\rangle_S) \otimes \frac{1}{2}(|0\rangle_A\langle0|_A + |1\rangle_A\langle1|_A),
+\]
+
+and
+
+\[
+    \text{Tr}(M_0\rho) = \frac{1}{2}\left(|\alpha|^2\ket{0}_S\bra{0}_S + |\beta|^2\ket{1}_S\bra{1}_S\right),
+\]
+
+respectively.
+
 
 \end{document}
