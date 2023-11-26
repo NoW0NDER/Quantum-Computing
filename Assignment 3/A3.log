@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.10)  7 NOV 2023 17:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.10)  27 NOV 2023 00:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -448,33 +448,93 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
-) (c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+)
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:23: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.23 <
+      <<<<<< HEAD
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:30: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 =
+      ======
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:39: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.39 >
+      >>>>>> cae044e2746708fff28748083d6016faf95d2365
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(c:/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
-) (c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+)
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:95: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 <
+      <<<<<< HEAD
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (26.12643pt too wide) in paragraph at lines 95--101
+[]\OT1/cmr/m/n/12 <<<<<<< HEAD  =======  >>>>>>> cae044e2746708fff28748083d6016faf95d2365
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--101
+
+ []
+
+(c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count316
 \l__pdf_internal_box=\box104
 ) (./A3.aux)
 \openout1 = `A3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
  (c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count317
@@ -494,7 +554,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (c:/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 88.
+Package hyperref Info: Link coloring OFF on input line 103.
  (./A3.out) (./A3.out)
 \@outlinefile=\write3
 \openout3 = `A3.out'.
@@ -538,61 +598,543 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count323
-LaTeX Font Info:    Trying to load font information for U+msa on input line 91.
-(c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[1{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 106.
+ (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 91.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 106.
  (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (4.8601pt too wide) in paragraph at lines 92--92
+Overfull \hbox (4.8601pt too wide) in paragraph at lines 107--107
 []\OT1/cmr/bx/n/17.28 EXERCISE 1: CLAS-SI-CAL MIX-TURE VS CO-HER-
  []
 
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:134: Misplaced \crcr.
+\endarray ->\crcr 
+                  \egroup \egroup \@arrayright \gdef \@preamble {}
+l.134           \end{pmatrix}
+                             $
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
-Overfull \hbox (15.9298pt too wide) in paragraph at lines 130--133
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:134: Extra }, or forgotten \endgroup.
+\endarray ->\crcr \egroup 
+                          \egroup \@arrayright \gdef \@preamble {}
+l.134           \end{pmatrix}
+                             $
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:134: Extra }, or forgotten \endgroup.
+\endarray ->\crcr \egroup \egroup 
+                                  \@arrayright \gdef \@preamble {}
+l.134           \end{pmatrix}
+                             $
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:134: Missing $ inserted.
+<inserted text> 
+                $
+l.134           \end{pmatrix}
+                             $
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:134: Extra \right.
+\endpmatrix -> \endmatrix \right )
+                                  
+l.134           \end{pmatrix}
+                             $
+I'm ignoring a \right that had no matching \left.
+
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:134: LaTeX Error: \begin{enumerate} on input line 109 ended by \end{pmatrix}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.134           \end{pmatrix}
+                             $
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:134: Missing $ inserted.
+<inserted text> 
+                $
+l.134           \end{pmatrix}
+                             $
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:136: Missing $ inserted.
+<inserted text> 
+                $
+l.136 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (8.94972pt too wide) in paragraph at lines 115--136
+\OML/cmm/m/it/12 ^^L^^L[] [] [] \OT1/cmr/m/n/12 = [] [] = [] = []$ =======
+ []
+
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:137: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.137     \item W
+                 rite the state $\sigma$ representing a classical mixture of...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 137
+[][]
+ []
+
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:146: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.146     \item G
+                 iven the POVM $M := \{M_0, M_1\}$, where $M_i = |i\rangle\l...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 146
+[][]
+ []
+
+
+Overfull \hbox (4.17992pt too wide) in paragraph at lines 149--152
 []\OT1/cmr/bx/n/12 Solution: $\OML/cmm/m/it/12 p[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Tr\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 M[]^^Z\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 Tr\OT1/cmr/m/n/12 ([] [] (\OML/cmm/m/it/12 [] [] [] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^L[] [] [] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^L[] [] [] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^L^^L[] [] []\OT1/cmr/m/n/12 )) =
  []
 
-[1
 
-{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (16.2223pt too wide) in paragraph at lines 191--191
+Overfull \hbox (29.6405pt too wide) in paragraph at lines 153--155
+[]$\OML/cmm/m/it/12 p[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Tr\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 M[]^^Z\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 Tr\OT1/cmr/m/n/12 ([] [] (\OML/cmm/m/it/12 [] [] [] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^L[] [] [] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^L[] [] [] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^L^^L[] [] []\OT1/cmr/m/n/12 )) = \OML/cmm/m/it/12 Tr\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^L[] [] [] \OT1/cmr/m/n/12 +
+ []
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: Undefined control sequence.
+\enit@endenumerate ->\enit@after 
+                                 \endlist \ifx \enit@series \relax \else \if...
+l.163 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: Undefined control sequence.
+\enit@endenumerate ...\else \ifnum \enit@resuming 
+                                                  =\@ne \enit@setresumekeys ...
+l.163 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.163 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.163 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.163 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.163 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: Undefined control sequence.
+<argument> enit@resume@series@\enit@series 
+                                           
+l.163 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: Undefined control sequence.
+\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
+                                                  \endcsname \the \csname c@...
+l.163 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: Undefined control sequence.
+\enit@setresumekeys ...e \the \csname c@\@listctr 
+                                                  \endcsname }\fi }
+l.163 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.163 \end{enumerate}
+                     
+I'm forgetting what you said and using zero instead.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: Undefined control sequence.
+\enit@endenumerate ...t \fi \ifnum \enit@resuming 
+                                                  =\thr@@ \enit@setresumekey...
+l.163 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.163 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.163 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.163 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.163 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: Undefined control sequence.
+\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
+                                                  \endcsname \the \csname c@...
+l.163 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: Undefined control sequence.
+\enit@setresumekeys ...e \the \csname c@\@listctr 
+                                                  \endcsname }\fi }
+l.163 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.163 \end{enumerate}
+                     
+I'm forgetting what you said and using zero instead.
+
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: LaTeX Error: \begin{document} ended by \end{enumerate}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.163 \end{enumerate}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:163: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.163 \end{enumerate}
+                     
+Things are pretty mixed up, but I think the worst is over.
+
+[2]
+Overfull \hbox (16.2223pt too wide) in paragraph at lines 216--216
 []\OT1/cmr/bx/n/17.28 EXERCISE 2: QUAN-TUM FOURIER TRANS-FORM 
  []
 
 
-Overfull \hbox (37.02998pt too wide) in paragraph at lines 193--194
+Overfull \hbox (37.02998pt too wide) in paragraph at lines 218--219
 \OT1/cmr/m/n/12 We de-fined the Quan-tum Fourier Trans-form (QFT) as the op-er-a-tor $\OML/cmm/m/it/12 U[] \OT1/cmr/m/n/12 = [] [][] \OML/cmm/m/it/12 e[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 n\OMS/cmsy/m/n/12 ih\OML/cmm/m/it/12 m\OMS/cmsy/m/n/12 j$\OT1/cmr/m/n/12 ,
  []
 
-[2]
-Overfull \hbox (19.26845pt too wide) in paragraph at lines 204--205
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[3]
+Overfull \hbox (19.26845pt too wide) in paragraph at lines 229--230
 []$\OML/cmm/m/it/12 U[] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 U[][]\OT1/cmr/m/n/12 ([] + \OML/cmm/m/it/12 i []\OT1/cmr/m/n/12 ) = [] [][] \OML/cmm/m/it/12 e[] [] [] []\OT1/cmr/m/n/12 ([] + \OML/cmm/m/it/12 i []\OT1/cmr/m/n/12 ) = [] [][] \OML/cmm/m/it/12 e[] [] \OT1/cmr/m/n/12 +
  []
 
 
-Overfull \hbox (0.3563pt too wide) in paragraph at lines 221--227
+Overfull \hbox (0.3563pt too wide) in paragraph at lines 246--252
 []\OT1/cmr/m/n/12 (ii) $\OML/cmm/m/it/12 U[] \OT1/cmr/m/n/12 = [] [][] \OML/cmm/m/it/12 e[] [] [] \OT1/cmr/m/n/12 = [] [][] \OML/cmm/m/it/12 e[] [] [] \OT1/cmr/m/n/12 = [] []$ 
  []
 
-[3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 296--303
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[4]
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:294: Missing $ inserted.
+<inserted text> 
+                $
+l.294           \\=\frac{1}{\sqrt{2^t}}
+                                       (\ket{0}+e^{2\pi i(0.\varphi_t)}\ket{...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:294: Extra }, or forgotten $.
+\frac  #1#2->{\begingroup #1\endgroup \@@over #2}
+                                                 
+l.294           \\=\frac{1}{\sqrt{2^t}}
+                                       (\ket{0}+e^{2\pi i(0.\varphi_t)}\ket{...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+Overfull \hbox (112.43852pt too wide) in paragraph at lines 293--298
+\OT1/cmr/m/n/12 =1$[]$
+ []
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:298: Missing } inserted.
+<inserted text> 
+                }
+l.298 \end{enumerate}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 328--335
 
  []
 
 
-Overfull \hbox (40.59702pt too wide) detected at line 329
+Overfull \hbox (37.5754pt too wide) detected at line 364
 []
  []
 
-[5]
-Overfull \hbox (35.94228pt too wide) in paragraph at lines 422--422
+
+Overfull \hbox (40.59702pt too wide) detected at line 380
+[]
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[6]
+Overfull \hbox (19.9803pt too wide) detected at line 387
+[]
+ []
+
+
+Overfull \hbox (779.48468pt too wide) detected at line 397
+[]
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[7]
+Overfull \hbox (35.94228pt too wide) in paragraph at lines 487--487
 []\OT1/cmr/bx/n/17.28 EXERCISE 4: UN-DER-STAND-ING GROVER SEARCH
  []
 
-[6] [7] [8] [9] 
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[8]
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:540: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.540           \end{align*}
+                            
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex:540: Package amsmath Error: Erroneous nesting of equation structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.540           \end{align*}
+                            
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (35.56728pt too wide) detected at line 540
+[]
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[9]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[10]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[11] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./A3.aux)
  ***********
@@ -603,18 +1145,18 @@ Package rerunfilecheck Info: File `A3.out' has not changed.
 (rerunfilecheck)             Checksum: 8A6F210BDA55E59E40F45BF2AE8F194E;1187.
  ) 
 Here is how much of TeX's memory you used:
- 14500 strings out of 474928
- 224049 string characters out of 5763561
- 1945785 words of memory out of 5000000
- 35816 multiletter control sequences out of 15000+600000
- 567139 words of font info for 71 fonts, out of 8000000 for 9000
+ 14509 strings out of 474928
+ 224213 string characters out of 5763561
+ 1947785 words of memory out of 5000000
+ 35824 multiletter control sequences out of 15000+600000
+ 567747 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,10n,79p,662b,581s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on A3.pdf (9 pages, 175830 bytes).
+ 75i,16n,79p,662b,579s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on A3.pdf (11 pages, 197428 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
+ 189 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
  47 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
