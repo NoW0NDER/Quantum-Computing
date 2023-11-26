@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1699350815 "c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex" "A3.pdf" "A3" 1699350817 0
-  "A3.aux" 1699350817 1277 9c10e676a9eeda9c8fee4abce0c0f681 "pdflatex"
-  "A3.out" 1699350817 1187 8a6f210bda55e59e40f45bf2ae8f194e "pdflatex"
-  "A3.tex" 1699350813 33213 bc595635cb9a2d9d433ae89f02fa7da5 ""
-  "c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex" 1699350813 33213 bc595635cb9a2d9d433ae89f02fa7da5 ""
+["pdflatex"] 1701012539 "c:/WorkSpace/HKU/Quantum-Computing/Assignment 4/A4.tex" "A4.pdf" "A4" 1701012541 0
+  "A4.aux" 1701012541 1063 d63ad9b733b1d84bd9f50f616c29a8ea "pdflatex"
+  "A4.out" 1701012541 591 dbe3d3c0bf28a300ca38f7aaed8343a4 "pdflatex"
+  "A4.tex" 1701012539 13805 4d4d10768a6048f92cb291ac4d178525 ""
+  "c:/WorkSpace/HKU/Quantum-Computing/Assignment 4/A4.tex" 1701012539 13805 4d4d10768a6048f92cb291ac4d178525 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1696919956 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1696918365 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1696918365 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -34,7 +34,6 @@
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1696918365 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1696918365 32587 65067f817f408bc71a7312f3d9828a9b ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1696918365 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
-  "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1696918365 31764 459c573c03a4949a528c2cc7f557e217 ""
   "c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1696921311 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "c:/texlive/2023/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1696918477 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "c:/texlive/2023/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1696918781 40635 c40361e206be584d448876bba8a64a3b ""
@@ -115,8 +114,8 @@
   "c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1696924140 8183281 1df0e75cd49c7eea7db589b98a326f53 ""
   "c:/texlive/2023/texmf.cnf" 1696923796 713 e69b156964470283e0530f5060668171 ""
   (generated)
-  "A3.aux"
-  "A3.log"
-  "A3.out"
-  "A3.pdf"
+  "A4.aux"
+  "A4.log"
+  "A4.out"
+  "A4.pdf"
   (rewritten before read)

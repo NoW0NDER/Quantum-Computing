@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.10)  7 NOV 2023 17:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.10)  26 NOV 2023 23:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex"
-(c:/WorkSpace/HKU/Quantum-Computing/Assignment 3/A3.tex
+**"c:/WorkSpace/HKU/Quantum-Computing/Assignment 4/A4.tex"
+(c:/WorkSpace/HKU/Quantum-Computing/Assignment 4/A4.tex
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
 (c:/texlive/2023/texmf-dist/tex/latex/base/article.cls
@@ -454,8 +454,8 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count316
 \l__pdf_internal_box=\box104
-) (./A3.aux)
-\openout1 = `A3.aux'.
+) (./A4.aux)
+\openout1 = `A4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
 LaTeX Font Info:    ... okay on input line 88.
@@ -495,9 +495,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 88.
- (./A3.out) (./A3.out)
+ (./A4.out) (./A4.out)
 \@outlinefile=\write3
-\openout3 = `A3.out'.
+\openout3 = `A4.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
@@ -545,76 +545,31 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 91.
  (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (4.8601pt too wide) in paragraph at lines 92--92
-[]\OT1/cmr/bx/n/17.28 EXERCISE 1: CLAS-SI-CAL MIX-TURE VS CO-HER-
- []
+) [1
 
-
-Overfull \hbox (15.9298pt too wide) in paragraph at lines 130--133
-[]\OT1/cmr/bx/n/12 Solution: $\OML/cmm/m/it/12 p[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Tr\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 M[]^^Z\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 Tr\OT1/cmr/m/n/12 ([] [] (\OML/cmm/m/it/12 [] [] [] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^L[] [] [] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^L[] [] [] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^L^^L[] [] []\OT1/cmr/m/n/12 )) =
- []
-
-[1
-
-{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (16.2223pt too wide) in paragraph at lines 191--191
-[]\OT1/cmr/bx/n/17.28 EXERCISE 2: QUAN-TUM FOURIER TRANS-FORM 
- []
-
-
-Overfull \hbox (37.02998pt too wide) in paragraph at lines 193--194
-\OT1/cmr/m/n/12 We de-fined the Quan-tum Fourier Trans-form (QFT) as the op-er-a-tor $\OML/cmm/m/it/12 U[] \OT1/cmr/m/n/12 = [] [][] \OML/cmm/m/it/12 e[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 n\OMS/cmsy/m/n/12 ih\OML/cmm/m/it/12 m\OMS/cmsy/m/n/12 j$\OT1/cmr/m/n/12 ,
- []
-
-[2]
-Overfull \hbox (19.26845pt too wide) in paragraph at lines 204--205
-[]$\OML/cmm/m/it/12 U[] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 U[][]\OT1/cmr/m/n/12 ([] + \OML/cmm/m/it/12 i []\OT1/cmr/m/n/12 ) = [] [][] \OML/cmm/m/it/12 e[] [] [] []\OT1/cmr/m/n/12 ([] + \OML/cmm/m/it/12 i []\OT1/cmr/m/n/12 ) = [] [][] \OML/cmm/m/it/12 e[] [] \OT1/cmr/m/n/12 +
- []
-
-
-Overfull \hbox (0.3563pt too wide) in paragraph at lines 221--227
-[]\OT1/cmr/m/n/12 (ii) $\OML/cmm/m/it/12 U[] \OT1/cmr/m/n/12 = [] [][] \OML/cmm/m/it/12 e[] [] [] \OT1/cmr/m/n/12 = [] [][] \OML/cmm/m/it/12 e[] [] [] \OT1/cmr/m/n/12 = [] []$ 
- []
-
-[3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 296--303
-
- []
-
-
-Overfull \hbox (40.59702pt too wide) detected at line 329
-[]
- []
-
-[5]
-Overfull \hbox (35.94228pt too wide) in paragraph at lines 422--422
-[]\OT1/cmr/bx/n/17.28 EXERCISE 4: UN-DER-STAND-ING GROVER SEARCH
- []
-
-[6] [7] [8] [9] 
+{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] 
 enddocument/afterlastpage: lastpage setting LastPage.
-(./A3.aux)
+(./A4.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
  ***********
-Package rerunfilecheck Info: File `A3.out' has not changed.
-(rerunfilecheck)             Checksum: 8A6F210BDA55E59E40F45BF2AE8F194E;1187.
+Package rerunfilecheck Info: File `A4.out' has not changed.
+(rerunfilecheck)             Checksum: DBE3D3C0BF28A300CA38F7AAED8343A4;591.
  ) 
 Here is how much of TeX's memory you used:
- 14500 strings out of 474928
- 224049 string characters out of 5763561
+ 14469 strings out of 474928
+ 223757 string characters out of 5763561
  1945785 words of memory out of 5000000
- 35816 multiletter control sequences out of 15000+600000
+ 35815 multiletter control sequences out of 15000+600000
  567139 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,10n,79p,662b,581s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on A3.pdf (9 pages, 175830 bytes).
+ 75i,12n,79p,724b,572s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on A4.pdf (4 pages, 131461 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
- 47 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 105 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
+ 25 words of extra memory for PDF output out of 10000 (max. 10000000)
 

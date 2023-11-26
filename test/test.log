@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.10)  3 NOV 2023 15:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.10)  9 NOV 2023 14:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -204,13 +204,86 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Package xypdf Info: Line width: 0.39998pt on input line 9.
 
-Overfull \hbox (80.67789pt too wide) detected at line 20
-[]
+c:/WorkSpace/HKU/Quantum-Computing/test/test.tex:13: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.13     \hline
+               
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+c:/WorkSpace/HKU/Quantum-Computing/test/test.tex:14: Missing $ inserted.
+<inserted text> 
+                $
+l.14 ...he paper and Training existing model code^
+                                                  {2,5}                     ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+c:/WorkSpace/HKU/Quantum-Computing/test/test.tex:15: Missing $ inserted.
+<inserted text> 
+                $
+l.15     \hline
+               
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+c:/WorkSpace/HKU/Quantum-Computing/test/test.tex:16: Missing $ inserted.
+<inserted text> 
+                $
+l.16 ...STMs with 4 different peer networks, GRUs^
+                                                  {4,5}, BiGRUs^{1,3}, BiLST...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+c:/WorkSpace/HKU/Quantum-Computing/test/test.tex:17: Missing $ inserted.
+<inserted text> 
+                $
+l.17     \hline
+               
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+[]\OT1/cmr/m/n/10 Replace LSTMs with 4 dif-fer-ent peer net-works,
  []
 
+c:/WorkSpace/HKU/Quantum-Computing/test/test.tex:18: Missing $ inserted.
+<inserted text> 
+                $
+l.18     Week 3 & Implement T5v1.1^
+                                   {3,5}, Byt5^{1,2,4} to improve t5 \newlin...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
-Overfull \hbox (90.36385pt too wide) detected at line 32
-[]
+c:/WorkSpace/HKU/Quantum-Computing/test/test.tex:19: Missing $ inserted.
+<inserted text> 
+                $
+l.19     \hline
+               
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+c:/WorkSpace/HKU/Quantum-Computing/test/test.tex:20: Missing $ inserted.
+<inserted text> 
+                $
+l.20     Week 4 & Train and Evaluate results^
+                                             {1,2,3,4,5} \newline Write, com...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+c:/WorkSpace/HKU/Quantum-Computing/test/test.tex:21: Missing $ inserted.
+<inserted text> 
+                $
+l.21     \hline
+               
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (136.28308pt too wide) in paragraph at lines 10--23
+[][] 
  []
 
 [1
@@ -222,18 +295,18 @@ L3 programming layer <2023-08-29>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4283 strings out of 474928
- 55063 string characters out of 5763561
- 1941785 words of memory out of 5000000
- 25820 multiletter control sequences out of 15000+600000
+ 4281 strings out of 474928
+ 55003 string characters out of 5763561
+ 1922785 words of memory out of 5000000
+ 25818 multiletter control sequences out of 15000+600000
  560641 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,11n,79p,1439b,136s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on test.pdf (1 page, 71147 bytes).
+ 72i,10n,79p,1439b,150s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
+Output written on test.pdf (1 page, 51933 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
- 25 compressed objects within 1 object stream
+ 28 PDF objects out of 1000 (max. 8388607)
+ 16 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

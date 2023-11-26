@@ -81,7 +81,7 @@
 
 % 设置标题
 \title{\textbf{Assignment 3: Quantum computing}}
-\author{\textbf{Wang Dingrui}}
+\author{\textbf{Wang Dingrui 3036196908}}
 \date{\textbf{\today}}
 
 % 正文部分
@@ -242,9 +242,28 @@ $$
           \textbf{Solution:}
 
           $QFT\ket{\varphi}
+              \\=QFT\ket{\varphi_0\varphi_1...\varphi_t}
               \\=\frac{1}{\sqrt{2^t}}(\ket{0}+e^{2\pi i(0.\varphi_t)}\ket{1})\otimes \frac{1}{\sqrt{2^t}}(\ket{0}+e^{2\pi i(0.\varphi_{t-1}\varphi_{t})}\ket{1}) \otimes ... \otimes \frac{1}{\sqrt{2^t}}(\ket{0}+e^{2\pi i(0.\varphi_{1}\varphi_{2}...\varphi_{t})}\ket{1})
               \\=\frac{1}{\sqrt{2^t}}(\ket{0...0}+(e^{2\pi i(0.\varphi_t+0.\varphi_{t-1}\varphi_{t}+...+0.\varphi_{1}\varphi_{2}...\varphi_{t})})\ket{1...1})
           $
+
+          From the slides, we have the transformation $\ket{0}^{\otimes t}\otimes  \ket{u} \rightarrow (\frac{1}{\sqrt{2^t}}\sum_{k=0}^{2^t-1}e^{2\pi i\varphi k}\ket{k})\otimes \ket{u}$
+
+          Have:
+          $\frac{1}{\sqrt{2^t}}(\ket{0...0}+(e^{2\pi i(0.\varphi_t+0.\varphi_{t-1}\varphi_{t}+...+0.\varphi_{1}\varphi_{2}...\varphi_{t})})\ket{1...1})\\
+              =\frac{1}{\sqrt{2^t}}\sum_{k=0}^{2^t-1}e^{2\pi i\varphi k}\ket{k}$
+
+
+
+          So, $QFT\ket{\varphi} = \frac{1}{\sqrt{2^t}}\sum_{k=0}^{2^t-1}e^{2\pi i\varphi k}\ket{k}$
+
+          Meaning: $QFT^{-1}\frac{1}{\sqrt{2^t}}\sum_{k=0}^{2^t-1}e^{2\pi i\varphi k}\ket{k} = \ket{\varphi} = \ket{\varphi_0\varphi_1...\varphi_t}$
+
+
+
+
+
+
 \end{enumerate}
 
 \section{EXERCISE 3: QUANTUM TELEPORTATION (26 POINTS)}
@@ -360,7 +379,7 @@ Alice wants to send a state $\ket{\psi}_S = \alpha\ket{0}_S + \beta\ket{1}_S$ to
           \textbf{Solution:}
 
 
-          Assume Bob assigns the state $\ket{\Lambda}\bra{\Lambda}$ to himself without knowing the measurement outcome.
+          Assume the system $\ket{\Lambda}\bra{\Lambda}$ without knowing the measurement outcome is:
 
           \begin{align}
               \ket{\Lambda}\bra{\Lambda} = & \frac{1}{4}\sum_{i=0}^{3}\frac{\sqrt{M_i} \rho\sqrt{M_i}^{\dagger}}{Tr(M_i\rho)}                                 \\
@@ -371,6 +390,13 @@ Alice wants to send a state $\ket{\psi}_S = \alpha\ket{0}_S + \beta\ket{1}_S$ to
                                            & \frac{1}{4}\ket{\phi_3}\bra{\phi_3}\otimes (\alpha\ket{1}_B-\beta\ket{0}_B)(\alpha^*\bra{1}_B-\beta^*\bra{0}_B)
           \end{align}
 
+
+          In this system, we discard other qubits, the state Bob assign to himself is:
+
+          $\frac{1}{4}(\alpha\ket{0}_B+\beta\ket{1}_B)(\alpha^*\bra{0}_B+\beta^*\bra{1}_B)+
+              \frac{1}{4}(\alpha\ket{0}_B-\beta\ket{1}_B)(\alpha^*\bra{0}_B-\beta^*\bra{1}_B)+
+              \frac{1}{4}(\alpha\ket{1}_B+\beta\ket{0}_B)(\alpha^*\bra{1}_B+\beta^*\bra{0}_B)+
+              \frac{1}{4}(\alpha\ket{1}_B-\beta\ket{0}_B)(\alpha^*\bra{1}_B-\beta^*\bra{0}_B)$
 
 
     \item Imagine now the outcome is not necessarily “0”. Calculate the output state given that Alice obtains outcome
@@ -384,7 +410,7 @@ Alice wants to send a state $\ket{\psi}_S = \alpha\ket{0}_S + \beta\ket{1}_S$ to
 
           Bob can retrieve the correct state by applying the unitary gate $X$ on the system B.
 
-          $X(\alpha\ket{0}_B-\beta\ket{1}_B)(\alpha^*\bra{0}_B-\beta^*\bra{1}_B) = (\alpha\ket{1}_B+\beta\ket{0}_B)(\alpha^*\bra{1}_B+\beta^*\bra{0}_B)$
+          $Z(\alpha\ket{0}_B-\beta\ket{1}_B)(\alpha^*\bra{0}_B-\beta^*\bra{1}_B) = (\alpha\ket{1}_B+\beta\ket{0}_B)(\alpha^*\bra{1}_B+\beta^*\bra{0}_B)$
           Bob retrieves the correct state $\alpha\ket{0}_B+\beta\ket{1}_B$.
 
 

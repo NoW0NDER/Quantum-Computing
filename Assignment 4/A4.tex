@@ -1,0 +1,280 @@
+\documentclass[12pt]{article}
+
+% 导入宏包
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{braket} % braket宏包
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% % 设置页面边距
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+% 设置页眉页脚
+% \pagestyle{fancy}
+% \fancyhf{}
+
+% 设置代码块样式
+\lstset{
+    basicstyle=\small\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    breaklines=true,
+    breakatwhitespace=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    frame=single,
+    rulecolor=\color{black},
+    backgroundcolor=\color{white},
+    captionpos=b,
+    tabsize=4,
+    language=Python
+}
+
+% 定义新命令
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\rank}{\mathrm{rank}}
+\newcommand{\proj}{\mathrm{proj}}
+\newcommand{\sgn}{\mathrm{sgn}}
+\newcommand{\Span}{\mathrm{span}}
+\newcommand{\im}{\mathrm{im}}
+\newcommand{\kernel}{\mathrm{ker}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Inn}{\mathrm{Inn}}
+\newcommand{\Out}{\mathrm{Out}}
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\Gal}{\mathrm{Gal}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\inner}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\diff}{\,\mathrm{d}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\defeq}{\stackrel{\mathrm{def}}{=}}
+
+% 设置标题
+\title{\textbf{Assignment 3: Quantum computing}}
+\author{\textbf{Wang Dingrui 3036196908}}
+\date{\textbf{\today}}
+
+% 正文部分
+\begin{document}
+
+\maketitle
+
+\section{QUANTUM PHASE ESTIMATION}
+We studied quantum phase estimation as a tool to estimate the number $\phi$ in the eigenvalue $e^{2\pi i\phi}$ with corresponding eigenvector $|u\rangle$ of a unitary operation $U$. The algorithm proceeded in two steps: first, the phase factor $\phi$ of the eigenvalue is encoded in binary in a $t$-qubit quantum state. Thereafter, a measurement in the computational basis yields the $t$ binary digits of $\phi$ – explicitly telling us the eigenvalue up to some precision.
+\begin{enumerate}
+    \item Let us depict again the phase estimation circuit: We found that the final state of the first register at the end of the circuit is given by $\frac{1}{\sqrt{2^t}}\sum_{k=0}^{2^t-1} e^{2\pi i\phi k}|k\rangle$. Derive this state by going through the circuit step-by-step (in particular, show that the output state can be written in this exact form). (8 points)
+
+          \textbf{Solution:}
+
+          In the first step, $
+              \ket{0}_{t-1}...\ket{0}_1\ket{0}_{0}\ket{u}\rightarrow\frac{\ket{0}_{t-1}+\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_1+\ket{1}_1}{\sqrt{2}}\frac{\ket{0}_{0}+\ket{1}_{0}}{\sqrt{2}}\ket{u}
+          $
+
+          In the second step, $0th$ qbit is the applied control qbit.
+
+          $
+              \frac{\ket{0}_{t-1}+\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_1+\ket{1}_1}{\sqrt{2}}\frac{\ket{0}_{0}+\ket{1}_{0}}{\sqrt{2}}\ket{u}
+              \\\rightarrow
+              \frac{\ket{0}_{t-1}+\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_1+\ket{1}_1}{\sqrt{2}}\frac{\ket{0}_{0}+\ket{1}_{0}}{\sqrt{2}}U^{2^0}\ket{u}
+              \\=\frac{\ket{0}_{t-1}+\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_1+\ket{1}_1}{\sqrt{2}}\frac{\ket{0}_{0}\ket{u}+\ket{1}_{0}U^{2^0}\ket{u}}{\sqrt{2}}
+              \\=\frac{\ket{0}_{t-1}+\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_1+\ket{1}_1}{\sqrt{2}}\frac{\ket{0}_{0}+e^{2\pi i\phi 2^0}\ket{1}_{0}}{\sqrt{2}}\ket{u}
+          $
+
+          In the third step, $1th$ qbit is the applied control qbit.
+
+          $
+              \frac{\ket{0}_{t-1}+\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_1+\ket{1}_1}{\sqrt{2}}\frac{\ket{0}_{0}+e^{2\pi i\phi 2^0}\ket{1}_{0}}{\sqrt{2}}\ket{u}
+              \\\rightarrow
+              \frac{\ket{0}_{t-1}+\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_1+\ket{1}_1}{\sqrt{2}}\frac{\ket{0}_{0}+e^{2\pi i\phi 2^0}\ket{1}_{0}}{\sqrt{2}}U^{2^1}\ket{u}
+              \\=\frac{\ket{0}_{t-1}+\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_{1}+e^{2\pi i\phi 2^1}\ket{1}_{1}}{\sqrt{2}}\frac{\ket{0}_{0}+e^{2\pi i\phi 2^0}\ket{1}_{0}}{\sqrt{2}}\ket{u}
+          $
+
+          In the t+1$th$ step, $(t-1)th$ qbit is the applied control qbit.
+
+          $
+              \frac{\ket{0}_{t-1}+\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_{1}+e^{2\pi i\phi 2^1}\ket{1}_{1}}{\sqrt{2}}\frac{\ket{0}_{0}+e^{2\pi i\phi 2^0}\ket{1}_{0}}{\sqrt{2}}\ket{u}
+              \\\rightarrow
+              \frac{\ket{0}_{t-1}+\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_{1}+e^{2\pi i\phi 2^1}\ket{1}_{1}}{\sqrt{2}}\frac{\ket{0}_{0}+e^{2\pi i\phi 2^0}\ket{1}_{0}}{\sqrt{2}}U^{2^{t-1}}\ket{u}
+              \\=\frac{\ket{0}_{t-1}+e^{2\pi i\phi 2^{t-1}}\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_{1}+e^{2\pi i\phi 2^1}\ket{1}_{1}}{\sqrt{2}}\frac{\ket{0}_{0}+e^{2\pi i\phi 2^0}\ket{1}_{0}}{\sqrt{2}}\ket{u}
+          $
+
+          We know that $F(\ket{j})=\frac{1}{\sqrt{2}}\sum_{k=0}^{2^n-1}e^{2\pi i \frac{jk}{2^n}}\ket{k}$
+
+
+          Assume $k_t=2^t$,
+
+          $\frac{\ket{0}_{t-1}+e^{2\pi i\phi 2^{t-1}}\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_{1}+e^{2\pi i\phi 2^1}\ket{1}_{1}}{\sqrt{2}}\frac{\ket{0}_{0}+e^{2\pi i\phi 2^0}\ket{1}_{0}}{\sqrt{2}}\ket{u}
+              %   \\=\frac{1}{\sqrt{2^t}}(\ket{0...00}_{t-1...0}+\sum_{j=0}^{t-1}e^{2\pi i \phi 2^{j}}\ket{1}_j)\ket{u}
+              \\=\frac{1}{\sqrt{2^t}}\sum_{k=0}^{2^t-1} e^{2\pi i\phi k}\ket{k}\ket{u}$
+
+          So, the final state of the first register at the end of the first circuit is given by
+          $\frac{1}{\sqrt{2^t}}\sum_{k=0}^{2^t-1} e^{2\pi i\phi k}\ket{k}$.
+
+
+    \item Show that the phase estimation algorithm does not only apply to one single eigenvector $\ket{u}$, but also to a superposition of eigenvectors $\sum_i P_i |u_i\rangle$. (6 points)
+
+
+
+\end{enumerate}
+
+\section{Exercise 2: controlled gates}
+In the lectures, we saw controlled gates $c^{-}L$, which applied a gate $L$ to a system state $\ket{\psi}$ if the control state $\ket{\sigma_c}$ is in state $\ket{1}$, and leaves $\ket{\psi}$ invariant if $\ket{\sigma_c} = \ket{0}$.
+\begin{enumerate}
+    \item Let us look now at doubly-controlled gates. Here, we have two control states $\ket{\sigma_1}$ and $\ket{\sigma_2}$. Then, $c^{-}c^{-}L$ is the gate which applies $L$ to a system state $\ket{\psi}$ if both $\ket{\sigma_1}=\ket{1}$ and $\ket{\sigma_2}=\ket{1}$, and leaves it invariant otherwise.
+
+
+          \textbf{Solution:}
+
+
+          $
+              c-cLX\ket{\sigma_1}_{c1}\ket{\sigma_2}_{c2}\ket{\psi}_t=
+              \\\ket{0}\bra{0}_{c_1}\ket{\sigma_1}\ket{0}\bra{0}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
+              \\\ket{0}\bra{0}_{c_1}\ket{\sigma_1}\ket{1}\bra{1}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
+              \\\ket{1}\bra{1}_{c_1}\ket{\sigma_1}\ket{0}\bra{0}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
+              \\\ket{1}\bra{1}_{c_1}\ket{\sigma_1}\ket{1}\bra{1}_{c_2}\ket{\sigma_2}L_3\ket{\psi}_3
+          $
+
+
+          \textbf{DRAW A PICTURE}
+
+    \item We encountered anti-controlled gates in the lectures. Here, for a gate $ac^{-}L$, the gate $L$ was applied to a system state $|\psi\rangle$ if the control state $|\sigma\rangle_c$ is in state $|0\rangle$, and $|\psi\rangle$ was left invariant for $|\sigma\rangle_c = |1\rangle$. Then, combining control and anti-control, there are four possible ways for a doubly-controlled gate. Write all four ways in ket-bra notation and draw the corresponding circuits. (6 points)
+
+          \textbf{Solution:}
+
+          If the first gate is anti-control, the second gate is anti-control:
+
+          $
+              ac-ac-L\ket{\sigma_1}_{c1}\ket{\sigma_2}_{c2}\ket{\psi}_t=
+              \\\ket{0}\bra{0}_{c_1}\ket{\sigma_1}\ket{0}\bra{0}_{c_2}\ket{\sigma_2}L_3\ket{\psi}_3+
+              \\\ket{0}\bra{0}_{c_1}\ket{\sigma_1}\ket{1}\bra{1}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
+              \\\ket{1}\bra{1}_{c_1}\ket{\sigma_1}\ket{0}\bra{0}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
+              \\\ket{1}\bra{1}_{c_1}\ket{\sigma_1}\ket{1}\bra{1}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3
+          $
+
+          If the first gate is anti-control, the second gate is control:
+
+          $
+              ac-c-L\ket{\sigma_1}_{c1}\ket{\sigma_2}_{c2}\ket{\psi}_t=
+              \\\ket{0}\bra{0}_{c_1}\ket{\sigma_1}\ket{0}\bra{0}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
+              \\\ket{0}\bra{0}_{c_1}\ket{\sigma_1}\ket{1}\bra{1}_{c_2}\ket{\sigma_2}L_3\ket{\psi}_3+
+              \\\ket{1}\bra{1}_{c_1}\ket{\sigma_1}\ket{0}\bra{0}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
+              \\\ket{1}\bra{1}_{c_1}\ket{\sigma_1}\ket{1}\bra{1}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3
+          $
+
+          If the first gate is control, the second gate is anti-control:
+
+          $
+              c-ac-L\ket{\sigma_1}_{c1}\ket{\sigma_2}_{c2}\ket{\psi}_t=
+              \\\ket{0}\bra{0}_{c_1}\ket{\sigma_1}\ket{0}\bra{0}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
+              \\\ket{0}\bra{0}_{c_1}\ket{\sigma_1}\ket{1}\bra{1}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
+              \\\ket{1}\bra{1}_{c_1}\ket{\sigma_1}\ket{0}\bra{0}_{c_2}\ket{\sigma_2}L_3\ket{\psi}_3+
+              \\\ket{1}\bra{1}_{c_1}\ket{\sigma_1}\ket{1}\bra{1}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3
+          $
+
+
+          If the first gate is control, the second gate is control:
+
+          $
+              c-cLX\ket{\sigma_1}_{c1}\ket{\sigma_2}_{c2}\ket{\psi}_t=
+              \\\ket{0}\bra{0}_{c_1}\ket{\sigma_1}\ket{0}\bra{0}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
+              \\\ket{0}\bra{0}_{c_1}\ket{\sigma_1}\ket{1}\bra{1}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
+              \\\ket{1}\bra{1}_{c_1}\ket{\sigma_1}\ket{0}\bra{0}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
+              \\\ket{1}\bra{1}_{c_1}\ket{\sigma_1}\ket{1}\bra{1}_{c_2}\ket{\sigma_2}L_3\ket{\psi}_3
+          $
+
+
+\end{enumerate}
+\section{Exercise 3: quantum neural networks}
+In the lectures, we studied classical binary feedforward neural networks and saw how to generalize them to quantum neural networks. To make this step, we formalized the classical neuron in the gate model. In the lectures, we identified the classical bit value $-1$ with the state $\ket{0}$ and value $+1$ with $\ket{1}$. We use the same mapping here in this exercise.
+\begin{enumerate}
+    \item Inside a classical binary neuron, the edge weight $w$ first gets multiplied with the input $a$ to obtain the value $w \cdot a$. Show that the multiplication of the weight with the input can be realized by the XNOR gate. (4 points)
+
+          \textbf{Solution:}
+
+          To a classical neuron, the table of $w\cdot a$ is:
+          \begin{table}[h]
+              \centering
+              \begin{tabular}{|c|c|c|}
+                  \hline
+                  $w$  & $a$  & $w\cdot a$ \\
+                  \hline
+                  $-1$ & $-1$ & $+1$       \\
+                  \hline
+                  $-1$ & $+1$ & $-1$       \\
+                  \hline
+                  $+1$ & $-1$ & $-1$       \\
+                  \hline
+                  $+1$ & $+1$ & $+1$       \\
+                  \hline
+              \end{tabular}
+          \end{table}
+
+          In quantum computing, the XNOR gate is defined as:
+          \begin{table}[h]
+              \centering
+              \begin{tabular}{|c|c|c|}
+                  \hline
+                  $w$       & $a$       & $w\cdot a$ \\
+                  \hline
+                  $\ket{0}$ & $\ket{0}$ & $\ket{1}$  \\
+                  \hline
+                  $\ket{0}$ & $\ket{1}$ & $\ket{0}$  \\
+                  \hline
+                  $\ket{1}$ & $\ket{0}$ & $\ket{0}$  \\
+                  \hline
+                  $\ket{1}$ & $\ket{1}$ & $\ket{1}$  \\
+                  \hline
+              \end{tabular}
+          \end{table}
+
+          $\ket{0}$ is corresponding to $-1$, $\ket{1}$ is corresponding to $+1$.
+
+          So, the multiplication of the weight with the input can be realized by the XNOR gate.
+
+
+
+    \item Assume now we have two inputs $a_1$, $a_2$ to the neuron. After multiplying the inputs with the weights, we defined the resulting values as $s_1 = w_1a_1$ and $s_2 = w_2a_2$. The values $s_1$ and $s_2$ were summed up and forwarded to the Heaviside activation function. The Heaviside function $H$ then outputs the value +1 if the sum $s_1 + s_2$ is above a certain threshold $\alpha$, i.e. $H(s) = +1$ if $s_1 + s_2 \geq \alpha$ and $H(s) = -1$ if $s < \alpha$. Find a quantum circuit that takes the states $|s_1\rangle$, $|s_2\rangle$ and an ancilla $|0\rangle$, and implements the Heaviside function as:
+
+          \begin{equation}
+              |s_1\rangle|s_2\rangle|0\rangle \rightarrow |s_1\rangle|s_2\rangle|H(s)\rangle
+          \end{equation}
+
+          for the case $\alpha = +1$. Hint: make sure that the neuron is activated also in case $s_1 = s_2 = +1$. (8 points)
+
+          \textbf{Solution:}
+
+          
+
+\end{enumerate}
+
+\end{document}
