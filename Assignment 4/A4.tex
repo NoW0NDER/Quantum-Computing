@@ -89,7 +89,7 @@
 
 \maketitle
 
-\section{QUANTUM PHASE ESTIMATION}
+\section{Excersice 1: quantum phase estimation}
 We studied quantum phase estimation as a tool to estimate the number $\phi$ in the eigenvalue $e^{2\pi i\phi}$ with corresponding eigenvector $|u\rangle$ of a unitary operation $U$. The algorithm proceeded in two steps: first, the phase factor $\phi$ of the eigenvalue is encoded in binary in a $t$-qubit quantum state. Thereafter, a measurement in the computational basis yields the $t$ binary digits of $\phi$ – explicitly telling us the eigenvalue up to some precision.
 \begin{enumerate}
     \item Let us depict again the phase estimation circuit: We found that the final state of the first register at the end of the circuit is given by $\frac{1}{\sqrt{2^t}}\sum_{k=0}^{2^t-1} e^{2\pi i\phi k}|k\rangle$. Derive this state by going through the circuit step-by-step (in particular, show that the output state can be written in this exact form). (8 points)
@@ -272,9 +272,108 @@ In the lectures, we studied classical binary feedforward neural networks and saw
           for the case $\alpha = +1$. Hint: make sure that the neuron is activated also in case $s_1 = s_2 = +1$. (8 points)
 
           \textbf{Solution:}
+          $c-c-X\ket{s_1}\ket{s_2}\ket{0}$
 
+    \item Find a circuit that transforms $|s_1\rangle|s_2\rangle|0\rangle$ to $|s_1\rangle|s_2\rangle|H(s)\rangle$, where $\alpha = -1$. (8 points)
           
+          $ac-ac-X\ket{s_1}\ket{s_2}\ket{0}$
+
+          Then X on the third qbit.
+\end{enumerate}
+We identify now the value +1 with the state $\ket{0}$ and value $-1$ with the state $\ket{1}$.
+
+\begin{enumerate}[start=4]
+    \item Show that multiplication between input and weight can be written as $|s_1\rangle = |a_1 \oplus w_1\rangle$ and $|s_2\rangle = |a_2 \oplus w_2\rangle$,
+    meaning that we simply need to perform an addition (modulo 2) between the input $a_i$ and corresponding weight
+    $w_i$. (4 points)
+
+    \textbf{Solution:}
+
+    In classical, the truth table of $a_i\oplus w_i$ is:
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            $a_i$ & $w_i$ & $a_i\cdot w_i$ \\
+            \hline
+            $-1$  & $-1$  & $+1$            \\
+            \hline
+            $-1$  & $+1$  & $-1$            \\
+            \hline
+            $+1$  & $-1$  & $-1$            \\
+            \hline
+            $+1$  & $+1$  & $+1$            \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    In quantum, the truth table of $a_i\oplus w_i$ is:
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            $a_i$       & $w_i$       & $a_i\oplus w_i$ \\
+            \hline
+            $\ket{1}$ & $\ket{1}$ & $\ket{0}$  \\
+            \hline
+            $\ket{1}$ & $\ket{0}$ & $\ket{1}$  \\
+            \hline
+            $\ket{0}$ & $\ket{1}$ & $\ket{1}$  \\
+            \hline
+            $\ket{0}$ & $\ket{0}$ & $\ket{0}$  \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    The two tables are the same.
+
+    $\ket{0}$ is corresponding to $+1$, $\ket{1}$ is corresponding to $-1$.
+    So, multiplication between input and weight can be written as $|s_1\rangle = |a_1 \oplus w_1\rangle$ and $|s_2\rangle = |a_2 \oplus w_2\rangle$.
+    
+\end{enumerate}
+
+\section{Exercise 4: quantum dot product}
+
+Distances can be evaluated more efficiently on a quantum computer compared to a classical computer. Assume we are given two quantum states $|\vec{x}_i\rangle$ and $|\vec{x}_j\rangle$ encoding the vectors $\vec{x}_i = (x_{i,0}, x_{i,1}, ..., x_{i,n-1})^T$ and $\vec{x}_j = (x_{j,0}, x_{j,1}, ..., x_{j,n-1})^T$.
+\begin{enumerate}
+    \item The vectors $\vec{x}_i$ and $\vec{x}_j$ do not need to be normalized - they can, in general, have arbitrary norms $\|\vec{x}_i\|$ and $\|\vec{x}_j\|$. Show that the encodings 
+    $|\vec{x}_i\rangle = \frac{1}{\|\vec{x}_i\|} \sum_{m=0}^{n-1} x_{i,m}|m\rangle$ 
+    and $|\vec{x}_j\rangle = \frac{1}{\|\vec{x}_j\|} \sum_{k=0}^{n-1} x_{j,k}|k\rangle$ are indeed normalized correctly. (3 points)
+    
+    \textbf{Solution:}
+
+    $||\frac{1}{\|\vec{x}_i\|} \sum_{m=0}^{n-1} x_{i,m}\ket{m}||^2=
+    \frac{\sum_{m=0}^{n-1}x_{i,m}^2}{\|\vec{x}_i\|^2}=
+    \frac{\sum_{m=0}^{n-1}x_{i,m}^2}{\sum_{m=0}^{n-1}x_{i,m}^2}=1
+    $ 
+
+    $||\frac{1}{\|\vec{x}_j\|} \sum_{k=0}^{n-1} x_{j,k}\ket{k}||^2=
+    \frac{\sum_{k=0}^{n-1}x_{j,k}^2}{\|\vec{x}_j\|^2}=
+    \frac{\sum_{k=0}^{n-1}x_{j,k}^2}{\sum_{k=0}^{n-1}x_{j,k}^2}=1
+    $ 
+
+    So, the encodings are normalized correctly.
+\end{enumerate}
+
+
+In the following, we assume the sum of the vector norms $Z = \|\vec{x}_i\|^2 + \|\vec{x}_j\|^2$ to be known. Further, let us assume we are given the states $|\psi\rangle = \frac{1}{\sqrt{2}}(|0\rangle_1|\vec{x}_i\rangle_2 + |1\rangle_1|\vec{x}_j\rangle_2)$ and $|\phi\rangle = \frac{1}{\sqrt{Z}}(\|\vec{x}_i\||0\rangle_1 - \|\vec{x}_j\||1\rangle_1)$.
+
+\begin{enumerate}[start=2]
+    \item Compute the overlap $(\langle\phi|_1 \otimes I_2)|\psi\rangle_{12}$ between the states. (3 points)
+    
+
+    \textbf{Solution:}
+
+    $\langle\phi|_1=\frac{1}{\sqrt{Z}}(\|\vec{x}_i\|\bra{0}_1 - \|\vec{x}_j\|\bra{1}_1)$
+    
+    $(\langle\phi|_1 \otimes I_2)|\psi\rangle_{12}
+    \\=\frac{1}{\sqrt{2Z}}(||\vec{x_i}||^2\ket{\vec{x_i}}_2-||\vec{x_j}||^2\ket{\vec{x_j}}_2)
+    $
 
 \end{enumerate}
+
+
+    The goal of this exercise is to show that we can compute the distance between the vectors $\vec{x}_i$ and $\vec{x}_j$ by performing a swap-test on the states $|\psi\rangle$ and $|\phi\rangle$.
+
 
 \end{document}
