@@ -379,6 +379,80 @@ In the following, we assume the sum of the vector norms $Z = \|\vec{x}_i\|^2 + \
 
     \begin{enumerate}[start=3]
         \item Begin with the initial state $|0\rangle|\psi\rangle|\phi\rangle$ and compute the state before the final measurement. Do so by doing a step-by-step calculation for each operation in the circuit. The operation after the first Hadamard gate is a controlled swap gate: for two states $|a\rangle$ and $|b\rangle$, a swap gate acts as $\text{SWAP}(|a\rangle_1|b\rangle_2) = |b\rangle_1|a\rangle_2$. (6 points)
+    
+        \textbf{Solution:}
+
+        In the first step:
+        $\ket{0}_0\ket{\psi}_1\ket{\phi}_2$
+
+        In the second step:
+        $\frac{1}{\sqrt{2}}(\ket{0}_0+\ket{1}_0)\ket{\psi}_1\ket{\phi}_2$
+
+        In the third step:
+        $\frac{1}{\sqrt{2}}(\ket{0}_0\ket{\psi}_1\ket{\phi}_2+\ket{1}_0\ket{\phi}_1\ket{\psi}_2)$
+
+        In the fourth step:
+        $\frac{1}{\sqrt{2}}(\frac{1}{\sqrt{2}}(\ket{0}_0+\ket{1}_0)\ket{\psi}_1\ket{\phi}_2
+        +\frac{1}{\sqrt{2}}(\ket{0}_0-\ket{1}_0)\ket{\phi}_1\ket{\psi}_2)
+        \\=\frac{1}{2}(\ket{0}_0\ket{\psi}_1\ket{\phi}_2+\ket{1}_0\ket{\psi}_1\ket{\phi}_2
+        +\ket{0}_0\ket{\phi}_1\ket{\psi}_2-\ket{1}_0\ket{\phi}_1\ket{\psi}_2)
+        $
+        
+    
     \end{enumerate}
 
+        We want to show that the final measurement gives insight to the distance $\|\vec{x}_i - \vec{x}_j\|$ between the vectors $\vec{x}_i$ and $\vec{x}_j$.
+    We do so by showing the following steps.
+
+    \begin{enumerate}[start=4]
+        \item Assume the final measurement on the uppermost wire is performed in the computational basis $\{\ket{0}, \ket{1}\}$. Compute the corresponding probability $p(0)$ of obtaining outcome ``0'' from the measurement. (8 points)
+       
+        \textbf{Solution:}
+        $p(0)
+        \\=|\bra{0}\frac{1}{2}(\ket{0}_0\ket{\psi}_1\ket{\phi}_2+\ket{1}_0\ket{\psi}_1\ket{\phi}_2
+        +\ket{0}_0\ket{\phi}_1\ket{\psi}_2-\ket{1}_0\ket{\phi}_1\ket{\psi}_2)|^2
+        \\=\frac{1}{4}|\ket{\psi}_1\ket{\phi}_2+\ket{\phi}_1\ket{\psi}_2|^2
+        \\=\frac{1}{4}|\ket{\vec{x_i}}_1\ket{\vec{x_j}}_2+\ket{\vec{x_j}}_1\ket{\vec{x_i}}_2|^2
+        $
+
+        \item Use the expression for the overlap $\langle\psi|\phi\rangle$ from part 2 to show that the probability $p(0)$ can be written as
+        \[
+        p(0) = \frac{1}{2}\left(1 + \frac{\|\vec{x}_i - \vec{x}_j\|^2}{2Z}\right)
+        \]
+        (6 points) Hint: note, that $\|\vec{x}_i\|\ket{\vec{x}_i} = \vec{x}_i$.
+
+        \textbf{Solution:}
+
+        $p(0)
+        \\=(\bra{0}_0\otimes I_1\otimes I_2)\frac{1}{2}(\ket{0}_0\ket{\psi}_1\ket{\phi}_2+\ket{1}_0\ket{\psi}_1\ket{\phi}_2
+        +\ket{0}_0\ket{\phi}_1\ket{\psi}_2-\ket{1}_0\ket{\phi}_1\ket{\psi}_2)
+        \\=
+        $
+
+    \end{enumerate}
+
+\section{Exercise 5: quantum causality (26 points)}
+The last part of the lectures discussed the possibility of exotic causal scenarios in quantum mechanics. One concrete example of indefinite causality that was considered is the quantum switch. The quantum switch, denoted as S, is a map that takes two channels, A and B, as inputs and creates a coherent superposition, S(A, B), of the two classical causal orders: B ◦ A and A ◦ B.
+
+\begin{enumerate}
+    \item The orders in the quantum switch are determined by a control qubit, which can be in a quantum superposition.
+    We observed that even though the channels in both arms of the quantum switch completely erase any information, Bob can still receive information about Alice's input state σ. Instead of transmitting her information through the information-erasing channels in the switch, why doesn't Alice encode her information into the control qubit? This way, the information would not be erased, and Bob could extract ρ by measuring the control qubit and the output of the switch, just like he did in the communication protocol discussed in the lectures. (3 points)
+    \textbf{Solution:}
+    \begin{itemize}
+        \item Interference with the control qubit: The control qubit may be in a quantum superposition, and measuring it to extract the information introduces uncertainty and reduces the reliability of the communication.
+
+        \item Efficiency of bit transmission: Directly encoding the information into transmission bits, rather than using the control qubit, allows for more efficient and faster communication. It reduces the need for additional bits and operations.
+        
+        \item Information confidentiality: Encoding the information into the control qubit may reveal information about Alice's input state when Bob measures the control qubit. This can lead to information leakage and security issues. Encoding the information directly into the transmission bits provides better control over information confidentiality.
+
+    \end{itemize}
+\end{enumerate}
+
+
+We saw in the lectures that the quantum switch can help with certain tasks. One example was communication. Here,
+we look at another example: channel discrimination. Most generally, channel discrimination is the following task.
+Given a black box which executes one of two channels $C_1$ and $C_2$, find out which channel it is. Clearly, we need some
+information about the channels to be successful. Depending on the information, there are many variations of the task.
+Here, we look at the following instance: given channel $C_1 = U \otimes U$ and $C_2 = U \otimes V$, with $U$ and $V$ unitary channels,
+do we have $C_1$ or $C_2$?
 \end{document}
