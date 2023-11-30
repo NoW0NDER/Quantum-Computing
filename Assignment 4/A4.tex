@@ -157,7 +157,7 @@ In the lectures, we saw controlled gates $c^{-}L$, which applied a gate $L$ to a
 
 
           $
-              c-cLX\ket{\sigma_1}_{c1}\ket{\sigma_2}_{c2}\ket{\psi}_t=
+              c-cL\ket{\sigma_1}_{c1}\ket{\sigma_2}_{c2}\ket{\psi}_t=
               \\\ket{0}\bra{0}_{c_1}\ket{\sigma_1}\ket{0}\bra{0}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
               \\\ket{0}\bra{0}_{c_1}\ket{\sigma_1}\ket{1}\bra{1}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
               \\\ket{1}\bra{1}_{c_1}\ket{\sigma_1}\ket{0}\bra{0}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
@@ -205,7 +205,7 @@ In the lectures, we saw controlled gates $c^{-}L$, which applied a gate $L$ to a
           If the first gate is control, the second gate is control:
 
           $
-              c-cLX\ket{\sigma_1}_{c1}\ket{\sigma_2}_{c2}\ket{\psi}_t=
+              c-cL\ket{\sigma_1}_{c1}\ket{\sigma_2}_{c2}\ket{\psi}_t=
               \\\ket{0}\bra{0}_{c_1}\ket{\sigma_1}\ket{0}\bra{0}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
               \\\ket{0}\bra{0}_{c_1}\ket{\sigma_1}\ket{1}\bra{1}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
               \\\ket{1}\bra{1}_{c_1}\ket{\sigma_1}\ket{0}\bra{0}_{c_2}\ket{\sigma_2}I_3\ket{\psi}_3+
@@ -367,7 +367,8 @@ In the following, we assume the sum of the vector norms $Z = \|\vec{x}_i\|^2 + \
     $\langle\phi|_1=\frac{1}{\sqrt{Z}}(\|\vec{x}_i\|\bra{0}_1 - \|\vec{x}_j\|\bra{1}_1)$
     
     $(\langle\phi|_1 \otimes I_2)|\psi\rangle_{12}
-    \\=\frac{1}{\sqrt{2Z}}(||\vec{x_i}||^2\ket{\vec{x_i}}_2-||\vec{x_j}||^2\ket{\vec{x_j}}_2)
+    \\=\frac{1}{\sqrt{2Z}}(||\vec{x_i}||\ket{\vec{x_i}}_2-||\vec{x_j}||\ket{\vec{x_j}}_2)
+    \\=\frac{1}{\sqrt{2Z}}(\vec{x_i}-\vec{x_j})
     $
 
 \end{enumerate}
@@ -386,16 +387,16 @@ In the following, we assume the sum of the vector norms $Z = \|\vec{x}_i\|^2 + \
         $\ket{0}_0\ket{\psi}_1\ket{\phi}_2$
 
         In the second step:
-        $\frac{1}{\sqrt{2}}(\ket{0}_0+\ket{1}_0)\ket{\psi}_1\ket{\phi}_2$
+        $\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})\ket{\psi}\ket{\phi}$
 
         In the third step:
-        $\frac{1}{\sqrt{2}}(\ket{0}_0\ket{\psi}_1\ket{\phi}_2+\ket{1}_0\ket{\phi}_1\ket{\psi}_2)$
+        $\frac{1}{\sqrt{2}}(\ket{0}\ket{\psi}\ket{\phi}+\ket{1}\ket{\phi}\ket{\psi})$
 
         In the fourth step:
-        $\frac{1}{\sqrt{2}}(\frac{1}{\sqrt{2}}(\ket{0}_0+\ket{1}_0)\ket{\psi}_1\ket{\phi}_2
-        +\frac{1}{\sqrt{2}}(\ket{0}_0-\ket{1}_0)\ket{\phi}_1\ket{\psi}_2)
-        \\=\frac{1}{2}(\ket{0}_0\ket{\psi}_1\ket{\phi}_2+\ket{1}_0\ket{\psi}_1\ket{\phi}_2
-        +\ket{0}_0\ket{\phi}_1\ket{\psi}_2-\ket{1}_0\ket{\phi}_1\ket{\psi}_2)
+        $\frac{1}{\sqrt{2}}(\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})\ket{\psi}\ket{\phi}
+        +\frac{1}{\sqrt{2}}(\ket{0}-\ket{1})\ket{\phi}\ket{\psi})
+        \\=\frac{1}{2}(\ket{0}\ket{\psi}\ket{\phi}+\ket{1}\ket{\psi}\ket{\phi}
+        +\ket{0}\ket{\phi}\ket{\psi}-\ket{1}\ket{\phi}\ket{\psi})
         $
         
     
@@ -409,11 +410,22 @@ In the following, we assume the sum of the vector norms $Z = \|\vec{x}_i\|^2 + \
        
         \textbf{Solution:}
         $p(0)
-        \\=|\bra{0}\frac{1}{2}(\ket{0}_0\ket{\psi}_1\ket{\phi}_2+\ket{1}_0\ket{\psi}_1\ket{\phi}_2
-        +\ket{0}_0\ket{\phi}_1\ket{\psi}_2-\ket{1}_0\ket{\phi}_1\ket{\psi}_2)|^2
-        \\=\frac{1}{4}|\ket{\psi}_1\ket{\phi}_2+\ket{\phi}_1\ket{\psi}_2|^2
-        \\=\frac{1}{4}|\ket{\vec{x_i}}_1\ket{\vec{x_j}}_2+\ket{\vec{x_j}}_1\ket{\vec{x_i}}_2|^2
+        \\=|\bra{0}_0\frac{1}{2}(\ket{0}_0\ket{\psi}\ket{\phi}+\ket{1}\ket{\psi}\ket{\phi}
+        +\ket{0}_0\ket{\phi}\ket{\psi}-\ket{1}\ket{\phi}\ket{\psi})|^2
+        \\=\frac{1}{4}|\ket{\psi}\ket{\phi}+\ket{\phi}\ket{\psi}|^2
+        \\=\frac{1}{4}|(\bra{\psi}\bra{\phi}+\bra{\phi}\bra{\psi})(\ket{\psi}\ket{\phi}+\ket{\phi}\ket{\psi})|
+        \\=\frac{1}{4}|\braket{\psi\phi|\psi\phi}+\braket{\phi\psi|\psi\phi}+\braket{\psi\phi|\phi\psi}+\braket{\phi\psi|\phi\psi}|
+        \\=\frac{1}{4}|2+\braket{\psi\phi|\psi\phi}+\braket{\phi\psi|\phi\psi}|
         $
+%         \\=\frac{1}{4}|
+%         \frac{1}{\sqrt{2Z}}(\ket{0}_1\ket{\vec{x_i}}_2+\ket{1}_1\ket{\vec{x_j}}_2)(\|\vec{x}_i\|\ket{0}_3 - \|\vec{x}_j\|\ket{1}_3)+\frac{1}{\sqrt{2Z}}(\|\vec{x}_i\|\ket{0}_1 - \|\vec{x}_j\|\ket{1}_1)(\ket{0}_2\ket{\vec{x_i}}_3+\ket{1}_2\ket{\vec{x_j}}_3)
+%         |^2
+%         \\=\frac{1}{8Z}|
+%         (
+% (\bra{0}_1\bra{\vec{x_i}}_2+\bra{1}_1\bra{\vec{x_j}}_2)(\|\vec{x}_i\|\ket{0}_3 - \|\vec{x}_j\|\ket{1}_3)+(\|\vec{x}_i\|\ket{0}_1 - \|\vec{x}_j\|\ket{1}_1)(\bra{0}_2\bra{\vec{x_i}}_3+\bra{1}_2\bra{\vec{x_j}}_3
+%             |^2)
+%             (\ket{0}_1\ket{\vec{x_i}}_2+\ket{1}_1\ket{\vec{x_j}}_2)(\|\vec{x}_i\|\ket{0}_3 - \|\vec{x}_j\|\ket{1}_3)+(\|\vec{x}_i\|\ket{0}_1 - \|\vec{x}_j\|\ket{1}_1)(\ket{0}_2\ket{\vec{x_i}}_3+\ket{1}_2\ket{\vec{x_j}}_3))|
+%         $
 
         \item Use the expression for the overlap $\langle\psi|\phi\rangle$ from part 2 to show that the probability $p(0)$ can be written as
         \[
@@ -424,9 +436,9 @@ In the following, we assume the sum of the vector norms $Z = \|\vec{x}_i\|^2 + \
         \textbf{Solution:}
 
         $p(0)
-        \\=(\bra{0}_0\otimes I_1\otimes I_2)\frac{1}{2}(\ket{0}_0\ket{\psi}_1\ket{\phi}_2+\ket{1}_0\ket{\psi}_1\ket{\phi}_2
-        +\ket{0}_0\ket{\phi}_1\ket{\psi}_2-\ket{1}_0\ket{\phi}_1\ket{\psi}_2)
-        \\=
+        \\=\frac{1}{4}|2+\braket{\psi\phi|\psi\phi}+\braket{\phi\psi|\phi\psi}|
+        \\=\frac{1}{4}|2+(\frac{1}{\sqrt{2Z}}(\vec{x_i}-\vec{x_j}))^2+(\frac{1}{\sqrt{2Z}}(\vec{x_i}-\vec{x_j}))^2|
+        \\=\frac{1}{2}(1+\frac{|\vec{x_i}-\vec{x_j}|^2}{2Z})
         $
 
     \end{enumerate}
@@ -436,16 +448,23 @@ The last part of the lectures discussed the possibility of exotic causal scenari
 
 \begin{enumerate}
     \item The orders in the quantum switch are determined by a control qubit, which can be in a quantum superposition.
-    We observed that even though the channels in both arms of the quantum switch completely erase any information, Bob can still receive information about Alice's input state σ. Instead of transmitting her information through the information-erasing channels in the switch, why doesn't Alice encode her information into the control qubit? This way, the information would not be erased, and Bob could extract ρ by measuring the control qubit and the output of the switch, just like he did in the communication protocol discussed in the lectures. (3 points)
+    We observed that even though the channels in both arms of the quantum switch completely erase any information, Bob can still receive information about Alice's input state $\sigma$. Instead of transmitting her information through the information-erasing channels in the switch, why doesn't Alice encode her information into the control qubit? This way, the information would not be erased, and Bob could extract $\rho$ by measuring the control qubit and the output of the switch, just like he did in the communication protocol discussed in the lectures. (3 points)
+    
     \textbf{Solution:}
+    
     \begin{itemize}
-        \item Interference with the control qubit: The control qubit may be in a quantum superposition, and measuring it to extract the information introduces uncertainty and reduces the reliability of the communication.
-
-        \item Efficiency of bit transmission: Directly encoding the information into transmission bits, rather than using the control qubit, allows for more efficient and faster communication. It reduces the need for additional bits and operations.
-        
-        \item Information confidentiality: Encoding the information into the control qubit may reveal information about Alice's input state when Bob measures the control qubit. This can lead to information leakage and security issues. Encoding the information directly into the transmission bits provides better control over information confidentiality.
-
+        \item Information protection: Directly transmitting data using control qubits may result in irreversible loss of information. Since control qubits collapse into specific states upon measurement, it means that the data cannot be recovered and may be lost. In contrast, erasing channels can maintain the integrity and recoverability of the data during transmission.
+        \item Increased transmission capacity: Erasing channels can increase the transmission capacity by erasing a portion of the information during the process. By using erasing channels at specific positions, new input data can be inserted at those positions, thereby improving transmission efficiency.
+        \item Reduced transmission error rate: Using erasing channels can lower the error rate during transmission. Erasing channels can minimize errors by erasing irrelevant noise and interference, thereby enhancing the reliability of the data.
     \end{itemize}
+    % \begin{itemize}
+    %     \item Interference with the control qubit: The control qubit may be in a quantum superposition, and measuring it to extract the information introduces uncertainty and reduces the reliability of the communication.
+
+    %     \item Efficiency of bit transmission: Directly encoding the information into transmission bits, rather than using the control qubit, allows for more efficient and faster communication. It reduces the need for additional bits and operations.
+        
+    %     \item Information confidentiality: Encoding the information into the control qubit may reveal information about Alice's input state when Bob measures the control qubit. This can lead to information leakage and security issues. Encoding the information directly into the transmission bits provides better control over information confidentiality.
+
+    % \end{itemize}
 \end{enumerate}
 
 
@@ -455,4 +474,71 @@ Given a black box which executes one of two channels $C_1$ and $C_2$, find out w
 information about the channels to be successful. Depending on the information, there are many variations of the task.
 Here, we look at the following instance: given channel $C_1 = U \otimes U$ and $C_2 = U \otimes V$, with $U$ and $V$ unitary channels,
 do we have $C_1$ or $C_2$?
+\begin{enumerate}[start=2]
+    \item Assume the channels act on a state $\rho$ as $U(\rho) = U\rho U^\dagger$ and $V(\rho) = V \rho V^\dagger$ – meaning that the Kraus operators are given by $U$ and $V$ respectively. What is the output state of the quantum switch (global state of system and control) if we insert the channel $C1$ into the quantum switch and apply it to a general input state $\rho$? Note that $C1$ applies the unitary $U$ twice - meaning that we have $U$ in each slot of the quantum switch. Simplify the output as much as possible. (8 points)
+    
+
+        
+\textbf{Solution:}
+$C_1(\rho)=\frac{1}{2}\ket{0}\bra{0}_c\otimes U_B U_A\rho U_A^{\dagger} U_B^{\dagger}
++\frac{1}{2}\ket{1}\bra{1}_c\otimes U_A U_B\rho U_B^{\dagger} U_A^{\dagger}
++\frac{1}{2}\ket{0}\bra{1}_c\otimes U_B U_A\rho U_A^{\dagger} U_B^{\dagger}
++\frac{1}{2}\ket{1}\bra{0}_c\otimes U_A U_B\rho U_B^{\dagger} U_A^{\dagger}
+$
+
+
+
+% $C_1(\rho)=\frac{1}{4}\ket{+}\bra{+}_c\otimes \{U_B,U_A\}\rho \{U_A,U_B\}^{\dagger}$
+
+    \item What is the output state of the quantum switch if we insert $C2$ in the same way and take a general quantum state $\rho$ as input? (4 points)
+
+    \textbf{Solution:}
+$C_2(\rho)=\frac{1}{2}\ket{0}\bra{0}_c\otimes V_B U_A\rho U_A^{\dagger} V_B^{\dagger}
++\frac{1}{2}\ket{1}\bra{1}_c\otimes V_B U_A \rho U_A^{\dagger} V_B^{\dagger}
++\frac{1}{2}\ket{0}\bra{1}_c\otimes V_B U_A\rho U_A^{\dagger} V_B^{\dagger}
++\frac{1}{2}\ket{1}\bra{0}_c\otimes V_B U_A\rho U_A^{\dagger} V_B^{\dagger}
+$
+
+
+
+
+
+\end{enumerate}
+Now, we use these general expressions for a concrete example of the discrimination task
+
+
+\begin{enumerate}[start=4]
+    \item Assume that we are given the information, that $U, V = UV + VU = 0$ holds. How does the output simplify with this information when we put $C2$ into the quantum switch (as in 3.)? (8 points)
+    \textbf{Solution:}
+
+    Define $\{U,V\}=UV+VU=0$.
+
+    Define $[U,V]=UV-VU\neq0$.
+
+    Define $\{U,U\}=UU+UU=2UU$.
+
+    Define $[U,U]=UU-UU=0$.
+
+    $C_2(\rho) = \frac{1}{4}(
+        \ket{+}\bra{+}_c\otimes \{U_A,V_B\}\rho \{U_A,V_B\}^{\dagger}
+        +\ket{-}\bra{-}\otimes [U_A,V_B]\rho [U_A,V_B]^{\dagger}
+        +\ket{+}\bra{-}\otimes \{U_A,V_B\}\rho [U_A,V_B]^{\dagger}
+        +\ket{-}\bra{+}\otimes [U_A,V_B]\rho \{U_A,V_B\}^{\dagger}
+    )
+    \\=\frac{1}{4}\ket{-}\bra{-}_c\otimes [U_A,V_B]\rho [U_A,V_B]^{\dagger}
+    $
+
+    % $C_2(\rho)=\frac{1}{2}\ket{-}\bra{-}_c\otimes \{U_A,V_B\}\rho \{U_A,V_B\}^{\dagger}$
+    \item Given the expressions for $S(C1)(\rho)$ and $S(C2)(\rho)$, if we do not know which of both channels we were given, how can a single measurement on the control qubit of the switch reveal the answer? (3 points)
+    
+    \textbf{Solution:}
+
+    $C_1(\rho)=\frac{1}{4}\ket{+}\bra{+}_c\otimes \{U_B,U_A\}\rho \{U_A,U_B\}^{\dagger}$
+    $C_2(\rho)=\frac{1}{4}\ket{-}\bra{-}_c\otimes [U_A,V_B]\rho [U_A,V_B]^{\dagger}$
+
+
+    Conduct a measurement on the control qubit of the switch. If the measurement result is $\ket{+}$, then the channel is $C_1$. If the measurement result is $\ket{-}$, then the channel is $C_2$.
+
+\end{enumerate}
+
 \end{document}
