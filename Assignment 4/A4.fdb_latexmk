@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1701362440 "/Users/nowonder/Documents/WorkSpace/Quantum-Computing/Assignment 4/A4.tex" "A4.pdf" "A4" 1701362441 0
-  "/Users/nowonder/Documents/WorkSpace/Quantum-Computing/Assignment 4/A4.tex" 1701362440 28324 50777baaa261e8fbcea2a7ed85bcd860 ""
+["pdflatex"] 1701362560 "/Users/nowonder/Documents/WorkSpace/Quantum-Computing/Assignment 4/A4.tex" "A4.pdf" "A4" 1701362560 0
+  "/Users/nowonder/Documents/WorkSpace/Quantum-Computing/Assignment 4/A4.tex" 1701362560 28339 59a5c97ed0e3493c5e877f0b3cec4145 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -114,9 +114,9 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1701184694 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1701184620 7883463 58cb063dc5d9140e1ba70691ab80ea25 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "A4.aux" 1701362441 1306 63f4bce057f1a0698bc83efc3128c0a4 "pdflatex"
-  "A4.out" 1701362441 1141 b16a78c6c3bb07db34bed0606e76db7e "pdflatex"
-  "A4.tex" 1701362440 28324 50777baaa261e8fbcea2a7ed85bcd860 ""
+  "A4.aux" 1701362560 1306 63f4bce057f1a0698bc83efc3128c0a4 "pdflatex"
+  "A4.out" 1701362560 1141 b16a78c6c3bb07db34bed0606e76db7e "pdflatex"
+  "A4.tex" 1701362560 28339 59a5c97ed0e3493c5e877f0b3cec4145 ""
   (generated)
   "A4.aux"
   "A4.log"
