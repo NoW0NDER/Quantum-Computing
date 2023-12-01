@@ -128,6 +128,9 @@ We studied quantum phase estimation as a tool to estimate the number $\phi$ in t
               \\=\frac{\ket{0}_{t-1}+e^{2\pi i\phi 2^{t-1}}\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_{1}+e^{2\pi i\phi 2^1}\ket{1}_{1}}{\sqrt{2}}\frac{\ket{0}_{0}+e^{2\pi i\phi 2^0}\ket{1}_{0}}{\sqrt{2}}\ket{u}
           $
 
+
+
+
           We know that $F(\ket{j})=\frac{1}{\sqrt{2}}\sum_{k=0}^{2^n-1}e^{2\pi i \frac{jk}{2^n}}\ket{k}$
 
 
@@ -143,7 +146,30 @@ We studied quantum phase estimation as a tool to estimate the number $\phi$ in t
 
     \item Show that the phase estimation algorithm does not only apply to one single eigenvector $\ket{u}$, but also to a superposition of eigenvectors $\sum_i P_i |u_i\rangle$. (6 points)
 
+    \textbf{Solution:}
 
+
+    The second register is in the state $\sum_i P_i \ket{u_i}$.
+
+    The initial state if the whole system is $\ket{0}_{t-1}...\ket{0}_1\ket{0}_{0}\sum_i P_i \ket{u_i}$.
+
+    The second step is 
+
+    $
+    \frac{\ket{0}_{t-1}+\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_1+\ket{1}_1}{\sqrt{2}}\frac{\ket{0}_{0}+\ket{1}_{0}}{\sqrt{2}}U^{2^0}\sum_i P_i \ket{u_i}
+    \\=\frac{\ket{0}_{t-1}+\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_1+\ket{1}_1}{\sqrt{2}}\frac{\ket{0}_{0}\ket{u}+\ket{1}_{0}U^{2^0}\sum_i P_i \ket{u_i}}{\sqrt{2}}
+    \\=\frac{\ket{0}_{t-1}+\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_1+\ket{1}_1}{\sqrt{2}}\frac{\ket{0}_{0}+e^{2\pi i\phi 2^0}\ket{1}_{0}}{\sqrt{2}}\sum_i P_i \ket{u_i}
+$
+
+
+In the t+1$th$ step, $(t-1)th$ qbit is the applied control qbit.
+
+$
+    \frac{\ket{0}_{t-1}+\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_{1}+e^{2\pi i\phi 2^1}\ket{1}_{1}}{\sqrt{2}}\frac{\ket{0}_{0}+e^{2\pi i\phi 2^0}\ket{1}_{0}}{\sqrt{2}}U^{2^{t-1}}\sum_i P_i \ket{u_i}
+    \\=\frac{\ket{0}_{t-1}+e^{2\pi i\phi 2^{t-1}}\ket{1}_{t-1}}{\sqrt{2}}...\frac{\ket{0}_{1}+e^{2\pi i\phi 2^1}\ket{1}_{1}}{\sqrt{2}}\frac{\ket{0}_{0}+e^{2\pi i\phi 2^0}\ket{1}_{0}}{\sqrt{2}}\sum_i P_i \ket{u_i}
+$
+
+In the first register, it has exactly the same state as the first question. So, the phase estimation algorithm does not only apply to one single eigenvector $\ket{u}$, but also to a superposition of eigenvectors $\sum_i P_i |u_i\rangle$.
 
 \end{enumerate}
 
@@ -289,7 +315,7 @@ We identify now the value +1 with the state $\ket{0}$ and value $-1$ with the st
 
     \textbf{Solution:}
 
-    In classical, the truth table of $a_i\oplus w_i$ is:
+    In classical, the truth table of $a_i\cdot w_i$ is:
     \begin{table}[h]
         \centering
         \begin{tabular}{|c|c|c|}
@@ -325,7 +351,8 @@ We identify now the value +1 with the state $\ket{0}$ and value $-1$ with the st
         \end{tabular}
     \end{table}
 
-    The two tables are the same.
+
+    The two tables are the same (see the second table in the next page).
 
     $\ket{0}$ is corresponding to $+1$, $\ket{1}$ is corresponding to $-1$.
     So, multiplication between input and weight can be written as $|s_1\rangle = |a_1 \oplus w_1\rangle$ and $|s_2\rangle = |a_2 \oplus w_2\rangle$.
@@ -367,9 +394,7 @@ In the following, we assume the sum of the vector norms $Z = \|\vec{x}_i\|^2 + \
     $\langle\phi|_1=\frac{1}{\sqrt{Z}}(\|\vec{x}_i\|\bra{0}_1 - \|\vec{x}_j\|\bra{1}_1)$
     
     $(\langle\phi|_1 \otimes I_2)|\psi\rangle_{12}
-    \\=\frac{1}{\sqrt{2Z}}(||\vec{x_i}||\ket{\vec{x_i}}_2-||\vec{x_j}||\ket{\vec{x_j}}_2)
-    \\=\frac{1}{\sqrt{2Z}}(\vec{x_i}-\vec{x_j})
-    $
+    \\=\frac{1}{\sqrt{2Z}}(||\vec{x_i}||\ket{\vec{x_i}}_2-||\vec{x_j}||\ket{\vec{x_j}}_2)$
 
 \end{enumerate}
 
@@ -410,12 +435,12 @@ In the following, we assume the sum of the vector norms $Z = \|\vec{x}_i\|^2 + \
        
         \textbf{Solution:}
         $p(0)
-        \\=|\bra{0}_0\frac{1}{2}(\ket{0}_0\ket{\psi}\ket{\phi}+\ket{1}\ket{\psi}\ket{\phi}
-        +\ket{0}_0\ket{\phi}\ket{\psi}-\ket{1}\ket{\phi}\ket{\psi})|^2
-        \\=\frac{1}{4}|\ket{\psi}\ket{\phi}+\ket{\phi}\ket{\psi}|^2
-        \\=\frac{1}{4}|(\bra{\psi}\bra{\phi}+\bra{\phi}\bra{\psi})(\ket{\psi}\ket{\phi}+\ket{\phi}\ket{\psi})|
-        \\=\frac{1}{4}|\braket{\psi\phi|\psi\phi}+\braket{\phi\psi|\psi\phi}+\braket{\psi\phi|\phi\psi}+\braket{\phi\psi|\phi\psi}|
-        \\=\frac{1}{4}|2+\braket{\psi\phi|\psi\phi}+\braket{\phi\psi|\phi\psi}|
+        \\=|\bra{0}_0\frac{1}{2}(\ket{0}_0\ket{\psi}_A\ket{\phi}B+\ket{1}\ket{\psi}_A\ket{\phi}_B
+        +\ket{0}_0\ket{\phi}_A\ket{\psi}_B-\ket{1}\ket{\phi}_A\ket{\psi}_B)|^2
+        \\=\frac{1}{4}|\ket{\psi}_A\ket{\phi}_B+\ket{\phi}_A\ket{\psi}_B|^2
+        \\=\frac{1}{4}|(\bra{\psi}_A\bra{\phi}_B+\bra{\phi}_A\bra{\psi}_B)(\ket{\psi}_A\ket{\phi}_B+\ket{\phi}_A\ket{\psi}_B)|
+        \\=\frac{1}{4}|\braket{\psi_A\phi_B|\psi_A\phi_B}+\braket{\phi_A\psi_B|\psi_A\phi_B}+\braket{\psi_A\phi_B|\phi_A\psi_B}+\braket{\phi_A\psi_B|\phi_A\psi_B}|
+        \\=\frac{1}{4}|2+\braket{\phi_A\psi_B|\psi_A\phi_B}+\braket{\psi_A\phi_B|\phi_A\psi_B}|
         $
 %         \\=\frac{1}{4}|
 %         \frac{1}{\sqrt{2Z}}(\ket{0}_1\ket{\vec{x_i}}_2+\ket{1}_1\ket{\vec{x_j}}_2)(\|\vec{x}_i\|\ket{0}_3 - \|\vec{x}_j\|\ket{1}_3)+\frac{1}{\sqrt{2Z}}(\|\vec{x}_i\|\ket{0}_1 - \|\vec{x}_j\|\ket{1}_1)(\ket{0}_2\ket{\vec{x_i}}_3+\ket{1}_2\ket{\vec{x_j}}_3)
@@ -435,8 +460,18 @@ In the following, we assume the sum of the vector norms $Z = \|\vec{x}_i\|^2 + \
 
         \textbf{Solution:}
 
+        Because $\|\vec{x}_i\|\ket{\vec{x}_i} = \vec{x}_i$
+
+
+        $(\langle\phi|_1 \otimes I_2)|\psi\rangle_{12}
+        \\=\frac{1}{\sqrt{2Z}}(||\vec{x_i}||\ket{\vec{x_i}}_2-||\vec{x_j}||\ket{\vec{x_j}}_2)
+        \\=\frac{1}{\sqrt{2Z}}(\vec{x_i}-\vec{x_j})
+        $
+
         $p(0)
-        \\=\frac{1}{4}|2+\braket{\psi\phi|\psi\phi}+\braket{\phi\psi|\phi\psi}|
+        \\=\frac{1}{4}|2+\braket{\phi_A\psi_B|\psi_A\phi_B}+\braket{\psi_A\phi_B|\phi_A\psi_B}|
+        \\=\frac{1}{4}|2+\braket{\phi_A\otimes I|\psi_A}\braket{\psi_B|\phi_B\otimes I}+\braket{\psi_A|\phi_A\otimes I}\braket{\phi_B\otimes I|\psi_B}|
+        % \\=\frac{1}{4}|2+\braket{\psi\phi|\psi\phi}+\braket{\phi\psi|\phi\psi}|
         \\=\frac{1}{4}|2+(\frac{1}{\sqrt{2Z}}(\vec{x_i}-\vec{x_j}))^2+(\frac{1}{\sqrt{2Z}}(\vec{x_i}-\vec{x_j}))^2|
         \\=\frac{1}{2}(1+\frac{|\vec{x_i}-\vec{x_j}|^2}{2Z})
         $
@@ -480,10 +515,22 @@ do we have $C_1$ or $C_2$?
 
         
 \textbf{Solution:}
+
+Define $\{U,U\}=UU+UU=2UU$.
+
+Define $[U,U]=UU-UU=0$.
+
+
 $C_1(\rho)=\frac{1}{2}\ket{0}\bra{0}_c\otimes U_B U_A\rho U_A^{\dagger} U_B^{\dagger}
 +\frac{1}{2}\ket{1}\bra{1}_c\otimes U_A U_B\rho U_B^{\dagger} U_A^{\dagger}
-+\frac{1}{2}\ket{0}\bra{1}_c\otimes U_B U_A\rho U_A^{\dagger} U_B^{\dagger}
-+\frac{1}{2}\ket{1}\bra{0}_c\otimes U_A U_B\rho U_B^{\dagger} U_A^{\dagger}
++\frac{1}{2}\ket{0}\bra{1}_c\otimes U_B U_A\rho U_B^{\dagger} U_A^{\dagger}
++\frac{1}{2}\ket{1}\bra{0}_c\otimes U_A U_B\rho U_A^{\dagger} U_B^{\dagger}
+\\=\frac{1}{4}(
+    \ket{+}\bra{+}_c\otimes \{U_A,U_B\}\rho \{U_A,U_B\}^{\dagger}
+    +\ket{-}\bra{-}\otimes [U_A,U_B]\rho [U_A,U_B]^{\dagger}
+    -\ket{+}\bra{-}\otimes \{U_A,U_B\}\rho [U_A,U_B]^{\dagger}
+    -\ket{-}\bra{+}\otimes [U_A,U_B]\rho \{U_A,U_B\}^{\dagger})
+    \\=\frac{1}{4}\ket{+}\bra{+}_c\otimes \{U_A,U_B\}\rho \{U_A,U_B\}^{\dagger}
 $
 
 
@@ -494,9 +541,9 @@ $
 
     \textbf{Solution:}
 $C_2(\rho)=\frac{1}{2}\ket{0}\bra{0}_c\otimes V_B U_A\rho U_A^{\dagger} V_B^{\dagger}
-+\frac{1}{2}\ket{1}\bra{1}_c\otimes V_B U_A \rho U_A^{\dagger} V_B^{\dagger}
-+\frac{1}{2}\ket{0}\bra{1}_c\otimes V_B U_A\rho U_A^{\dagger} V_B^{\dagger}
-+\frac{1}{2}\ket{1}\bra{0}_c\otimes V_B U_A\rho U_A^{\dagger} V_B^{\dagger}
++\frac{1}{2}\ket{1}\bra{1}_c\otimes U_A V_B \rho V_B^{\dagger} U_A^{\dagger}
++\frac{1}{2}\ket{0}\bra{1}_c\otimes V_B U_A\rho V_B^{\dagger} U_A^{\dagger}
++\frac{1}{2}\ket{1}\bra{0}_c\otimes U_A V_B\rho U_A^{\dagger} V_B^{\dagger}
 $
 
 
@@ -534,6 +581,8 @@ Now, we use these general expressions for a concrete example of the discriminati
     \textbf{Solution:}
 
     $C_1(\rho)=\frac{1}{4}\ket{+}\bra{+}_c\otimes \{U_B,U_A\}\rho \{U_A,U_B\}^{\dagger}$
+    
+    
     $C_2(\rho)=\frac{1}{4}\ket{-}\bra{-}_c\otimes [U_A,V_B]\rho [U_A,V_B]^{\dagger}$
 
 
